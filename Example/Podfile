@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'CustomUIWidget_Example' do
+  pod 'CustomUIWidget', :path => '../'
+
+  target 'CustomUIWidget_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
