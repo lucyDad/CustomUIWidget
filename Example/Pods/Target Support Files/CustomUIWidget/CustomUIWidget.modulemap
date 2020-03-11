@@ -1,0 +1,6 @@
+framework module CustomUIWidget {
+  umbrella header "CustomUIWidget-umbrella.h"
+
+  export *
+  module * { export * }
+}

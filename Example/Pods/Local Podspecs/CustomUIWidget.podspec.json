@@ -1,0 +1,22 @@
+{
+  "name": "CustomUIWidget",
+  "version": "0.1.0",
+  "summary": "A short description of CustomUIWidget.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/lucyDad/CustomUIWidget",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "lucyDad": "xiang.he@zhenai.com"
+  },
+  "source": {
+    "git": "https://github.com/lucyDad/CustomUIWidget.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CustomUIWidget/Classes/**/*"
+}

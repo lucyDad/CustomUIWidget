@@ -1,0 +1,16 @@
+PODS:
+  - CustomUIWidget (0.1.0)
+
+DEPENDENCIES:
+  - CustomUIWidget (from `../`)
+
+EXTERNAL SOURCES:
+  CustomUIWidget:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CustomUIWidget: 84708119193a7654860681dced6291917358ac05
+
+PODFILE CHECKSUM: 54e2aa5c9ed5483464c2e58402acd9d55b8df3e9
+
+COCOAPODS: 1.9.1

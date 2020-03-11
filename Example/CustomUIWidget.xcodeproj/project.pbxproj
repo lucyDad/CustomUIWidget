@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		073BF61CD47D1667DEB71E97 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		073BF61CD47D1667DEB71E97 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* CustomUIWidget_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomUIWidget_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,9 +64,9 @@
 		AEEFBC13CC939556476FC4EF /* Pods-CustomUIWidget_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomUIWidget_Example.debug.xcconfig"; path = "Target Support Files/Pods-CustomUIWidget_Example/Pods-CustomUIWidget_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B65141B28CD6FCFD8B776A9F /* Pods_CustomUIWidget_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomUIWidget_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF1149857500EE0C191D0882 /* Pods-CustomUIWidget_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomUIWidget_Example.release.xcconfig"; path = "Target Support Files/Pods-CustomUIWidget_Example/Pods-CustomUIWidget_Example.release.xcconfig"; sourceTree = "<group>"; };
-		EA476657B52F17D58A871F0E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		EA476657B52F17D58A871F0E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		ECC2FF9281B387836CAAAA80 /* Pods_CustomUIWidget_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomUIWidget_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F784362B54DB48C4288B8940 /* CustomUIWidget.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = CustomUIWidget.podspec; path = ../CustomUIWidget.podspec; sourceTree = "<group>"; };
+		F784362B54DB48C4288B8940 /* CustomUIWidget.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CustomUIWidget.podspec; path = ../CustomUIWidget.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,6 @@
 				8F3A48A738DC97D87A6F54FD /* Pods-CustomUIWidget_Tests.debug.xcconfig */,
 				9E4E12C6C4546B05346657C2 /* Pods-CustomUIWidget_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
