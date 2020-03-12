@@ -10,6 +10,10 @@
 #endif
 #endif
 
+#import "FDCustomUIWidgetDef.h"
+#import "UIImage+FRColor.h"
+#import "FDCommonButtonView.h"
+#import "FDMarqueeView.h"
 
 FOUNDATION_EXPORT double CustomUIWidgetVersionNumber;
 FOUNDATION_EXPORT const unsigned char CustomUIWidgetVersionString[];

@@ -1,10 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 use_frameworks!
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 target 'CustomUIWidget_Example' do
   pod 'CustomUIWidget', :path => '../'
-
+  pod 'Masonry'
+  pod 'YYCategories'
   target 'CustomUIWidget_Tests' do
     inherit! :search_paths
 

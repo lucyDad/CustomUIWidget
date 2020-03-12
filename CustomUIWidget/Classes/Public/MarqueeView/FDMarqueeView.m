@@ -83,11 +83,14 @@
     [self stopMarquee];
     
     self.marqueeDisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(processMarquee)];
+    // preferredFramesPerSecond: 每秒钟调用几次
+    // frameInterval: 标识间隔多少帧调用一次selector方法
     if (@available(iOS 10, *)) {
-        self.marqueeDisplayLink.preferredFramesPerSecond = self.viewConfig.frameInterval;
+        self.marqueeDisplayLink.preferredFramesPerSecond = 60 / self.viewConfig.frameInterval;
     } else {
         self.marqueeDisplayLink.frameInterval = self.viewConfig.frameInterval;
     }
+    
     [self.marqueeDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
@@ -236,9 +239,12 @@
     if (nil == view) {
         return nil;
     }
+    NSData * tempArchive = [NSKeyedArchiver archivedDataWithRootObject:view];
+    return [NSKeyedUnarchiver unarchiveObjectWithData:tempArchive];
+    /*
     if (@available(iOS 12, *)) {
         NSError *error = nil;
-        NSData * tempArchive = [NSKeyedArchiver archivedDataWithRootObject:view requiringSecureCoding:YES error:&error];
+        NSData * tempArchive = [NSKeyedArchiver archivedDataWithRootObject:view requiringSecureCoding:NO error:&error];
         if (error) {
             [self log:@"view序列化失败 error = %@", error];
             return nil;
@@ -253,6 +259,7 @@
         NSData * tempArchive = [NSKeyedArchiver archivedDataWithRootObject:view];
         return [NSKeyedUnarchiver unarchiveObjectWithData:tempArchive];
     }
+     */
 }
 
 - (void)log:(NSString *)format, ... {

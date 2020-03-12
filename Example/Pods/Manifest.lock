@@ -1,16 +1,31 @@
 PODS:
-  - CustomUIWidget (0.1.0)
+  - CustomUIWidget (0.0.1):
+    - Masonry
+    - YYCategories
+  - Masonry (1.1.0)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
 
 DEPENDENCIES:
   - CustomUIWidget (from `../`)
+  - Masonry
+  - YYCategories
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Masonry
+    - YYCategories
 
 EXTERNAL SOURCES:
   CustomUIWidget:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CustomUIWidget: 84708119193a7654860681dced6291917358ac05
+  CustomUIWidget: ff85967e99cf21cd48b4872bd70cc927b1e5b85e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
 
-PODFILE CHECKSUM: 54e2aa5c9ed5483464c2e58402acd9d55b8df3e9
+PODFILE CHECKSUM: 98d4263f59c3455d9d3848fe5950aa725a856f12
 
 COCOAPODS: 1.9.1

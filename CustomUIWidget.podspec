@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CustomUIWidget'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = '可自定义配置使用的ui组件库.'
 
 # This description is used to generate tags and improve search results.
@@ -36,7 +36,8 @@ TODO: 此工程将日常使用频繁的ui组件集合到一起，同时各ui组�
   #   'CustomUIWidget' => ['CustomUIWidget/Assets/*.png']
   # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.public_header_files = 'Pod/Classes/Public/**/*.h'
+  s.frameworks = 'UIKit', 'Foundation'
+  s.dependency 'Masonry'
+  s.dependency 'YYCategories'
 end
