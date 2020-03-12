@@ -1,5 +1,5 @@
 PODS:
-  - CustomUIWidget (0.0.1):
+  - CustomUIWidget (0.0.2):
     - Masonry
     - YYCategories
   - Masonry (1.1.0)
@@ -22,10 +22,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CustomUIWidget: ff85967e99cf21cd48b4872bd70cc927b1e5b85e
+  CustomUIWidget: 996b71be871c88c589595a7a2a4acd4e33ec3a2e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
 
-PODFILE CHECKSUM: 98d4263f59c3455d9d3848fe5950aa725a856f12
+PODFILE CHECKSUM: 4c65b857ba8d8d8aefe92408914c207ba685786b
 
 COCOAPODS: 1.9.1

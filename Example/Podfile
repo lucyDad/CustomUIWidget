@@ -8,9 +8,5 @@ target 'CustomUIWidget_Example' do
   pod 'CustomUIWidget', :path => '../'
   pod 'Masonry'
   pod 'YYCategories'
-  target 'CustomUIWidget_Tests' do
-    inherit! :search_paths
 
-    
-  end
 end

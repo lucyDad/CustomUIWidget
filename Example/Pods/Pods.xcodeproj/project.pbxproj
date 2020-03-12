@@ -13,7 +13,7 @@
 		0A522498272EE4D47D1F5BC867B81D23 /* UIBezierPath+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C68995E2828A701E57EED5240AC678B /* UIBezierPath+YYAdd.m */; };
 		0C7EA297C5E8E62A6A00F47A58D91B95 /* UIApplication+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = A97A51803E1CEB0240C1C26B10ACBCD2 /* UIApplication+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D8216C8E0210E4726007B94EEA5D222 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EB9947A96757FE6EEF684E4E91B034F /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D996014226B29184D3FD4B7B003D42E /* Pods-CustomUIWidget_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C1DEB9561F61C0C283489309DB9315D /* Pods-CustomUIWidget_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D996014226B29184D3FD4B7B003D42E /* Pods-CustomUIWidget_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A77774C517D5BC9280143FD6204969E8 /* Pods-CustomUIWidget_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0EF2148ACBA0BE1FDBA0C3F848D3C533 /* CALayer+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = C32F155A9AE5C30A1CDAA43D1D268B01 /* CALayer+YYAdd.m */; };
 		132A66B089D2448872E3441391E5D912 /* UIView+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 718B8CA00204FBCC903A9C0383D75929 /* UIView+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14842121984CE5551955F73D9C7A1554 /* NSTimer+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 50C38E7E3F1A287DBAEC2D62B79AB3EF /* NSTimer+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,14 +31,13 @@
 		22845BB7951B258801B4CE8756B00FD0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC63C8FFDFE7CA02F6FCECABB6FBE61 /* CoreText.framework */; };
 		2339FEB73DB399F564D16DD35F43D489 /* UITextField+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 024E04867864EC23130ECD65D0E1BE9C /* UITextField+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24728DE50F5D012AE10A1E69A6DA0087 /* NSTimer+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA37F5E510C70AAB114933FCF9AE40A /* NSTimer+YYAdd.m */; };
-		24F9DE40E911AC8D77906AAD3B6BFFC3 /* Pods-CustomUIWidget_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A5A68892C5053411AC6EA6B22726A4 /* Pods-CustomUIWidget_Tests-dummy.m */; };
 		2559C1AFF7DC87B3236BDA8874B05B53 /* YYCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A0ED55ECE345E1F18E9257C03427CB /* YYCGUtilities.m */; };
 		2B25E7B946CC762DC883BC8B7A7129AE /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = EFCF3A9F4790C44282E6996EA9AEBEDC /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C195D748F9D69EF7436B093A0BE24FA /* YYCategoriesMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CCE266D75E3C789B5119C55B4DC33A4 /* YYCategoriesMacro.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EE4568E1B5B4F72311A83C999012FF0 /* FDCommonButtonView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6578994FEE51F3487F7590B63C26C4AE /* FDCommonButtonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30D5CB5BCD7F4E8E46B2AEAE8E8AF299 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 211F8C36B3F09621990C878D3FDC0BA4 /* ViewController+MASAdditions.m */; };
 		345FC0C064DDF2039987219009F989A4 /* UIGestureRecognizer+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEF95BCFE157343DF0878F57CA96EF3 /* UIGestureRecognizer+YYAdd.m */; };
-		34C5693BF3E2F71FC9D88C5FE248140B /* Pods-CustomUIWidget_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 429A276D3C36F5D818452E08AECDD785 /* Pods-CustomUIWidget_Example-dummy.m */; };
+		34C5693BF3E2F71FC9D88C5FE248140B /* Pods-CustomUIWidget_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 005EC46D74D25BE80EEC2C1EAEA31AC7 /* Pods-CustomUIWidget_Example-dummy.m */; };
 		39903C7CD5A06C8251CD5BD71D727B21 /* UITableView+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = B6ECDF3392AAEDF9B7AAB3E65E56ED17 /* UITableView+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B30E96B988D4765763F591E3FC4B9C5 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB133A59721376DE344F4867D9689334 /* CoreFoundation.framework */; };
 		3B44C4CFD7B15AAE7E34B99BA8C0CBB5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A06D0291DFCB654BC8EC738D0883D3 /* UIKit.framework */; };
@@ -85,12 +84,10 @@
 		94EE2FCF7582CEDA536232B2D4ECFC65 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B99EBD0D73FE7D452F2E7C5634669CF /* MASCompositeConstraint.m */; };
 		9711E6F2F0D75D4B88A83B22F442F010 /* NSObject+YYAddForARC.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D2B51175C441EFEF908228544F0E88D /* NSObject+YYAddForARC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B0779EE70DC26B458E9D3365D03D8FC /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014B65C08EB9B1B8FAEC638B050D3370 /* Masonry.framework */; };
-		9C3A2927F86EBE80081BB180363AB28F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD6F930544939D780C1735806C9EE3B /* Foundation.framework */; };
 		9D803EAEFE69DF45385F176CDC96B6AC /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DBADB50469716A7DD192AC26D6938BBD /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5C83763194EE9911AE8991C6C87DE37 /* NSObject+YYAddForKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E65888C366723052E9CEECAEF59606C /* NSObject+YYAddForKVO.m */; };
 		A5CF7B8A66C76500EC91DC91B275958D /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E39244D3CC4C33364B9957F46FBDBE8 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A8FB76D5D1844ABF60AE330A8645FB78 /* UIImage+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EED488F55A767E82EC4A44079E4D619 /* UIImage+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9FC9DD2F092374B4C9BAA1E83F519FD /* Pods-CustomUIWidget_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DED9C7A8499585E486D1BE611E9EA76A /* Pods-CustomUIWidget_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAD306E81AEA42E3CC7E811D99ADC048 /* NSDate+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C22C805117D4FB0D363B61B7C54DA74 /* NSDate+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AD3F4570F247F704C26518E3CC658E34 /* NSArray+YYAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AC668E66B6BD1AE094D0F4E00D11758 /* NSArray+YYAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AE874277E5433EFC69EA0D76307B86C5 /* NSObject+YYAddForKVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C82739111EDC422A83A926D6EA657D /* NSObject+YYAddForKVO.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -131,13 +128,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		040220FFD3E8D99574E1A53567B90284 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7DE75A56BF40FFECE955A96FD24EAB0A;
-			remoteInfo = "Pods-CustomUIWidget_Example";
-		};
 		3F7826A598245A6C9C3807DDDD31410B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -178,6 +168,7 @@
 /* Begin PBXFileReference section */
 		00077FDDB80B43ED1E0423DD74BB77BE /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		004E31855743DC9A656A9A869BE78DA9 /* UIScrollView+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+YYAdd.m"; path = "YYCategories/UIKit/UIScrollView+YYAdd.m"; sourceTree = "<group>"; };
+		005EC46D74D25BE80EEC2C1EAEA31AC7 /* Pods-CustomUIWidget_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CustomUIWidget_Example-dummy.m"; sourceTree = "<group>"; };
 		00F4C1EE05AA35DA18052E2B944C46B4 /* UIImage+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+YYAdd.m"; path = "YYCategories/UIKit/UIImage+YYAdd.m"; sourceTree = "<group>"; };
 		014B65C08EB9B1B8FAEC638B050D3370 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		024E04867864EC23130ECD65D0E1BE9C /* UITextField+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+YYAdd.h"; path = "YYCategories/UIKit/UITextField+YYAdd.h"; sourceTree = "<group>"; };
@@ -185,14 +176,11 @@
 		0D2D605010792A2C0ED15887FD52F8B8 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
 		12E76CC299D71D15ADFD4D8051B48DAF /* UIBezierPath+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIBezierPath+YYAdd.h"; path = "YYCategories/UIKit/UIBezierPath+YYAdd.h"; sourceTree = "<group>"; };
 		14310F3D0A42CB37AF36342638189D4C /* YYCategories.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYCategories.h; path = YYCategories/YYCategories.h; sourceTree = "<group>"; };
-		144AD5AF8A0918ACB93F1C13F57C92C1 /* Pods-CustomUIWidget_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CustomUIWidget_Example-Info.plist"; sourceTree = "<group>"; };
 		1716B5FBCF0DF55C120AC52CFC22452D /* YYCategories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YYCategories.framework; path = YYCategories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1945149E0C9962553DE89509F16093F4 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
 		1C22C805117D4FB0D363B61B7C54DA74 /* NSDate+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+YYAdd.h"; path = "YYCategories/Foundation/NSDate+YYAdd.h"; sourceTree = "<group>"; };
-		1C4BC4D1FDE533CA077B6A85153C73BB /* Pods-CustomUIWidget_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CustomUIWidget_Tests.modulemap"; sourceTree = "<group>"; };
 		1D04392E3717BCBB50ABF2F51FC590C2 /* UIBarButtonItem+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+YYAdd.m"; path = "YYCategories/UIKit/UIBarButtonItem+YYAdd.m"; sourceTree = "<group>"; };
 		1DE21AF81E2700CA59CEE9E81474A5FF /* CustomUIWidget-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CustomUIWidget-dummy.m"; sourceTree = "<group>"; };
-		1F4C22B30EBD16872B660E37317C759D /* Pods-CustomUIWidget_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CustomUIWidget_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		1F51DF6B8C68599D7B7357245DC9D111 /* NSObject+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+YYAdd.m"; path = "YYCategories/Foundation/NSObject+YYAdd.m"; sourceTree = "<group>"; };
 		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		211F8C36B3F09621990C878D3FDC0BA4 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
@@ -207,7 +195,6 @@
 		3111DBC2A72AEAB23D41D4E7C458AB55 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		316C7480B268A3C9734DDF93DD73E66F /* NSNumber+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNumber+YYAdd.h"; path = "YYCategories/Foundation/NSNumber+YYAdd.h"; sourceTree = "<group>"; };
 		32FC4EFFE897D29781F85039F1E8F75D /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		34A5A68892C5053411AC6EA6B22726A4 /* Pods-CustomUIWidget_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CustomUIWidget_Tests-dummy.m"; sourceTree = "<group>"; };
 		3584149919FB675E553EE9A00F70B276 /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
 		359936B4850F425D49477EBB8AA39C04 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		35F07DB7D51D3ED06937A070DB9DB02C /* YYCategories-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYCategories-prefix.pch"; sourceTree = "<group>"; };
@@ -218,7 +205,6 @@
 		3E39244D3CC4C33364B9957F46FBDBE8 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		3E65888C366723052E9CEECAEF59606C /* NSObject+YYAddForKVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+YYAddForKVO.m"; path = "YYCategories/Foundation/NSObject+YYAddForKVO.m"; sourceTree = "<group>"; };
 		3E915FD6765802B2AB846854A1614C7E /* NSData+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+YYAdd.m"; path = "YYCategories/Foundation/NSData+YYAdd.m"; sourceTree = "<group>"; };
-		429A276D3C36F5D818452E08AECDD785 /* Pods-CustomUIWidget_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CustomUIWidget_Example-dummy.m"; sourceTree = "<group>"; };
 		465A00A1A60B9B1B6D5FF196EDD18DFB /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		478087EFE3890330AB3608ABFDBA54ED /* UIControl+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIControl+YYAdd.m"; path = "YYCategories/UIKit/UIControl+YYAdd.m"; sourceTree = "<group>"; };
 		493A5AC01332DB485A5DA9BBCD47F5D8 /* NSData+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+YYAdd.h"; path = "YYCategories/Foundation/NSData+YYAdd.h"; sourceTree = "<group>"; };
@@ -231,8 +217,6 @@
 		51005655B0FFB6A3C4C9B6FAF973138A /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		52EB21A11ED73CFA1808EA0C12306079 /* NSNumber+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+YYAdd.m"; path = "YYCategories/Foundation/NSNumber+YYAdd.m"; sourceTree = "<group>"; };
 		53024B270CF80FDB0D836068728EAE8D /* UITableView+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+YYAdd.m"; path = "YYCategories/UIKit/UITableView+YYAdd.m"; sourceTree = "<group>"; };
-		53E741CD458FE04DD37924F090F8BE6B /* Pods-CustomUIWidget_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CustomUIWidget_Example.modulemap"; sourceTree = "<group>"; };
-		55FCB9EDAB34CED0A50126933A4B2551 /* Pods_CustomUIWidget_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CustomUIWidget_Tests.framework; path = "Pods-CustomUIWidget_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57F833A2AF02C0B1304CC89030C90A87 /* NSArray+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+YYAdd.m"; path = "YYCategories/Foundation/NSArray+YYAdd.m"; sourceTree = "<group>"; };
 		581B7AC8C6841D38A22EC394A4CCA000 /* UIDevice+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+YYAdd.h"; path = "YYCategories/UIKit/UIDevice+YYAdd.h"; sourceTree = "<group>"; };
 		5BC2AF40681739F2EDC99EF17EE08F6E /* YYCategories-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YYCategories-umbrella.h"; sourceTree = "<group>"; };
@@ -254,22 +238,21 @@
 		6EB9947A96757FE6EEF684E4E91B034F /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		718B8CA00204FBCC903A9C0383D75929 /* UIView+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+YYAdd.h"; path = "YYCategories/UIKit/UIView+YYAdd.h"; sourceTree = "<group>"; };
 		72315C709C8A1F7AF75752FCDCCBCAB1 /* UIBarButtonItem+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+YYAdd.h"; path = "YYCategories/UIKit/UIBarButtonItem+YYAdd.h"; sourceTree = "<group>"; };
-		779786A125B744033CBF192570C9C2A2 /* Pods-CustomUIWidget_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CustomUIWidget_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7AC668E66B6BD1AE094D0F4E00D11758 /* NSArray+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+YYAdd.h"; path = "YYCategories/Foundation/NSArray+YYAdd.h"; sourceTree = "<group>"; };
-		7BF33FD844DE26A0C1F4452F77369B92 /* Pods-CustomUIWidget_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CustomUIWidget_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7C1DEB9561F61C0C283489309DB9315D /* Pods-CustomUIWidget_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CustomUIWidget_Example-umbrella.h"; sourceTree = "<group>"; };
 		7DB2BA743A87DA85FB66D2ACB0C370B8 /* UIScreen+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+YYAdd.m"; path = "YYCategories/UIKit/UIScreen+YYAdd.m"; sourceTree = "<group>"; };
 		7E22285B10B989DC8952C6E226C55729 /* YYCategories-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YYCategories-Info.plist"; sourceTree = "<group>"; };
 		7FFC3A234B9F6A4ED2901DAAE02AB359 /* CustomUIWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CustomUIWidget.release.xcconfig; sourceTree = "<group>"; };
+		83884A61F8563DDFCF66EC2F56D983E5 /* Pods-CustomUIWidget_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CustomUIWidget_Example-frameworks.sh"; sourceTree = "<group>"; };
+		8553EBC48A240DAF5BA7BABCBB8210CD /* Pods-CustomUIWidget_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CustomUIWidget_Example.modulemap"; sourceTree = "<group>"; };
+		86E34A225573485CAEB427C6C838383E /* Pods-CustomUIWidget_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CustomUIWidget_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		86FD2BA68F0E20C7C20E6DAC433FD89D /* UIColor+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+YYAdd.m"; path = "YYCategories/UIKit/UIColor+YYAdd.m"; sourceTree = "<group>"; };
+		898BA0B4EB1760EEDABD523772822B6A /* Pods-CustomUIWidget_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CustomUIWidget_Example.release.xcconfig"; sourceTree = "<group>"; };
 		8D2B51175C441EFEF908228544F0E88D /* NSObject+YYAddForARC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+YYAddForARC.h"; path = "YYCategories/Foundation/NSObject+YYAddForARC.h"; sourceTree = "<group>"; };
 		90CD5C4E95D9B258E822821E74CAF7BA /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreImage.framework; sourceTree = DEVELOPER_DIR; };
-		963D9F5A9EECC2E5D2DF95D84016C2EF /* Pods-CustomUIWidget_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CustomUIWidget_Example.release.xcconfig"; sourceTree = "<group>"; };
 		993333E807D11B9BA703B001F4C8B6F5 /* NSObject+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+YYAdd.h"; path = "YYCategories/Foundation/NSObject+YYAdd.h"; sourceTree = "<group>"; };
 		99BB90849548F648D0182C96D44979DE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		9A65033AD6141C2B093D88BC83D35B74 /* Pods_CustomUIWidget_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CustomUIWidget_Example.framework; path = "Pods-CustomUIWidget_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B99EBD0D73FE7D452F2E7C5634669CF /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
-		9C41CDE5A9F82086BD4E59A4051D964A /* Pods-CustomUIWidget_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CustomUIWidget_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A08EEAD8F8686D1DAA7B375AA5D559BE /* NSKeyedUnarchiver+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSKeyedUnarchiver+YYAdd.h"; path = "YYCategories/Foundation/NSKeyedUnarchiver+YYAdd.h"; sourceTree = "<group>"; };
 		A1AD3A6B268281C631AD8381647EF652 /* FDMarqueeView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FDMarqueeView.m; sourceTree = "<group>"; };
@@ -279,12 +262,12 @@
 		A375AD4F12918BF20CBD882953416A37 /* NSBundle+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+YYAdd.m"; path = "YYCategories/Foundation/NSBundle+YYAdd.m"; sourceTree = "<group>"; };
 		A5F962B42BCC2ED26C4FE45453D82577 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
 		A6AC7FA3724772FFD3FA2FC484C32DCA /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		A77774C517D5BC9280143FD6204969E8 /* Pods-CustomUIWidget_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CustomUIWidget_Example-umbrella.h"; sourceTree = "<group>"; };
 		A850E0147D8CF2D6881E1AA3E80F6BEC /* Masonry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.release.xcconfig; sourceTree = "<group>"; };
 		A8CE9EFCDDC0CCB20C951DBEAEF80787 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		A97A51803E1CEB0240C1C26B10ACBCD2 /* UIApplication+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+YYAdd.h"; path = "YYCategories/UIKit/UIApplication+YYAdd.h"; sourceTree = "<group>"; };
 		ABC26543AA5D61D1A1015EF1D253CD2C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		ABEF95BCFE157343DF0878F57CA96EF3 /* UIGestureRecognizer+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIGestureRecognizer+YYAdd.m"; path = "YYCategories/UIKit/UIGestureRecognizer+YYAdd.m"; sourceTree = "<group>"; };
-		ACAECAE34B1F7613B3648481C97FC617 /* Pods-CustomUIWidget_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CustomUIWidget_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADA768A164638781396C360655B690EC /* YYCategories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYCategories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A06D0291DFCB654BC8EC738D0883D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B1F54EB4E33AF7AE33E30FF645B176CF /* UIColor+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+YYAdd.h"; path = "YYCategories/UIKit/UIColor+YYAdd.h"; sourceTree = "<group>"; };
@@ -305,25 +288,23 @@
 		D0E7ADE908A7431C11ABE7CE997FA0F9 /* YYCategories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYCategories.release.xcconfig; sourceTree = "<group>"; };
 		D6E34E394BA50D708220593AF9AF1B4D /* UIScrollView+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+YYAdd.h"; path = "YYCategories/UIKit/UIScrollView+YYAdd.h"; sourceTree = "<group>"; };
 		DB2149476C9F7F39CEBE108895C01C48 /* CustomUIWidget-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CustomUIWidget-Info.plist"; sourceTree = "<group>"; };
+		DB8B339F8D616294DA6D3B2C4F31A546 /* Pods-CustomUIWidget_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CustomUIWidget_Example-Info.plist"; sourceTree = "<group>"; };
 		DBADB50469716A7DD192AC26D6938BBD /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
-		DD0F032E09CBE133A12A5D664F7145B0 /* Pods-CustomUIWidget_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CustomUIWidget_Example-frameworks.sh"; sourceTree = "<group>"; };
-		DED9C7A8499585E486D1BE611E9EA76A /* Pods-CustomUIWidget_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CustomUIWidget_Tests-umbrella.h"; sourceTree = "<group>"; };
+		DC373153D3C8DB2CE9755153E3832107 /* Pods-CustomUIWidget_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CustomUIWidget_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DFE720F2143DEE811697F86FF27B1BB2 /* NSDictionary+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+YYAdd.m"; path = "YYCategories/Foundation/NSDictionary+YYAdd.m"; sourceTree = "<group>"; };
 		E41E1985D99A1F73D5AE979AB69EB0CC /* CustomUIWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CustomUIWidget.debug.xcconfig; sourceTree = "<group>"; };
 		E4D2D5536A42F5284E359B64DAF6D0FA /* UIFont+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIFont+YYAdd.m"; path = "YYCategories/UIKit/UIFont+YYAdd.m"; sourceTree = "<group>"; };
 		E559CA88C5569D9493B7EAD3A2D495A6 /* CustomUIWidget-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CustomUIWidget-umbrella.h"; sourceTree = "<group>"; };
-		E6B5653A6719253EEA650B83045FB985 /* Pods-CustomUIWidget_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CustomUIWidget_Tests-Info.plist"; sourceTree = "<group>"; };
 		E78E892CA2420A5643420423BBEF8F05 /* UIControl+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIControl+YYAdd.h"; path = "YYCategories/UIKit/UIControl+YYAdd.h"; sourceTree = "<group>"; };
 		E7C761391A78FDE1039519C912D1957C /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
-		E8106F706C3F20A983A5990D4C794A1C /* Pods-CustomUIWidget_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CustomUIWidget_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E8B5D5A2A2FE19A18F2B62D6745442DE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E9FAE2A658850BF4467D94EC79229A42 /* Pods-CustomUIWidget_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CustomUIWidget_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EEE074656DACCC9D834BBAEEB47419FE /* FDMarqueeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FDMarqueeView.h; sourceTree = "<group>"; };
 		EFCF3A9F4790C44282E6996EA9AEBEDC /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
 		F0CFB6EBB11FAEBE74E5023E72D87A3E /* CustomUIWidget.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CustomUIWidget.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F0FECE6AE1896118908DEB454014F104 /* NSThread+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSThread+YYAdd.m"; path = "YYCategories/Foundation/NSThread+YYAdd.m"; sourceTree = "<group>"; };
 		F12915DCEE3C4A8E07F7550CDCA2EDB8 /* NSString+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+YYAdd.h"; path = "YYCategories/Foundation/NSString+YYAdd.h"; sourceTree = "<group>"; };
 		F1A0ED55ECE345E1F18E9257C03427CB /* YYCGUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYCGUtilities.m; path = YYCategories/Quartz/YYCGUtilities.m; sourceTree = "<group>"; };
-		F45944D56D1870E89523BEFA9EDE54B6 /* Pods-CustomUIWidget_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CustomUIWidget_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FB133A59721376DE344F4867D9689334 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		FBBEFA2BD379FACD7B0686B2D6503ACE /* NSKeyedUnarchiver+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSKeyedUnarchiver+YYAdd.m"; path = "YYCategories/Foundation/NSKeyedUnarchiver+YYAdd.m"; sourceTree = "<group>"; };
 		FCDBB3BCACEDFD4F11A4582186855F45 /* UIView+YYAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+YYAdd.m"; path = "YYCategories/UIKit/UIView+YYAdd.m"; sourceTree = "<group>"; };
@@ -344,14 +325,6 @@
 				8A33B0BE545B81B46BC3CFC8F8B1EB04 /* ImageIO.framework in Frameworks */,
 				C68DD62B10A53944EA7C85B2DC9F8A30 /* QuartzCore.framework in Frameworks */,
 				1DE4CED71F151A9A68FF41B9C6C7A97E /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		431A414914E8FA9F58D62C7B7BE64DA4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C3A2927F86EBE80081BB180363AB28F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +411,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		58C991DDD2F4FC7F42EE2E6ED3F20809 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F2198A7F461D270C636CA6C719F1937B /* Pods-CustomUIWidget_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5B3D18C8F0E2ACD169BBA67DDBC0CC31 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C0787EE9E42FF6EF6930411B6C07FD4 /* CustomUIWidget.framework */,
+				1FFED36A657123030ABB700256D73F15 /* Masonry.framework */,
+				9A65033AD6141C2B093D88BC83D35B74 /* Pods_CustomUIWidget_Example.framework */,
+				1716B5FBCF0DF55C120AC52CFC22452D /* YYCategories.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		64880F52F09222D72EB0A2CDE79E37C0 /* MarqueeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -446,23 +438,6 @@
 			);
 			name = MarqueeView;
 			path = MarqueeView;
-			sourceTree = "<group>";
-		};
-		65EE596F86520BA4E92AE23FCB4B33A0 /* Pods-CustomUIWidget_Example */ = {
-			isa = PBXGroup;
-			children = (
-				53E741CD458FE04DD37924F090F8BE6B /* Pods-CustomUIWidget_Example.modulemap */,
-				7BF33FD844DE26A0C1F4452F77369B92 /* Pods-CustomUIWidget_Example-acknowledgements.markdown */,
-				779786A125B744033CBF192570C9C2A2 /* Pods-CustomUIWidget_Example-acknowledgements.plist */,
-				429A276D3C36F5D818452E08AECDD785 /* Pods-CustomUIWidget_Example-dummy.m */,
-				DD0F032E09CBE133A12A5D664F7145B0 /* Pods-CustomUIWidget_Example-frameworks.sh */,
-				144AD5AF8A0918ACB93F1C13F57C92C1 /* Pods-CustomUIWidget_Example-Info.plist */,
-				7C1DEB9561F61C0C283489309DB9315D /* Pods-CustomUIWidget_Example-umbrella.h */,
-				9C41CDE5A9F82086BD4E59A4051D964A /* Pods-CustomUIWidget_Example.debug.xcconfig */,
-				963D9F5A9EECC2E5D2DF95D84016C2EF /* Pods-CustomUIWidget_Example.release.xcconfig */,
-			);
-			name = "Pods-CustomUIWidget_Example";
-			path = "Target Support Files/Pods-CustomUIWidget_Example";
 			sourceTree = "<group>";
 		};
 		7035154A59B8205DAC2CFF164843CFC6 /* CustomUIWidget */ = {
@@ -475,22 +450,6 @@
 			);
 			name = CustomUIWidget;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		7578A9340EEBCE3D10B504667491D7C9 /* Pods-CustomUIWidget_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				1C4BC4D1FDE533CA077B6A85153C73BB /* Pods-CustomUIWidget_Tests.modulemap */,
-				E8106F706C3F20A983A5990D4C794A1C /* Pods-CustomUIWidget_Tests-acknowledgements.markdown */,
-				1F4C22B30EBD16872B660E37317C759D /* Pods-CustomUIWidget_Tests-acknowledgements.plist */,
-				34A5A68892C5053411AC6EA6B22726A4 /* Pods-CustomUIWidget_Tests-dummy.m */,
-				E6B5653A6719253EEA650B83045FB985 /* Pods-CustomUIWidget_Tests-Info.plist */,
-				DED9C7A8499585E486D1BE611E9EA76A /* Pods-CustomUIWidget_Tests-umbrella.h */,
-				ACAECAE34B1F7613B3648481C97FC617 /* Pods-CustomUIWidget_Tests.debug.xcconfig */,
-				F45944D56D1870E89523BEFA9EDE54B6 /* Pods-CustomUIWidget_Tests.release.xcconfig */,
-			);
-			name = "Pods-CustomUIWidget_Tests";
-			path = "Target Support Files/Pods-CustomUIWidget_Tests";
 			sourceTree = "<group>";
 		};
 		87A592D552C2EAF2E6A5684CB899C309 /* Support Files */ = {
@@ -531,15 +490,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/YYCategories";
-			sourceTree = "<group>";
-		};
-		AAFB01B5D96816626427895C33DB957C /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				65EE596F86520BA4E92AE23FCB4B33A0 /* Pods-CustomUIWidget_Example */,
-				7578A9340EEBCE3D10B504667491D7C9 /* Pods-CustomUIWidget_Tests */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		B3C8885A28219355856F4E5A21BCAAD3 /* YYCategories */ = {
@@ -617,8 +567,8 @@
 				1CF44D2843D9ECAE73846869CC5C214B /* Development Pods */,
 				071F99661F08EDF4E73E76A63CC8A8F3 /* Frameworks */,
 				48AEEB41654703D9DCCD23C70F9797A8 /* Pods */,
-				ED635D8EE8F415ECAD5ECBD50E1874F8 /* Products */,
-				AAFB01B5D96816626427895C33DB957C /* Targets Support Files */,
+				5B3D18C8F0E2ACD169BBA67DDBC0CC31 /* Products */,
+				58C991DDD2F4FC7F42EE2E6ED3F20809 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -683,16 +633,21 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		ED635D8EE8F415ECAD5ECBD50E1874F8 /* Products */ = {
+		F2198A7F461D270C636CA6C719F1937B /* Pods-CustomUIWidget_Example */ = {
 			isa = PBXGroup;
 			children = (
-				5C0787EE9E42FF6EF6930411B6C07FD4 /* CustomUIWidget.framework */,
-				1FFED36A657123030ABB700256D73F15 /* Masonry.framework */,
-				9A65033AD6141C2B093D88BC83D35B74 /* Pods_CustomUIWidget_Example.framework */,
-				55FCB9EDAB34CED0A50126933A4B2551 /* Pods_CustomUIWidget_Tests.framework */,
-				1716B5FBCF0DF55C120AC52CFC22452D /* YYCategories.framework */,
+				8553EBC48A240DAF5BA7BABCBB8210CD /* Pods-CustomUIWidget_Example.modulemap */,
+				E9FAE2A658850BF4467D94EC79229A42 /* Pods-CustomUIWidget_Example-acknowledgements.markdown */,
+				86E34A225573485CAEB427C6C838383E /* Pods-CustomUIWidget_Example-acknowledgements.plist */,
+				005EC46D74D25BE80EEC2C1EAEA31AC7 /* Pods-CustomUIWidget_Example-dummy.m */,
+				83884A61F8563DDFCF66EC2F56D983E5 /* Pods-CustomUIWidget_Example-frameworks.sh */,
+				DB8B339F8D616294DA6D3B2C4F31A546 /* Pods-CustomUIWidget_Example-Info.plist */,
+				A77774C517D5BC9280143FD6204969E8 /* Pods-CustomUIWidget_Example-umbrella.h */,
+				DC373153D3C8DB2CE9755153E3832107 /* Pods-CustomUIWidget_Example.debug.xcconfig */,
+				898BA0B4EB1760EEDABD523772822B6A /* Pods-CustomUIWidget_Example.release.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-CustomUIWidget_Example";
+			path = "Target Support Files/Pods-CustomUIWidget_Example";
 			sourceTree = "<group>";
 		};
 		FE2AD736A42947E250D6EC7A6CE9CD8D /* Categorys */ = {
@@ -719,14 +674,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		11213FDB4F8D0D05F873BA6010E6DCEC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9FC9DD2F092374B4C9BAA1E83F519FD /* Pods-CustomUIWidget_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		15A52B66DB5B62282F4858985E51FC6D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -813,25 +760,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		26DD1F5A501888450AE35811BEBB5049 /* Pods-CustomUIWidget_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5F1293F8EDB4580571F8D7F109D99CBA /* Build configuration list for PBXNativeTarget "Pods-CustomUIWidget_Tests" */;
-			buildPhases = (
-				11213FDB4F8D0D05F873BA6010E6DCEC /* Headers */,
-				A4C683737A90FDD375567FD91C758917 /* Sources */,
-				431A414914E8FA9F58D62C7B7BE64DA4 /* Frameworks */,
-				669F5C9D667832E1E8F2CB2D97B2CA23 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B68675C93DB96BF180050BA4D6C05602 /* PBXTargetDependency */,
-			);
-			name = "Pods-CustomUIWidget_Tests";
-			productName = "Pods-CustomUIWidget_Tests";
-			productReference = 55FCB9EDAB34CED0A50126933A4B2551 /* Pods_CustomUIWidget_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		4CF4590C80DA0BCFB23334523B614709 /* YYCategories */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2C56209FB8631BFF4178BC74719B1DF /* Build configuration list for PBXNativeTarget "YYCategories" */;
@@ -927,14 +855,13 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = ED635D8EE8F415ECAD5ECBD50E1874F8 /* Products */;
+			productRefGroup = 5B3D18C8F0E2ACD169BBA67DDBC0CC31 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				AFB894A3A4FA53A12FB6A2566647B9EA /* CustomUIWidget */,
 				55AF53E6C77A10ED4985E04D74A8878E /* Masonry */,
 				7DE75A56BF40FFECE955A96FD24EAB0A /* Pods-CustomUIWidget_Example */,
-				26DD1F5A501888450AE35811BEBB5049 /* Pods-CustomUIWidget_Tests */,
 				4CF4590C80DA0BCFB23334523B614709 /* YYCategories */,
 			);
 		};
@@ -949,13 +876,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		58062C3A8B4023C5D16B6099C0B4EEF2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		669F5C9D667832E1E8F2CB2D97B2CA23 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1013,14 +933,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				34C5693BF3E2F71FC9D88C5FE248140B /* Pods-CustomUIWidget_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4C683737A90FDD375567FD91C758917 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24F9DE40E911AC8D77906AAD3B6BFFC3 /* Pods-CustomUIWidget_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1089,12 +1001,6 @@
 			target = 4CF4590C80DA0BCFB23334523B614709 /* YYCategories */;
 			targetProxy = 3F7826A598245A6C9C3807DDDD31410B /* PBXContainerItemProxy */;
 		};
-		B68675C93DB96BF180050BA4D6C05602 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-CustomUIWidget_Example";
-			target = 7DE75A56BF40FFECE955A96FD24EAB0A /* Pods-CustomUIWidget_Example */;
-			targetProxy = 040220FFD3E8D99574E1A53567B90284 /* PBXContainerItemProxy */;
-		};
 		E3154939EEED9C6307F6BE2201DEABC0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Masonry;
@@ -1137,7 +1043,7 @@
 		};
 		539DCAE5724262C321C82C24E61D4CE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C41CDE5A9F82086BD4E59A4051D964A /* Pods-CustomUIWidget_Example.debug.xcconfig */;
+			baseConfigurationReference = DC373153D3C8DB2CE9755153E3832107 /* Pods-CustomUIWidget_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1202,7 +1108,7 @@
 		};
 		6910F35AEB2616449BDBAE6A6BA58321 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 963D9F5A9EECC2E5D2DF95D84016C2EF /* Pods-CustomUIWidget_Example.release.xcconfig */;
+			baseConfigurationReference = 898BA0B4EB1760EEDABD523772822B6A /* Pods-CustomUIWidget_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -1421,73 +1327,6 @@
 			};
 			name = Debug;
 		};
-		936490D065F77141267B2E256C921B84 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACAECAE34B1F7613B3648481C97FC617 /* Pods-CustomUIWidget_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CustomUIWidget_Tests/Pods-CustomUIWidget_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CustomUIWidget_Tests/Pods-CustomUIWidget_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		9C8B0BC11AE0F5F25F9ABFA6F709277F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F45944D56D1870E89523BEFA9EDE54B6 /* Pods-CustomUIWidget_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-CustomUIWidget_Tests/Pods-CustomUIWidget_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-CustomUIWidget_Tests/Pods-CustomUIWidget_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		A611E48B778845C61AF03472A5EE11EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0E7ADE908A7431C11ABE7CE997FA0F9 /* YYCategories.release.xcconfig */;
@@ -1568,15 +1407,6 @@
 			buildConfigurations = (
 				916E0404255105F480DC4950B7625F7A /* Debug */,
 				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5F1293F8EDB4580571F8D7F109D99CBA /* Build configuration list for PBXNativeTarget "Pods-CustomUIWidget_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				936490D065F77141267B2E256C921B84 /* Debug */,
-				9C8B0BC11AE0F5F25F9ABFA6F709277F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
