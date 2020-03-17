@@ -9,7 +9,7 @@
 #import "FDViewController.h"
 #import <Masonry/Masonry.h>
 #import "FDMarqueeView.h"
-#import "FDCommonButtonView.h"
+#import "UIView+FDAlertView.h"
 
 static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifier";
 
@@ -29,6 +29,18 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
     UIView *superView = self.view;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(superView);
+    }];
+}
+
+#pragma mark - 自定义弹框1
+
+- (void)testFunction1 {
+    FDCommonAlertViewConfig *config = [FDCommonAlertViewConfig new];
+    config.content = @"优秀的第三方包管理工具";
+    [self.view showFDAlertViewWithConfig:config customView:nil clickBlock:^(FDAlertViewClickType clickType) {
+        if (FDAlertViewClickTypeConfirm == clickType) {
+            
+        }
     }];
 }
 
@@ -120,7 +132,7 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
 - (NSArray *)arrData {
     if (!_arrData) {
         _arrData = ({
-            NSArray *view = @[@"自定义跑马灯0"];
+            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1"];
             view;
         });
     }

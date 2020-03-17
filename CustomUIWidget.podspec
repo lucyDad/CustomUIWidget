@@ -40,4 +40,6 @@ TODO: 此工程将日常使用频繁的ui组件集合到一起，同时各ui组�
   s.frameworks = 'UIKit', 'Foundation'
   s.dependency 'Masonry'
   s.dependency 'YYCategories'
+  s.dependency 'YYText'
+  s.dependency 'libextobjc'
 end

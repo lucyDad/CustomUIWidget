@@ -1,31 +1,75 @@
 PODS:
   - CustomUIWidget (0.0.2):
+    - libextobjc
     - Masonry
     - YYCategories
+    - YYText
+  - libextobjc (0.6):
+    - libextobjc/EXTADT (= 0.6)
+    - libextobjc/EXTConcreteProtocol (= 0.6)
+    - libextobjc/EXTKeyPathCoding (= 0.6)
+    - libextobjc/EXTNil (= 0.6)
+    - libextobjc/EXTSafeCategory (= 0.6)
+    - libextobjc/EXTScope (= 0.6)
+    - libextobjc/EXTSelectorChecking (= 0.6)
+    - libextobjc/EXTSynthesize (= 0.6)
+    - "libextobjc/NSInvocation+EXT (= 0.6)"
+    - "libextobjc/NSMethodSignature+EXT (= 0.6)"
+    - libextobjc/RuntimeExtensions (= 0.6)
+    - libextobjc/UmbrellaHeader (= 0.6)
+  - libextobjc/EXTADT (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.6):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.6):
+    - libextobjc/RuntimeExtensions
+  - "libextobjc/NSInvocation+EXT (0.6)":
+    - libextobjc/RuntimeExtensions
+  - "libextobjc/NSMethodSignature+EXT (0.6)":
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.6)
+  - libextobjc/UmbrellaHeader (0.6)
   - Masonry (1.1.0)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
   - YYCategories/no-arc (1.0.4)
+  - YYText (1.0.7)
 
 DEPENDENCIES:
   - CustomUIWidget (from `../`)
+  - libextobjc
   - Masonry
   - YYCategories
+  - YYText
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - libextobjc
     - Masonry
     - YYCategories
+    - YYText
 
 EXTERNAL SOURCES:
   CustomUIWidget:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CustomUIWidget: 996b71be871c88c589595a7a2a4acd4e33ec3a2e
+  CustomUIWidget: 000887a5bd157dd10451660df0550a7dcb22f5da
+  libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 4c65b857ba8d8d8aefe92408914c207ba685786b
+PODFILE CHECKSUM: 1444b9928843dc87c27f7f76c152192dfba5e092
 
 COCOAPODS: 1.9.1

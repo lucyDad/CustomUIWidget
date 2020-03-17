@@ -12,7 +12,12 @@
 
 #import "FDCustomUIWidgetDef.h"
 #import "UIImage+FRColor.h"
+#import "FDAlertViewCommonDef.h"
+#import "FDAnimationManagerView.h"
+#import "FDCommonAlertPresentManager.h"
+#import "FDCommonAlertView.h"
 #import "FDCommonButtonView.h"
+#import "UIView+FDAlertView.h"
 #import "FDMarqueeView.h"
 
 FOUNDATION_EXPORT double CustomUIWidgetVersionNumber;

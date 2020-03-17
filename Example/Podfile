@@ -8,5 +8,6 @@ target 'CustomUIWidget_Example' do
   pod 'CustomUIWidget', :path => '../'
   pod 'Masonry'
   pod 'YYCategories'
-
+  pod 'YYText'
+  pod 'libextobjc'
 end
