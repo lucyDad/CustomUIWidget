@@ -10,6 +10,9 @@
 #import <Masonry/Masonry.h>
 #import "FDMarqueeView.h"
 #import "UIView+FDAlertView.h"
+#import "UIView+ArrowTipsView.h"
+#import <YYCategories/YYCategories.h>
+#import <YYText/YYText.h>
 
 static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifier";
 
@@ -29,6 +32,36 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
     UIView *superView = self.view;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(superView);
+    }];
+}
+
+#pragma mark - 箭头view2
+
+- (void)testFunction2 {
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    FDArrowTipsViewConfig *config = [FDArrowTipsViewConfig new];
+    config.contentCornerRadius = 10;
+    config.contentEdgeInsets = UIEdgeInsetsMake(8, 8, 8, 8);
+    config.originDirection = FDArrowDirection_Top;
+    config.gradientBackgroundLayer = [FDArrowTipsViewConfig gradientLayerWith:@[UIColorHex(FF8754), UIColorHex(FF2475)]];
+    config.arrowSize = CGSizeMake(6, 4);
+    config.isStartTimer = NO;
+    config.autoTimeOutClose = YES;
+    config.timeOutTime = 5;
+    config.animationTime = 0.0f;
+    config.autoAdjustPos = YES;
+    NSMutableAttributedString *attrText = [[NSMutableAttributedString alloc] initWithString:@"限时开放" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont systemFontOfSize:14]}];
+    attrText.yy_alignment = NSTextAlignmentCenter;
+    
+    CGPoint point = CGPointMake(100, 80);
+//    [cell showArrowTipsViewWithConfig:config andText:attrText andRealSize:CGSizeMake(0, 0) andArrowPoint:point andActionBlock:^BOOL(FDArrowTipsView * _Nonnull arrowTipsView, FDArrowTipsViewActionType actionType) {
+//        NSLog(@"actionType = %ld", actionType);
+//        return YES;
+//    }];
+    
+    [cell showArrowTipsBackgroundViewWithConfig:config andText:attrText andRealSize:CGSizeMake(0, 0) andArrowPoint:point andActionBlock:^BOOL(FDArrowTipsView * _Nonnull arrowTipsView, FDArrowTipsViewActionType actionType) {
+        NSLog(@"actionType = %ld", actionType);
+        return YES;
     }];
 }
 
@@ -100,7 +133,7 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 44 ;
+    return 88;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -132,7 +165,7 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
 - (NSArray *)arrData {
     if (!_arrData) {
         _arrData = ({
-            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1"];
+            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2"];
             view;
         });
     }

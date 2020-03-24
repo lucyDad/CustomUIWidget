@@ -1,5 +1,5 @@
 PODS:
-  - CustomUIWidget (0.0.2):
+  - CustomUIWidget (0.0.3):
     - libextobjc
     - Masonry
     - YYCategories
@@ -64,7 +64,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CustomUIWidget: 000887a5bd157dd10451660df0550a7dcb22f5da
+  CustomUIWidget: 37c528f36d360ae8cf14b3e24a7a7ee677b5d37a
   libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
