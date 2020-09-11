@@ -13,6 +13,8 @@
 #import "UIView+ArrowTipsView.h"
 #import <YYCategories/YYCategories.h>
 #import <YYText/YYText.h>
+#import "FDAutoPlaceView.h"
+#import "FDUserInfoModel.h"
 
 static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifier";
 
@@ -33,6 +35,34 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(superView);
     }];
+}
+
+#pragma mark - 自动换行排列view3
+
+- (void)testFunction3 {
+    CGFloat maxWidth = kScreenWidth;
+    FDAutoPlaceViewConfig *config = [FDAutoPlaceViewConfig new];
+    config.contentEdgeInsets = UIEdgeInsetsMake(30, 5, 50, 20);
+    config.contentRowInterval = 10;
+    config.contentColumnInterval = 10;
+    FDAutoPlaceView *placeView = [[FDAutoPlaceView alloc] initWithMaxWidth:maxWidth andConfig:config];
+    placeView.left = 0;
+    placeView.top = 80;
+    placeView.backgroundColor = [UIColor redColor];
+    
+    FDUserInfoModel *model = [FDUserInfoModel new];
+    CGFloat height = [FDAutoPlaceView allHeightOfAutoPlaceView:maxWidth config:config viewProtocol:model];
+    NSLog(@"height = %f", height);
+    placeView.placeViewProtocol = model;
+    
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] init];
+    @weakify(placeView);
+    [tapGes addActionBlock:^(id  _Nonnull sender) {
+        @strongify(placeView);
+        [placeView removeFromSuperview];
+    }];
+    [placeView addGestureRecognizer:tapGes];
+    [self.view addSubview:placeView];
 }
 
 #pragma mark - 箭头view2
@@ -165,7 +195,7 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
 - (NSArray *)arrData {
     if (!_arrData) {
         _arrData = ({
-            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2"];
+            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3"];
             view;
         });
     }
