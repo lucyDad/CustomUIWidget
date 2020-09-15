@@ -1,8 +1,9 @@
 PODS:
-  - CustomUIWidget (0.0.3):
+  - CustomUIWidget (0.1.0):
     - libextobjc
     - Masonry
     - YYCategories
+    - YYModel
     - YYText
   - libextobjc (0.6):
     - libextobjc/EXTADT (= 0.6)
@@ -40,36 +41,54 @@ PODS:
   - libextobjc/RuntimeExtensions (0.6)
   - libextobjc/UmbrellaHeader (0.6)
   - Masonry (1.1.0)
+  - YYCache (1.0.4)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
   - YYCategories/no-arc (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYModel (1.0.4)
   - YYText (1.0.7)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
   - CustomUIWidget (from `../`)
   - libextobjc
   - Masonry
   - YYCategories
+  - YYModel
   - YYText
+  - YYWebImage
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - libextobjc
     - Masonry
+    - YYCache
     - YYCategories
+    - YYImage
+    - YYModel
     - YYText
+    - YYWebImage
 
 EXTERNAL SOURCES:
   CustomUIWidget:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CustomUIWidget: 37c528f36d360ae8cf14b3e24a7a7ee677b5d37a
+  CustomUIWidget: 58555b37ba4ca47e74c0ab3a39ce3238ff53ede1
   libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 1444b9928843dc87c27f7f76c152192dfba5e092
+PODFILE CHECKSUM: ac56fd663f125b804a3643f594c8234530c7977f
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.8.4

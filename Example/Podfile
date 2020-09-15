@@ -9,5 +9,7 @@ target 'CustomUIWidget_Example' do
   pod 'Masonry'
   pod 'YYCategories'
   pod 'YYText'
+  pod 'YYModel'
+  pod 'YYWebImage'
   pod 'libextobjc'
 end

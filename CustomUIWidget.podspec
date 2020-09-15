@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CustomUIWidget'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = '可自定义配置使用的ui组件库.'
 
 # This description is used to generate tags and improve search results.
@@ -41,5 +41,6 @@ TODO: 此工程将日常使用频繁的ui组件集合到一起，同时各ui组�
   s.dependency 'Masonry'
   s.dependency 'YYCategories'
   s.dependency 'YYText'
+  s.dependency 'YYModel'
   s.dependency 'libextobjc'
 end

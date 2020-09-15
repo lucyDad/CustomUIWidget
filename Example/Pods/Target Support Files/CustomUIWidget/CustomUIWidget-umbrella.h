@@ -21,6 +21,9 @@
 #import "FDArrowCustomListView.h"
 #import "FDArrowTipsView.h"
 #import "UIView+ArrowTipsView.h"
+#import "FDAutoPlaceView.h"
+#import "FDAutoPlaceViewProtocol.h"
+#import "FDCollectionCellView.h"
 #import "FDMarqueeView.h"
 
 FOUNDATION_EXPORT double CustomUIWidgetVersionNumber;

@@ -12,6 +12,8 @@
 #import <YYText/YYText.h>
 #import <YYCategories/UIView+YYAdd.h>
 #import <YYCategories/UIColor+YYAdd.h>
+#import <YYModel/YYModel.h>
+#import <YYWebImage/YYWebImage.h>
 #import <libextobjc/extobjc.h>
 #import <Masonry/Masonry.h>
 
