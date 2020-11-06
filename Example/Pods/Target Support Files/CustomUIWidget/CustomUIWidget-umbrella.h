@@ -24,6 +24,7 @@
 #import "FDAutoPlaceView.h"
 #import "FDAutoPlaceViewProtocol.h"
 #import "FDCollectionCellView.h"
+#import "FDCollectionCellViewHelper.h"
 #import "FDMarqueeView.h"
 
 FOUNDATION_EXPORT double CustomUIWidgetVersionNumber;

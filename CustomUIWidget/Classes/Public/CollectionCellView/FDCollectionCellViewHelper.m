@@ -10,6 +10,7 @@
 #import <Masonry/Masonry.h>
 #import <YYCategories/NSArray+YYAdd.h>
 #import <YYCategories/UIControl+YYAdd.h>
+#import <YYWebImage/UIImageView+YYWebImage.h>
 #import "FDCustomUIWidgetDef.h"
 
 NSString *const gCollectionCellLocalIconNameDataKey = @"localIconName";

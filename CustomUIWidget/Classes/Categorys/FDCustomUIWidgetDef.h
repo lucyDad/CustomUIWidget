@@ -8,7 +8,7 @@
 #ifndef FDCustomUIWidgetDef_h
 #define FDCustomUIWidgetDef_h
 
-#import "UIImage+FRColor.h"
+#import <UIImage+FRColor.h>
 #import <YYText/YYText.h>
 #import <YYCategories/UIView+YYAdd.h>
 #import <YYCategories/UIColor+YYAdd.h>

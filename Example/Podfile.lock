@@ -1,10 +1,11 @@
 PODS:
-  - CustomUIWidget (0.1.0):
+  - CustomUIWidget (0.2.0):
     - libextobjc
     - Masonry
     - YYCategories
     - YYModel
     - YYText
+    - YYWebImage
   - libextobjc (0.6):
     - libextobjc/EXTADT (= 0.6)
     - libextobjc/EXTConcreteProtocol (= 0.6)
@@ -79,7 +80,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CustomUIWidget: 58555b37ba4ca47e74c0ab3a39ce3238ff53ede1
+  CustomUIWidget: 249eed407da94a16dc8317843e47173073939148
   libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
