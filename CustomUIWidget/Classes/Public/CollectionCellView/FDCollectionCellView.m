@@ -109,7 +109,7 @@ NSInteger const gTagForCollectionCellView = 8000;       ///> 每个子view的初
 }
 
 - (void)dealloc {
-    NLog(@"%s: ", __func__);
+    NSLog(@"%s: ", __func__);
 }
 
 #pragma mark - Event Response
