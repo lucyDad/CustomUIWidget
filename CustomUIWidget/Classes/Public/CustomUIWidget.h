@@ -25,7 +25,7 @@
 
 #else
 
-#import "FDCommonAlertPresendManager.h"
+#import "FDCommonAlertPresentManager.h"
 #import "FDCommonAlertView.h"
 #import "FDCommonButtonView.h"
 #import "UIView+FDAlertView.h"
