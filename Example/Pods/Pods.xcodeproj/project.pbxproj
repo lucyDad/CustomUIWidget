@@ -242,7 +242,7 @@
 		BD52A9F30FCC8DE5995827ABC52D6979 /* YYCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A6EA8122FE69C40BC8264F866464A3D /* YYCategories.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD75594A85D9DA491BBDECEFD62BF592 /* YYTextMagnifier.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3DB0FD623852AB922C607A687F8AF6 /* YYTextMagnifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDBA3C6262A2E394E7D5B2EB63521AEB /* NSData+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF65BB9A8ABE919042457A95DBD008A /* NSData+YYAdd.m */; };
-		BF7CAAEB2556735800A43DFF /* CustomUIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7CAAEA2556735800A43DFF /* CustomUIWidget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF7CAB0225567F2900A43DFF /* CustomUIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */; };
 		BFE890A1BE34A5352D0DEB87FDD02A5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4061ECE5582EDBB1EF06CA29F25409 /* Foundation.framework */; };
 		C049693DBD3D67B668EEEDB82ED2DF86 /* CALayer+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F401A50F326DE2283767656428D05C /* CALayer+YYAdd.m */; };
 		C1A9193571DF7780A1DD7460FE51E357 /* UITableView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C49D01FCD9EC42BD85353A5328E140 /* UITableView+YYAdd.m */; };
@@ -667,7 +667,7 @@
 		BD74198A5FA1740DDA0B182D5358F19C /* YYImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YYImage-dummy.m"; sourceTree = "<group>"; };
 		BDD1156C8C0C3B1AA2516D960A73819E /* NSDate+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+YYAdd.h"; path = "YYCategories/Foundation/NSDate+YYAdd.h"; sourceTree = "<group>"; };
 		BE365511B677ECF640161F5837DCA873 /* YYImageCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYImageCoder.m; path = YYImage/YYImageCoder.m; sourceTree = "<group>"; };
-		BF7CAAEA2556735800A43DFF /* CustomUIWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomUIWidget.h; sourceTree = "<group>"; };
+		BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUIWidget.h; sourceTree = "<group>"; };
 		C06331710B9D27385A7D692CFB75C12C /* YYClassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYClassInfo.m; path = YYModel/YYClassInfo.m; sourceTree = "<group>"; };
 		C13178C0C4C220730AC407275A0F1A05 /* FDCollectionCellView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FDCollectionCellView.m; sourceTree = "<group>"; };
 		C1725050758267BDD29C5921CEBAB630 /* NSNotificationCenter+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+YYAdd.h"; path = "YYCategories/Foundation/NSNotificationCenter+YYAdd.h"; sourceTree = "<group>"; };
@@ -1238,13 +1238,13 @@
 		61C4824F930C9248B6DDC32E20AB8228 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				BF7CAB0025567F2900A43DFF /* CustomUIWidget */,
 				51D2F79473454CFF587DA2E884F9EADE /* AlertView */,
 				27562583621D3DB2FBA0E986E13FE30A /* AnimationManagerView */,
 				252FFF746E343F2DC7C7F629A6083473 /* ArrowTipsView */,
 				9B82238E5750427DB39D875261E8F55F /* AutoPlaceView */,
 				6CF7C2C39A4F4971FC7C4D2C620B9819 /* CollectionCellView */,
 				3EEDA3F4A59CE62C9576AA35BD79E474 /* MarqueeView */,
-				BF7CAAEA2556735800A43DFF /* CustomUIWidget.h */,
 			);
 			name = Public;
 			path = CustomUIWidget/Classes/Public;
@@ -1486,6 +1486,14 @@
 				EBEFC24B035BE83C69C4A27D5930B820 /* EXTNil.m */,
 			);
 			name = EXTNil;
+			sourceTree = "<group>";
+		};
+		BF7CAB0025567F2900A43DFF /* CustomUIWidget */ = {
+			isa = PBXGroup;
+			children = (
+				BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */,
+			);
+			path = CustomUIWidget;
 			sourceTree = "<group>";
 		};
 		C3E9390E4C5BAEE587F1F2037FE00E8B /* RuntimeExtensions */ = {
@@ -1779,6 +1787,7 @@
 				69440AB6D5F3138159ED07F67DE31A3C /* FDArrowTipsView.h in Headers */,
 				B6EB7BD0643F2B3CF98A558185289AAB /* FDAutoPlaceView.h in Headers */,
 				36CE9A68AA16DD7854DF2401D66FD81D /* FDAutoPlaceViewProtocol.h in Headers */,
+				BF7CAB0225567F2900A43DFF /* CustomUIWidget.h in Headers */,
 				D38B989DA9663DDC09093136AC213EC0 /* FDCollectionCellView.h in Headers */,
 				06CD98C1986A068518AEF829CEFA7748 /* FDCollectionCellViewHelper.h in Headers */,
 				DE14CA0DC590E6F2EA295E1537A25CD0 /* FDCommonAlertPresentManager.h in Headers */,
@@ -1787,7 +1796,6 @@
 				42F98CC4EBD5AFADCBF8CCDDA50D9F2F /* FDCustomUIWidgetDef.h in Headers */,
 				1053CE9380EA45264E6D6FFD269A1ED2 /* FDMarqueeView.h in Headers */,
 				55C5E5651CA7463A5566143CA5427323 /* UIImage+FRColor.h in Headers */,
-				BF7CAAEB2556735800A43DFF /* CustomUIWidget.h in Headers */,
 				1235D419FA91F8A8D3044D493062CB5B /* UIView+ArrowTipsView.h in Headers */,
 				2EB0CA1E25843F52758600DE1922CFE8 /* UIView+FDAlertView.h in Headers */,
 			);

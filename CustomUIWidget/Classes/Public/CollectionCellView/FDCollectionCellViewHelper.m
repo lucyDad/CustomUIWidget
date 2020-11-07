@@ -210,6 +210,10 @@ static CGFloat const kTopMarginOfSubTitleLabel = 3;
     return [self initWithConfig:[FDCollectionCellViewHelperConfig new]];
 }
 
+- (void)dealloc {
+    NSLog(@"%s", __func__);
+}
+
 #pragma mark - Event Response
 
 #pragma mark -- FDCollectionCellViewDataSource
