@@ -10,7 +10,7 @@
 
 #if __has_include(<CustomUIWidget/CustomUIWidget.h>)
 
-#import <CustomUIWidget/FDCommonAlertPresendManager.h>
+#import <CustomUIWidget/FDCommonAlertPresentManager.h>
 #import <CustomUIWidget/FDCommonAlertView.h>
 #import <CustomUIWidget/FDCommonButtonView.h>
 #import <CustomUIWidget/UIView+FDAlertView.h>
