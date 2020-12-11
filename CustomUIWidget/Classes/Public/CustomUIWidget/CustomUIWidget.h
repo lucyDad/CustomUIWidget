@@ -22,6 +22,7 @@
 #import <CustomUIWidget/FDCollectionCellView.h>
 #import <CustomUIWidget/FDCollectionCellViewHelper.h>
 #import <CustomUIWidget/FDMarqueeView.h>
+#import <CustomUIWidget/UIView+LongPressDrag.h>
 
 #else
 
@@ -37,6 +38,7 @@
 #import "FDCollectionCellView.h"
 #import "FDCollectionCellViewHelper.h"
 #import "FDMarqueeView.h"
+#import "UIView+LongPressDrag.h"
 
 #endif
 

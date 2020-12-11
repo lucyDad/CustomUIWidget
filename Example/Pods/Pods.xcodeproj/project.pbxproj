@@ -242,7 +242,9 @@
 		BD52A9F30FCC8DE5995827ABC52D6979 /* YYCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A6EA8122FE69C40BC8264F866464A3D /* YYCategories.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD75594A85D9DA491BBDECEFD62BF592 /* YYTextMagnifier.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3DB0FD623852AB922C607A687F8AF6 /* YYTextMagnifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDBA3C6262A2E394E7D5B2EB63521AEB /* NSData+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF65BB9A8ABE919042457A95DBD008A /* NSData+YYAdd.m */; };
-		BF7CAB0225567F2900A43DFF /* CustomUIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */; };
+		BF7CAB0225567F2900A43DFF /* CustomUIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF85E25C258373190099AD4F /* UIView+LongPressDrag.h in Headers */ = {isa = PBXBuildFile; fileRef = BF85E25A258373190099AD4F /* UIView+LongPressDrag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF85E25D258373190099AD4F /* UIView+LongPressDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = BF85E25B258373190099AD4F /* UIView+LongPressDrag.m */; };
 		BFE890A1BE34A5352D0DEB87FDD02A5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4061ECE5582EDBB1EF06CA29F25409 /* Foundation.framework */; };
 		C049693DBD3D67B668EEEDB82ED2DF86 /* CALayer+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F401A50F326DE2283767656428D05C /* CALayer+YYAdd.m */; };
 		C1A9193571DF7780A1DD7460FE51E357 /* UITableView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C49D01FCD9EC42BD85353A5328E140 /* UITableView+YYAdd.m */; };
@@ -668,6 +670,8 @@
 		BDD1156C8C0C3B1AA2516D960A73819E /* NSDate+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+YYAdd.h"; path = "YYCategories/Foundation/NSDate+YYAdd.h"; sourceTree = "<group>"; };
 		BE365511B677ECF640161F5837DCA873 /* YYImageCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYImageCoder.m; path = YYImage/YYImageCoder.m; sourceTree = "<group>"; };
 		BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUIWidget.h; sourceTree = "<group>"; };
+		BF85E25A258373190099AD4F /* UIView+LongPressDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LongPressDrag.h"; sourceTree = "<group>"; };
+		BF85E25B258373190099AD4F /* UIView+LongPressDrag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LongPressDrag.m"; sourceTree = "<group>"; };
 		C06331710B9D27385A7D692CFB75C12C /* YYClassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYClassInfo.m; path = YYModel/YYClassInfo.m; sourceTree = "<group>"; };
 		C13178C0C4C220730AC407275A0F1A05 /* FDCollectionCellView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FDCollectionCellView.m; sourceTree = "<group>"; };
 		C1725050758267BDD29C5921CEBAB630 /* NSNotificationCenter+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+YYAdd.h"; path = "YYCategories/Foundation/NSNotificationCenter+YYAdd.h"; sourceTree = "<group>"; };
@@ -1238,6 +1242,7 @@
 		61C4824F930C9248B6DDC32E20AB8228 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				BF8EB1E72581D97400FDFBDE /* Tools */,
 				BF7CAB0025567F2900A43DFF /* CustomUIWidget */,
 				51D2F79473454CFF587DA2E884F9EADE /* AlertView */,
 				27562583621D3DB2FBA0E986E13FE30A /* AnimationManagerView */,
@@ -1494,6 +1499,15 @@
 				BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */,
 			);
 			path = CustomUIWidget;
+			sourceTree = "<group>";
+		};
+		BF8EB1E72581D97400FDFBDE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BF85E25A258373190099AD4F /* UIView+LongPressDrag.h */,
+				BF85E25B258373190099AD4F /* UIView+LongPressDrag.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		C3E9390E4C5BAEE587F1F2037FE00E8B /* RuntimeExtensions */ = {
@@ -1787,7 +1801,6 @@
 				69440AB6D5F3138159ED07F67DE31A3C /* FDArrowTipsView.h in Headers */,
 				B6EB7BD0643F2B3CF98A558185289AAB /* FDAutoPlaceView.h in Headers */,
 				36CE9A68AA16DD7854DF2401D66FD81D /* FDAutoPlaceViewProtocol.h in Headers */,
-				BF7CAB0225567F2900A43DFF /* CustomUIWidget.h in Headers */,
 				D38B989DA9663DDC09093136AC213EC0 /* FDCollectionCellView.h in Headers */,
 				06CD98C1986A068518AEF829CEFA7748 /* FDCollectionCellViewHelper.h in Headers */,
 				DE14CA0DC590E6F2EA295E1537A25CD0 /* FDCommonAlertPresentManager.h in Headers */,
@@ -1795,6 +1808,8 @@
 				0905A571A692B4ACA5E26C609C6FAAC4 /* FDCommonButtonView.h in Headers */,
 				42F98CC4EBD5AFADCBF8CCDDA50D9F2F /* FDCustomUIWidgetDef.h in Headers */,
 				1053CE9380EA45264E6D6FFD269A1ED2 /* FDMarqueeView.h in Headers */,
+				BF7CAB0225567F2900A43DFF /* CustomUIWidget.h in Headers */,
+				BF85E25C258373190099AD4F /* UIView+LongPressDrag.h in Headers */,
 				55C5E5651CA7463A5566143CA5427323 /* UIImage+FRColor.h in Headers */,
 				1235D419FA91F8A8D3044D493062CB5B /* UIView+ArrowTipsView.h in Headers */,
 				2EB0CA1E25843F52758600DE1922CFE8 /* UIView+FDAlertView.h in Headers */,
@@ -2221,6 +2236,7 @@
 				80BDB0C238F4BFF57221153E24DC0CC5 /* FDCollectionCellView.m in Sources */,
 				662C84C4412DAC5C050FC48C2B477489 /* FDCollectionCellViewHelper.m in Sources */,
 				6857296A75C7B8210D7C11DE34205B3D /* FDCommonAlertPresentManager.m in Sources */,
+				BF85E25D258373190099AD4F /* UIView+LongPressDrag.m in Sources */,
 				8C0680C01BFA76050D333DB9E8B10278 /* FDCommonAlertView.m in Sources */,
 				C39D3B70AC51CD2E25D1E81D198904B6 /* FDCommonButtonView.m in Sources */,
 				ADC81014FB6433E5354982B11AE7D0C4 /* FDMarqueeView.m in Sources */,

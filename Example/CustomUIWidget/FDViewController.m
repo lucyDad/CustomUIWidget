@@ -16,6 +16,7 @@
 #import "FDAutoPlaceView.h"
 #import "FDUserInfoModel.h"
 #import "FDCollectionCellViewHelper.h"
+#import "CustomUIWidget.h"
 
 static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifier";
 
@@ -37,6 +38,23 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(superView);
     }];
+}
+
+#pragma mark - 长按拖动view5
+
+- (void)testFunction5 {
+    UILabel *titleLabel = ({
+        UILabel *label = [[UILabel alloc] init];
+        label.backgroundColor = [UIColor redColor];
+        label.size = CGSizeMake(80, 80);
+        label.top = 200;
+        label.left = 20;
+        label.userInteractionEnabled = YES;
+        label;
+    });
+    [self.view addSubview:titleLabel];
+    titleLabel.longPressDragEdgeInsets = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.height + 10, 10, 40, 10);
+    [titleLabel addLongPressDragGestureRecognizer];
 }
 
 #pragma mark - 格子view4
@@ -244,7 +262,7 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
 - (NSArray *)arrData {
     if (!_arrData) {
         _arrData = ({
-            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4"];
+            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4", @"长按拖动view5"];
             view;
         });
     }
