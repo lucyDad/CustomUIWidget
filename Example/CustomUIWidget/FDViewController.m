@@ -21,6 +21,9 @@
 static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifier";
 
 @interface FDViewController ()<UITableViewDataSource, UITableViewDelegate>
+{
+    UIWindow *_tmpWindow;
+}
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (nonatomic, strong) NSArray *arrData;
@@ -40,9 +43,141 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
     }];
 }
 
+- (NSArray<UIView *> *)generateViews {
+    
+    UIImageView *matchmakerImageView = ({
+        UIImageView *imageView = [UIImageView new];
+        UIImage *image = [UIImage imageNamed:@"icon_matckmaker"];
+        imageView.image = image;
+        [imageView sizeToFit];
+        imageView;
+    });
+    UIImageView *vipImageView = ({
+        UIImageView *imageView = [UIImageView new];
+        UIImage *image = [UIImage imageNamed:@"icon_vip"];
+        imageView.image = image;
+        [imageView sizeToFit];
+        imageView;
+    });
+    UIImageView *sexImageView = ({
+        UIImageView *imageView = [UIImageView new];
+        UIImage *image = [UIImage imageNamed:@"icon_male"];
+        imageView.image = image;
+        [imageView sizeToFit];
+        imageView;
+    });
+    UIView *addressView = ({
+        UIView *superView = [UIView new];
+        superView.backgroundColor = UIColorHex(F4F4F4);
+        UILabel *addressLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label.backgroundColor = [UIColor clearColor];
+            label.textColor = UIColorHex(999999);
+            label.font = [UIFont systemFontOfSize:12];
+            label.textAlignment = NSTextAlignmentCenter;
+            label;
+        });
+        addressLabel.text = @"28.广东";
+        [addressLabel sizeToFit];
+        UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0, 8, 0, 8);
+        addressLabel.left = edgeInsets.left;
+        addressLabel.top = edgeInsets.top;
+        
+        [superView addSubview:addressLabel];
+        CGSize size = CGSizeMake(edgeInsets.left + edgeInsets.right + addressLabel.width, edgeInsets.top + edgeInsets.bottom + addressLabel.height);
+        superView.size = size;
+        superView.layer.cornerRadius = size.height / 2.0f;
+        superView.layer.masksToBounds = YES;
+        superView;
+    });
+    
+    UILabel *timeLabel = ({
+        UILabel *label = [[UILabel alloc] init];
+        label.backgroundColor = [UIColor clearColor];
+        label.textColor = UIColorHex(333333);
+        label.font = [UIFont systemFontOfSize:11];
+        label.textAlignment = NSTextAlignmentRight;
+        label.text = @"2020年12月24";
+        [label sizeToFit];
+        label;
+    });
+    
+    NSMutableArray *flagViews = [NSMutableArray array];
+    if (NO) {
+        [flagViews addObject:matchmakerImageView];
+    }
+    if (YES) {
+        [flagViews addObject:vipImageView];
+    }
+    if (NO) {
+        [flagViews addObject:addressView];
+    }
+    if (YES) {
+        [flagViews addObject:sexImageView];
+    }
+    if (YES) {
+        [flagViews addObject:timeLabel];
+    }
+    
+    matchmakerImageView.flexibleLayoutViewLeftMargin = 5;
+    matchmakerImageView.flexibleLayoutViewRightMargin = 5;
+    matchmakerImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
+    
+    vipImageView.flexibleLayoutViewLeftMargin = 5;
+    vipImageView.flexibleLayoutViewRightMargin = 5;
+    vipImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
+    
+    sexImageView.flexibleLayoutViewLeftMargin = 5;
+    sexImageView.flexibleLayoutViewRightMargin = 5;
+    sexImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
+    
+    addressView.flexibleLayoutViewLeftMargin = 5;
+    addressView.flexibleLayoutViewRightMargin = 5;
+    addressView.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
+    
+    timeLabel.flexibleLayoutViewLeftMargin = 2;
+    timeLabel.flexibleLayoutViewRightMargin = 2;
+    timeLabel.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
+    
+    return flagViews;
+}
+
+#pragma mark - 单行自动缩放view6
+
+- (void)testFunction6 {
+    CGSize size = CGSizeMake(300, 80);
+    UILabel *titleLabel = ({
+        UILabel *label = [[UILabel alloc] init];
+        label.backgroundColor = [UIColor clearColor];
+        label.textColor = [UIColor blackColor];
+        label.font = [UIFont systemFontOfSize:16];
+        label.textAlignment = NSTextAlignmentLeft;
+        label.text = @"红娘真心宝贝";
+        [label sizeToFit];
+        label.flexibleLayoutViewLeftMargin = 10;
+        label.flexibleLayoutViewRightMargin = 5;
+        label.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
+        label.flexibleLayoutViewMinWidthLimit = 30;
+        label;
+    });
+    [[self.view viewWithTag:9999] removeFromSuperview];
+
+    FDFlexibleLayoutView *layoutView = [FDFlexibleLayoutView new];
+    layoutView.backgroundColor = [UIColor redColor];
+    layoutView.left = 100;
+    layoutView.top = 200;
+    layoutView.size = size;
+    layoutView.adjustView = titleLabel;
+    layoutView.fixedViews = [self generateViews];
+    [layoutView reloadUI];
+    layoutView.tag = 9999;
+    [self.view addSubview:layoutView];
+}
+
 #pragma mark - 长按拖动view5
 
 - (void)testFunction5 {
+    // 示例一: UIView
     UILabel *titleLabel = ({
         UILabel *label = [[UILabel alloc] init];
         label.backgroundColor = [UIColor redColor];
@@ -55,6 +190,23 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
     [self.view addSubview:titleLabel];
     titleLabel.longPressDragEdgeInsets = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.height + 10, 10, 40, 10);
     [titleLabel addLongPressDragGestureRecognizer];
+    
+    // 示例二: UIWindow
+    UIWindow *view = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+    view.backgroundColor = [UIColor redColor];
+    view.windowLevel = UIWindowLevelAlert + 10;
+    view.hidden = NO;
+    view.clipsToBounds = YES;
+    view.right = [UIScreen mainScreen].bounds.size.width - 20;
+    view.top = 200;
+    view.longPressDragEdgeInsets = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.height + 10, 10, 40, 10);
+    [view addLongPressDragGestureRecognizer];
+    UIView *greenView = [UIView new];
+    greenView.backgroundColor = [UIColor greenColor];
+    greenView.size = CGSizeMake(40, 40);
+    [view addSubview:greenView];
+    
+    _tmpWindow = view;
 }
 
 #pragma mark - 格子view4
@@ -262,7 +414,7 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
 - (NSArray *)arrData {
     if (!_arrData) {
         _arrData = ({
-            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4", @"长按拖动view5"];
+            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4", @"长按拖动view5", @"单行自动缩放view6"];
             view;
         });
     }

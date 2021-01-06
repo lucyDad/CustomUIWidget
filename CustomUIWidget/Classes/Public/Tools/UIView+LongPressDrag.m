@@ -19,55 +19,56 @@
 
 - (void)longPressDrag_panGestureAction:(UIPanGestureRecognizer *)longPressGes {
     //LOGGO_INFO(@"longPressGes.state = %ld", longPressGes.state);
-    CGFloat superViewWidth = self.superview.width;
-    CGFloat superViewHeight = self.superview.height;
+    CGFloat superViewWidth = (nil == self.superview ? [UIScreen mainScreen].bounds.size.width : self.superview.width);
+    CGFloat superViewHeight = (nil == self.superview ? [UIScreen mainScreen].bounds.size.height : self.superview.height);
     CGPoint point = [longPressGes locationInView:self];
+    UIView *moveView = self;
     switch (longPressGes.state) {
         case UIGestureRecognizerStateBegan:
         {
-            self.longPressDragStartPoint = point;
+            moveView.longPressDragStartPoint = point;
             break;
         }
         case UIGestureRecognizerStateChanged:
         {
             //LOGGO_INFO(@"x = %f, y = %f", point.x - self.longPressDragStartPoint.x, point.y - self.longPressDragStartPoint.y);
-            CGFloat xOffset = point.x - self.longPressDragStartPoint.x;
-            CGFloat yOffset = point.y - self.longPressDragStartPoint.y;
+            CGFloat xOffset = point.x - moveView.longPressDragStartPoint.x;
+            CGFloat yOffset = point.y - moveView.longPressDragStartPoint.y;
     
-            CGFloat left = self.left + xOffset;
-            CGFloat top = self.top + yOffset;
+            CGFloat left = moveView.left + xOffset;
+            CGFloat top = moveView.top + yOffset;
             
-            self.left = [self longPressDrag_getFinalValue:left range:NSMakeRange(0, superViewWidth - self.width)];
-            self.top = [self longPressDrag_getFinalValue:top range:NSMakeRange(0, superViewHeight - self.height)];
+            moveView.left = [self longPressDrag_getFinalValue:left range:NSMakeRange(0, superViewWidth - moveView.width)];
+            moveView.top = [self longPressDrag_getFinalValue:top range:NSMakeRange(0, superViewHeight - moveView.height)];
             break;
         }
         case UIGestureRecognizerStateEnded:
         {
 
-            CGFloat minTopXpos = self.longPressDragEdgeInsets.top;
-            CGFloat maxTopXpos = superViewHeight - self.height - self.longPressDragEdgeInsets.bottom;
-            if (self.top < minTopXpos || self.top > maxTopXpos) {
+            CGFloat minTopXpos = moveView.longPressDragEdgeInsets.top;
+            CGFloat maxTopXpos = superViewHeight - moveView.height - moveView.longPressDragEdgeInsets.bottom;
+            if (moveView.top < minTopXpos || moveView.top > maxTopXpos) {
                 //LOGGO_WARN(@"Ended self.top = %f", self.top);
-                if (self.top < minTopXpos ) {
+                if (moveView.top < minTopXpos ) {
                     
                     [UIView animateWithDuration:0.2 animations:^{
-                        self.top = minTopXpos;
+                        moveView.top = minTopXpos;
                     }];
-                } else if (self.top > maxTopXpos) {
+                } else if (moveView.top > maxTopXpos) {
                     [UIView animateWithDuration:0.2 animations:^{
-                        self.top = maxTopXpos;
+                        moveView.top = maxTopXpos;
                     }];
                 }
             } else {
                 //LOGGO_WARN(@"Ended self.left = %f, middle = %f", self.left, SCREEN_WIDTH / 2.0f - self.width / 2.0f);
-                if (self.left < superViewWidth / 2.0f - self.width / 2.0f) {
+                if (moveView.left < superViewWidth / 2.0f - moveView.width / 2.0f) {
                     
                     [UIView animateWithDuration:0.2 animations:^{
-                        self.left = self.longPressDragEdgeInsets.left;
+                        moveView.left = moveView.longPressDragEdgeInsets.left;
                     }];
                 } else {
                     [UIView animateWithDuration:0.2 animations:^{
-                        self.right = superViewWidth - self.longPressDragEdgeInsets.right;
+                        moveView.right = superViewWidth - moveView.longPressDragEdgeInsets.right;
                     }];
                 }
             }

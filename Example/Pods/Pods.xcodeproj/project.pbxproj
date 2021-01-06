@@ -245,6 +245,8 @@
 		BF7CAB0225567F2900A43DFF /* CustomUIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF85E25C258373190099AD4F /* UIView+LongPressDrag.h in Headers */ = {isa = PBXBuildFile; fileRef = BF85E25A258373190099AD4F /* UIView+LongPressDrag.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF85E25D258373190099AD4F /* UIView+LongPressDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = BF85E25B258373190099AD4F /* UIView+LongPressDrag.m */; };
+		BFCE0E0725A40A80008A35B9 /* FDFlexibleLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCE0E0525A40A80008A35B9 /* FDFlexibleLayoutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFCE0E0825A40A80008A35B9 /* FDFlexibleLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCE0E0625A40A80008A35B9 /* FDFlexibleLayoutView.m */; };
 		BFE890A1BE34A5352D0DEB87FDD02A5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4061ECE5582EDBB1EF06CA29F25409 /* Foundation.framework */; };
 		C049693DBD3D67B668EEEDB82ED2DF86 /* CALayer+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F401A50F326DE2283767656428D05C /* CALayer+YYAdd.m */; };
 		C1A9193571DF7780A1DD7460FE51E357 /* UITableView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C49D01FCD9EC42BD85353A5328E140 /* UITableView+YYAdd.m */; };
@@ -672,6 +674,8 @@
 		BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUIWidget.h; sourceTree = "<group>"; };
 		BF85E25A258373190099AD4F /* UIView+LongPressDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LongPressDrag.h"; sourceTree = "<group>"; };
 		BF85E25B258373190099AD4F /* UIView+LongPressDrag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LongPressDrag.m"; sourceTree = "<group>"; };
+		BFCE0E0525A40A80008A35B9 /* FDFlexibleLayoutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDFlexibleLayoutView.h; sourceTree = "<group>"; };
+		BFCE0E0625A40A80008A35B9 /* FDFlexibleLayoutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDFlexibleLayoutView.m; sourceTree = "<group>"; };
 		C06331710B9D27385A7D692CFB75C12C /* YYClassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYClassInfo.m; path = YYModel/YYClassInfo.m; sourceTree = "<group>"; };
 		C13178C0C4C220730AC407275A0F1A05 /* FDCollectionCellView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FDCollectionCellView.m; sourceTree = "<group>"; };
 		C1725050758267BDD29C5921CEBAB630 /* NSNotificationCenter+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+YYAdd.h"; path = "YYCategories/Foundation/NSNotificationCenter+YYAdd.h"; sourceTree = "<group>"; };
@@ -1419,6 +1423,8 @@
 				F03EFEBF82B543D487DA006CCED93A55 /* FDAutoPlaceView.h */,
 				17577A2499E4218459628AEF74C1035E /* FDAutoPlaceView.m */,
 				635A3702D344FBB0492EFF2CFB66DB99 /* FDAutoPlaceViewProtocol.h */,
+				BFCE0E0525A40A80008A35B9 /* FDFlexibleLayoutView.h */,
+				BFCE0E0625A40A80008A35B9 /* FDFlexibleLayoutView.m */,
 			);
 			path = AutoPlaceView;
 			sourceTree = "<group>";
@@ -1811,6 +1817,7 @@
 				BF7CAB0225567F2900A43DFF /* CustomUIWidget.h in Headers */,
 				BF85E25C258373190099AD4F /* UIView+LongPressDrag.h in Headers */,
 				55C5E5651CA7463A5566143CA5427323 /* UIImage+FRColor.h in Headers */,
+				BFCE0E0725A40A80008A35B9 /* FDFlexibleLayoutView.h in Headers */,
 				1235D419FA91F8A8D3044D493062CB5B /* UIView+ArrowTipsView.h in Headers */,
 				2EB0CA1E25843F52758600DE1922CFE8 /* UIView+FDAlertView.h in Headers */,
 			);
@@ -2243,6 +2250,7 @@
 				2B780EE7943A107AB4667D542564E76A /* UIImage+FRColor.m in Sources */,
 				292E4FE8CDC8E6049ED944399F809758 /* UIView+ArrowTipsView.m in Sources */,
 				063854B50C5D23DB60BD5C54B4F57FB7 /* UIView+FDAlertView.m in Sources */,
+				BFCE0E0825A40A80008A35B9 /* FDFlexibleLayoutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
