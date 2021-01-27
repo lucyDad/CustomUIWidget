@@ -7,7 +7,12 @@
 //
 
 #import "FDArrowTipsView.h"
-#import "FDCustomUIWidgetDef.h"
+#import <libextobjc/extobjc.h>
+#import "UIView+YYAdd.h"
+
+static NSString* const kShowAnimationKey = @"arrowTipsView_showAnimation";
+static NSString* const kDismissAnimationKey = @"arrowTipsView_dismissAnimation";
+static CGFloat const kDefaultAnimationTime = 0.5;
 
 @interface FDArrowTipsViewConfig ()
 {
@@ -23,16 +28,15 @@
     self = [super init];
     if (self) {
         self.contentCornerRadius = -1;
-        self.contentEdgeInsets = UIEdgeInsetsMake(2, 2, 2, 2);
-
+        self.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
         self.gradientBackgroundLayer = [FDArrowTipsViewConfig defaultGradientLayer];
-
         self.arrowSize = CGSizeMake(8, 8);
-        
-        self.timeOutTime = 3;
-        self.animationTime = 0.0;
     }
     return self;
+}
+
++ (CAGradientLayer *)gradientLayerSingleColor:(UIColor *)color {
+    return [self gradientLayerWith:@[color, color] startPoint:CGPointMake(0, 0) endPoint:CGPointMake(0, 1)];
 }
 
 + (CAGradientLayer *)gradientLayerWith:(NSArray<UIColor *> *)colors {
@@ -66,11 +70,11 @@
 
 @end
 
-CGFloat const gArrowTipsViewMarginOffset = 5; // 微调值
-
 @interface FDArrowTipsView ()<CAAnimationDelegate>
 {
     NSTimer *_timer;
+    BOOL _isAutoDismiss; // 定时器关闭时是否自动移除view
+    BOOL _dismissAutoRemove;
 }
 @property (nonatomic, strong) FDArrowTipsViewConfig *viewConfig;
 
@@ -85,14 +89,13 @@ CGFloat const gArrowTipsViewMarginOffset = 5; // 微调值
 
 #pragma mark - Public Interface
 
-- (void)startShowTimerWithTime:(NSTimeInterval)time {
-    
+- (void)startShowTimerWithTime:(NSTimeInterval)time autoDismiss:(BOOL)autoDismiss {
+    _isAutoDismiss = autoDismiss;
     [self startTimerWithTime:time];
 }
 
-- (void)startViewAnimation {
-    
-    CGFloat animationTime = self.viewConfig.animationTime;
+- (void)startViewAnimation:(CGFloat)animationTime {
+
     CGFloat scaleRatio = 0.4f;
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     animation.fromValue = [NSNumber numberWithFloat:scaleRatio]; // 开始时的倍率
@@ -106,14 +109,16 @@ CGFloat const gArrowTipsViewMarginOffset = 5; // 微调值
     group.duration = animationTime;
     group.repeatCount = 1;
     group.animations = [NSArray arrayWithObjects:animation, animation2, nil];
+    group.removedOnCompletion = NO;
+    group.fillMode = kCAFillModeForwards;
     group.delegate = self;
-    [self.layer addAnimation:group forKey:@"arrowTipsView_showAnimation"];
+    [self.layer addAnimation:group forKey:kShowAnimationKey];
 }
 
-- (void)dismissTipsView {
+- (void)dismissTipsView:(CGFloat)animationTime autoRemove:(BOOL)autoRemove {
+    _dismissAutoRemove = autoRemove;
     [self stopTimer];
     
-    CGFloat animationTime = self.viewConfig.animationTime;
     CGFloat scaleRatio = 0.4f;
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     animation.fromValue = [NSNumber numberWithFloat:1]; // 开始时的倍率
@@ -127,19 +132,10 @@ CGFloat const gArrowTipsViewMarginOffset = 5; // 微调值
     group.duration = animationTime;
     group.repeatCount = 1;
     group.animations = [NSArray arrayWithObjects:animation, animation2, nil];
+    group.removedOnCompletion = NO;
+    group.fillMode = kCAFillModeForwards;
     group.delegate = self;
-    [self.layer addAnimation:group forKey:@"arrowTipsView_dismissAnimation"];
-
-    @weakify(self);
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((self.viewConfig.animationTime - 0.1) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        @strongify(self);
-        [self.layer removeAllAnimations];
-        
-        if (self.actionBlock) {
-            self.actionBlock(self, FDArrowTipsViewActionTypeWillRemove);
-        }
-        [self removeFromSuperview];
-    });
+    [self.layer addAnimation:group forKey:kDismissAnimationKey];
 }
 
 #pragma mark - Life Cycle
@@ -154,6 +150,21 @@ CGFloat const gArrowTipsViewMarginOffset = 5; // 微调值
         self.viewConfig.customView = customView;
         _direction = self.viewConfig.originDirection;
         [self setupUI];
+        switch (self.viewConfig.originDirection) {
+            case FDArrowDirection_Left:
+            case FDArrowDirection_Right:
+            {
+                self.arrowCenterOffset = self.height / 2.0f;
+                break;
+            }
+            case FDArrowDirection_Top:
+            case FDArrowDirection_Bottom:
+            default:
+            {
+                self.arrowCenterOffset = self.width / 2.0f;
+                break;
+            }
+        }
     }
     return self;
 }
@@ -164,7 +175,7 @@ CGFloat const gArrowTipsViewMarginOffset = 5; // 微调值
 
 - (void)dealloc {
     [self stopTimer];
-    LOGGO_INFO(@"");
+    NSLog(@"%s", __func__);
 }
 
 #pragma mark - Event Response
@@ -184,16 +195,27 @@ CGFloat const gArrowTipsViewMarginOffset = 5; // 微调值
         self.actionBlock(weakSelf, FDArrowTipsViewActionTypeTimeOut);
     }
     
-    if (self.viewConfig.autoTimeOutClose) {
-        [self dismissTipsView];
+    if (_isAutoDismiss) {
+        [self dismissTipsView:kDefaultAnimationTime autoRemove:YES];
     }
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     __weak typeof(self)weakSelf = self;
     if (flag) {
-        if (self.actionBlock) {
-            self.actionBlock(weakSelf, FDArrowTipsViewActionTypeAnimationEnd);
+        if ([self.layer.animationKeys containsObject:kShowAnimationKey]) {
+            [self.layer removeAnimationForKey:kShowAnimationKey];
+            if (self.actionBlock) {
+                self.actionBlock(weakSelf, FDArrowTipsViewActionTypeShowAnimationEnd);
+            }
+        } else if ([self.layer.animationKeys containsObject:kDismissAnimationKey]) {
+            [self.layer removeAnimationForKey:kDismissAnimationKey];
+            if (self.actionBlock) {
+                self.actionBlock(weakSelf, FDArrowTipsViewActionTypeDismissAnimationEnd);
+            }
+            if (_dismissAutoRemove) {
+                [self removeFromSuperview];
+            }
         }
     }
 }
@@ -289,21 +311,23 @@ CGFloat const gArrowTipsViewMarginOffset = 5; // 微调值
     self.viewConfig.gradientBackgroundLayer.frame = self.arrowLayerButton.bounds;
 }
 
-- (CGFloat)getAdjustArrowXOffset:(CGFloat)cornerRadius {
+#pragma mark -- Datas
 
-    CGFloat xOffset = self.arrowCenterXOffset - self.viewConfig.arrowSize.width / 2.0f;
-    CGFloat minXOffset = cornerRadius + gArrowTipsViewMarginOffset;  // 最小偏移量
-    CGFloat maxXOffset = self.size.width - minXOffset - self.viewConfig.arrowSize.width;
+- (CGFloat)getAdjustArrowCenterXOffset:(CGFloat)cornerRadius {
+
+    CGFloat xOffset = self.arrowCenterOffset;
+    CGFloat minXOffset = cornerRadius + self.viewConfig.arrowSize.width / 2.0f;  // 最小偏移量
+    CGFloat maxXOffset = self.size.width - cornerRadius - self.viewConfig.arrowSize.width / 2.0f;
     xOffset = MIN(maxXOffset, MAX(minXOffset, xOffset));
     
     return xOffset;
 }
 
-- (CGFloat)getAdjustArrowYOffset:(CGFloat)cornerRadius {
+- (CGFloat)getAdjustArrowCenterYOffset:(CGFloat)cornerRadius {
 
-    CGFloat yOffset = self.arrowCenterYOffset - self.viewConfig.arrowSize.height / 2.0f;
-    CGFloat minYOffset = cornerRadius + gArrowTipsViewMarginOffset;  // 最小偏移量
-    CGFloat maxYOffset = self.size.height - minYOffset - self.viewConfig.arrowSize.height;
+    CGFloat yOffset = self.arrowCenterOffset ;
+    CGFloat minYOffset = cornerRadius + self.viewConfig.arrowSize.height / 2.0f;  // 最小偏移量
+    CGFloat maxYOffset = self.size.height - cornerRadius - self.viewConfig.arrowSize.height / 2.0f;
     yOffset = MIN(maxYOffset, MAX(minYOffset, yOffset));
     
     return yOffset;
@@ -316,65 +340,98 @@ CGFloat const gArrowTipsViewMarginOffset = 5; // 微调值
     CGSize arrowSize = self.viewConfig.arrowSize;
     CGFloat cornerRadius = [self getCornerRadius];
     
-    CGFloat arrowXOffset = [self getAdjustArrowXOffset:cornerRadius];
-    CGFloat arrowYOffset = [self getAdjustArrowYOffset:cornerRadius];
+    CGFloat arrowCenterXOffset = [self getAdjustArrowCenterXOffset:cornerRadius];
+    CGFloat arrowCenterYOffset = [self getAdjustArrowCenterYOffset:cornerRadius];
     
     UIBezierPath *path = [UIBezierPath bezierPath];
     switch (self.direction) {
         case FDArrowDirection_Top:
         {
-            UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, arrowSize.height, viewSize.width, viewSize.height - arrowSize.height) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
-            
-            UIBezierPath *triangleRect = [UIBezierPath bezierPath];
-            [triangleRect moveToPoint:CGPointMake(arrowXOffset, arrowSize.height)];
-            [triangleRect addLineToPoint:CGPointMake(arrowXOffset + arrowSize.width / 2.0f, 0)];
-            [triangleRect addLineToPoint:CGPointMake(arrowXOffset + arrowSize.width, arrowSize.height)];
-            [triangleRect closePath];
-            
-            [path appendPath:roundedRect];
-            [path appendPath:triangleRect];
+            // 画左上角圆弧
+            [path addArcWithCenter:CGPointMake(cornerRadius, cornerRadius + arrowSize.height) radius:cornerRadius startAngle:M_PI endAngle:1.5 *M_PI clockwise:YES];
+            // 添加到右上角线
+            [path addLineToPoint:CGPointMake(arrowCenterXOffset - arrowSize.width / 2.0f, arrowSize.height)];
+            [path addLineToPoint:CGPointMake(arrowCenterXOffset , 0)];
+            [path addLineToPoint:CGPointMake(arrowCenterXOffset + arrowSize.width / 2.0f, arrowSize.height)];
+            [path addLineToPoint:CGPointMake(viewSize.width - cornerRadius, arrowSize.height)];
+            // 画右上角圆弧
+            [path addArcWithCenter:CGPointMake(viewSize.width - cornerRadius, cornerRadius + arrowSize.height) radius:cornerRadius startAngle:1.5 * M_PI endAngle:0 clockwise:YES];
+            // 添加到右下角线
+            [path addLineToPoint:CGPointMake(viewSize.width , viewSize.height - cornerRadius)];
+            // 画右下角圆弧
+            [path addArcWithCenter:CGPointMake(viewSize.width - cornerRadius, viewSize.height - cornerRadius) radius:cornerRadius startAngle:0 endAngle:M_PI_2 clockwise:YES];
+            // 添加到右下角线
+            [path addLineToPoint:CGPointMake(cornerRadius, viewSize.height)];
+            // 画左下角圆弧
+            [path addArcWithCenter:CGPointMake(cornerRadius, viewSize.height - cornerRadius) radius:cornerRadius startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+            [path closePath];
             break;
         }
         case FDArrowDirection_Bottom:
         {
-            UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, viewSize.width, viewSize.height - arrowSize.height) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
-            
-            UIBezierPath *triangleRect = [UIBezierPath bezierPath];
-            [triangleRect moveToPoint:CGPointMake(arrowXOffset, viewSize.height - arrowSize.height)];
-            [triangleRect addLineToPoint:CGPointMake(arrowXOffset + arrowSize.width / 2.0f, viewSize.height)];
-            [triangleRect addLineToPoint:CGPointMake(arrowXOffset + arrowSize.width, viewSize.height - arrowSize.height)];
-            [triangleRect closePath];
-            
-            [path appendPath:roundedRect];
-            [path appendPath:triangleRect];
+            // 画左上角圆弧
+            [path addArcWithCenter:CGPointMake(cornerRadius, cornerRadius) radius:cornerRadius startAngle:M_PI endAngle:1.5 *M_PI clockwise:YES];
+            // 添加到右上角线
+            [path addLineToPoint:CGPointMake(viewSize.width - cornerRadius, 0)];
+            // 画右上角圆弧
+            [path addArcWithCenter:CGPointMake(viewSize.width - cornerRadius, cornerRadius) radius:cornerRadius startAngle:1.5 * M_PI endAngle:0 clockwise:YES];
+            // 添加到右下角线
+            [path addLineToPoint:CGPointMake(viewSize.width , viewSize.height - cornerRadius - arrowSize.height)];
+            // 画右下角圆弧
+            [path addArcWithCenter:CGPointMake(viewSize.width - cornerRadius, viewSize.height - cornerRadius - arrowSize.height) radius:cornerRadius startAngle:0 endAngle:M_PI_2 clockwise:YES];
+            // 添加到右下角线
+            [path addLineToPoint:CGPointMake(arrowCenterXOffset + arrowSize.width / 2.0f, viewSize.height - arrowSize.height)];
+            [path addLineToPoint:CGPointMake(arrowCenterXOffset , viewSize.height)];
+            [path addLineToPoint:CGPointMake(arrowCenterXOffset - arrowSize.width / 2.0f, viewSize.height - arrowSize.height)];
+            [path addLineToPoint:CGPointMake(cornerRadius, viewSize.height - arrowSize.height)];
+            // 画左下角圆弧
+            [path addArcWithCenter:CGPointMake(cornerRadius, viewSize.height - arrowSize.height - cornerRadius) radius:cornerRadius startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+            [path closePath];
             break;
         }
         case FDArrowDirection_Left:
         {
-            UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(arrowSize.width, 0, viewSize.width - arrowSize.width, viewSize.height) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
-            
-            UIBezierPath *triangleRect = [UIBezierPath bezierPath];
-            [triangleRect moveToPoint:CGPointMake(arrowSize.width, arrowYOffset)];
-            [triangleRect addLineToPoint:CGPointMake(0, arrowYOffset + arrowSize.height / 2.0f)];
-            [triangleRect addLineToPoint:CGPointMake(arrowSize.width, arrowYOffset + arrowSize.height)];
-            [triangleRect closePath];
-            
-            [path appendPath:roundedRect];
-            [path appendPath:triangleRect];
+            // 画左上角圆弧
+            [path addArcWithCenter:CGPointMake(arrowSize.width + cornerRadius, cornerRadius) radius:cornerRadius startAngle:M_PI endAngle:1.5 *M_PI clockwise:YES];
+            // 添加到右上角线
+            [path addLineToPoint:CGPointMake(viewSize.width - cornerRadius, 0)];
+            // 画右上角圆弧
+            [path addArcWithCenter:CGPointMake(viewSize.width - cornerRadius, cornerRadius) radius:cornerRadius startAngle:1.5 * M_PI endAngle:0 clockwise:YES];
+            // 添加到右下角线
+            [path addLineToPoint:CGPointMake(viewSize.width , viewSize.height - cornerRadius)];
+            // 画右下角圆弧
+            [path addArcWithCenter:CGPointMake(viewSize.width - cornerRadius, viewSize.height - cornerRadius) radius:cornerRadius startAngle:0 endAngle:M_PI_2 clockwise:YES];
+            // 添加到右下角线
+            [path addLineToPoint:CGPointMake(arrowSize.width + cornerRadius, viewSize.height)];
+            // 画左下角圆弧
+            [path addArcWithCenter:CGPointMake(arrowSize.width + cornerRadius, viewSize.height - cornerRadius) radius:cornerRadius startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+            // 添加到左箭头
+            [path addLineToPoint:CGPointMake(arrowSize.width, arrowCenterYOffset + arrowSize.height / 2.0f)];
+            [path addLineToPoint:CGPointMake(0 , arrowCenterYOffset)];
+            [path addLineToPoint:CGPointMake(arrowSize.width, arrowCenterYOffset - arrowSize.height / 2.0f)];
+            [path closePath];
             break;
         }
         case FDArrowDirection_Right:
         {
-            UIBezierPath *roundedRect = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, viewSize.width - arrowSize.width, viewSize.height) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
-            
-            UIBezierPath *triangleRect = [UIBezierPath bezierPath];
-            [triangleRect moveToPoint:CGPointMake(viewSize.width - arrowSize.width, arrowYOffset)];
-            [triangleRect addLineToPoint:CGPointMake(viewSize.width, arrowYOffset + arrowSize.height / 2.0f)];
-            [triangleRect addLineToPoint:CGPointMake(viewSize.width - arrowSize.width, arrowYOffset + arrowSize.height)];
-            [triangleRect closePath];
-            
-            [path appendPath:roundedRect];
-            [path appendPath:triangleRect];
+            // 画左上角圆弧
+            [path addArcWithCenter:CGPointMake(cornerRadius, cornerRadius) radius:cornerRadius startAngle:M_PI endAngle:1.5 *M_PI clockwise:YES];
+            // 添加到右上角线
+            [path addLineToPoint:CGPointMake(viewSize.width - cornerRadius - arrowSize.width, 0)];
+            // 画右上角圆弧
+            [path addArcWithCenter:CGPointMake(viewSize.width - cornerRadius - arrowSize.width, cornerRadius) radius:cornerRadius startAngle:1.5 * M_PI endAngle:0 clockwise:YES];
+            // 添加到右箭头
+            [path addLineToPoint:CGPointMake(viewSize.width - arrowSize.width, arrowCenterYOffset - arrowSize.height / 2.0f)];
+            [path addLineToPoint:CGPointMake(viewSize.width, arrowCenterYOffset)];
+            [path addLineToPoint:CGPointMake(viewSize.width - arrowSize.width, arrowCenterYOffset + arrowSize.height / 2.0f)];
+            [path addLineToPoint:CGPointMake(viewSize.width - arrowSize.width, viewSize.height - cornerRadius )];
+            // 画右下角圆弧
+            [path addArcWithCenter:CGPointMake(viewSize.width - arrowSize.width - cornerRadius, viewSize.height - cornerRadius) radius:cornerRadius startAngle:0 endAngle:M_PI_2 clockwise:YES];
+            // 添加到右下角线
+            [path addLineToPoint:CGPointMake(cornerRadius, viewSize.height)];
+            // 画左下角圆弧
+            [path addArcWithCenter:CGPointMake(cornerRadius, viewSize.height - cornerRadius) radius:cornerRadius startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+            [path closePath];
             break;
         }
         default:
@@ -456,15 +513,15 @@ CGFloat const gArrowTipsViewMarginOffset = 5; // 微调值
 
 #pragma mark - Setter or Getter
 
-- (void)setArrowCenterXOffset:(CGFloat)arrowCenterXOffset {
-    _arrowCenterXOffset = arrowCenterXOffset;
+- (void)setCustomBezierPath:(UIBezierPath *)customBezierPath {
+    _customBezierPath = customBezierPath;
     
     self.triangleLayer.path = nil;
-    self.triangleLayer.path = [self getTrianglePath].CGPath;
+    self.triangleLayer.path = customBezierPath.CGPath;
 }
 
-- (void)setArrowCenterYOffset:(CGFloat)arrowCenterYOffset {
-    _arrowCenterYOffset = arrowCenterYOffset;
+- (void)setArrowCenterOffset:(CGFloat)arrowCenterOffset {
+    _arrowCenterOffset = arrowCenterOffset;
     
     self.triangleLayer.path = nil;
     self.triangleLayer.path = [self getTrianglePath].CGPath;

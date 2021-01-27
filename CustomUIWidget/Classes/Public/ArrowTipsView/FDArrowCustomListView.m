@@ -7,7 +7,8 @@
 //
 
 #import "FDArrowCustomListView.h"
-#import "FDCustomUIWidgetDef.h"
+#import <Masonry/Masonry.h>
+#import "UIView+YYAdd.h"
 
 static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifier";
 
@@ -32,7 +33,7 @@ typedef NS_ENUM(NSInteger, FDArrowPopViewCellStyle) {
     if (self) {
         self.iconEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
         self.labelEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-        self.titleFont = FONT_REGULAR_WITH_SIZE(16);
+        self.titleFont = [UIFont systemFontOfSize:15];
         self.titleColor = [UIColor blackColor];
     }
     return self;
@@ -117,7 +118,7 @@ typedef NS_ENUM(NSInteger, FDArrowPopViewCellStyle) {
     self.titleLabel = ({
         UILabel *label = [[UILabel alloc] init];
         label.backgroundColor = [UIColor clearColor];
-        label.textColor = UIColorHex(333333);
+        label.textColor = [UIColor colorWithRed:51.0 / 255.0 green:51.0 / 255.0 blue:51.0 / 255.0 alpha:1.0f];;
         label.textAlignment = NSTextAlignmentLeft;
         label;
     });
@@ -176,7 +177,7 @@ typedef NS_ENUM(NSInteger, FDArrowPopViewCellStyle) {
 }
 
 - (void)dealloc {
-    LOGGO_INFO(@"");
+    NSLog(@"%s", __func__);
 }
 
 #pragma mark - Delegates

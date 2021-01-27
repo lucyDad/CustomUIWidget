@@ -17,6 +17,7 @@
 #import "FDUserInfoModel.h"
 #import "FDCollectionCellViewHelper.h"
 #import "CustomUIWidget.h"
+#import "UIImage+FRColor.h"
 
 static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifier";
 
@@ -286,32 +287,98 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
 
 #pragma mark - 箭头view2
 
+- (NSMutableAttributedString *)defaultArrowTipsViewAttributedString:(NSString *)text {
+    NSMutableAttributedString *attText = [[NSMutableAttributedString alloc] initWithString:text];
+    attText.yy_font = [UIFont fontWithName:@"PingFangSC-Regular" size:15];
+    attText.yy_color = [UIColor whiteColor];
+    attText.yy_alignment = NSTextAlignmentCenter;
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineSpacing = 4;
+    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    paragraphStyle.alignment = NSTextAlignmentLeft;
+    
+    [attText addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];
+    return attText;
+}
+
 - (void)testFunction2 {
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
     FDArrowTipsViewConfig *config = [FDArrowTipsViewConfig new];
-    config.contentCornerRadius = 10;
-    config.contentEdgeInsets = UIEdgeInsetsMake(8, 8, 8, 8);
-    config.originDirection = FDArrowDirection_Top;
-    config.gradientBackgroundLayer = [FDArrowTipsViewConfig gradientLayerWith:@[UIColorHex(FF8754), UIColorHex(FF2475)]];
-    config.arrowSize = CGSizeMake(6, 4);
-    config.isStartTimer = NO;
-    config.autoTimeOutClose = YES;
-    config.timeOutTime = 5;
-    config.animationTime = 0.0f;
-    config.autoAdjustPos = YES;
-    NSMutableAttributedString *attrText = [[NSMutableAttributedString alloc] initWithString:@"限时开放" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont systemFontOfSize:14]}];
-    attrText.yy_alignment = NSTextAlignmentCenter;
+    config.contentCornerRadius = 8;
+    config.contentEdgeInsets = UIEdgeInsetsMake(8, 12, 8, 12);
+    config.originDirection = FDArrowDirection_Right;
+    config.gradientBackgroundLayer = [FDArrowTipsViewConfig gradientLayerWith:@[[UIColor colorWithRed:66.0 / 255.0 green:61.0 / 255.0 blue:98.0 / 255.0 alpha:0.65], [UIColor colorWithRed:66.0 / 255.0 green:61.0 / 255.0 blue:98.0 / 255.0 alpha:0.65]]];
+    config.arrowSize = CGSizeMake(6, 12);
+
+    [self testCustomArrow:config];
+}
+
+- (UIBezierPath *)getTrianglePath:(CGSize)viewSize
+                     cornerRadius:(CGFloat)cornerRadius
+                        arrowSize:(CGSize)arrowSize {
+
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    // 画左上角圆弧
+    [path addArcWithCenter:CGPointMake(cornerRadius, cornerRadius) radius:cornerRadius startAngle:M_PI endAngle:1.5 *M_PI clockwise:YES];
+    // 添加到右上角线
+    [path addLineToPoint:CGPointMake(viewSize.width - cornerRadius - arrowSize.width, 0)];
+    // 画右上角圆弧
+    [path addArcWithCenter:CGPointMake(viewSize.width - cornerRadius - arrowSize.width, cornerRadius) radius:cornerRadius startAngle:1.5 * M_PI endAngle:0 clockwise:YES];
+    // 添加到右箭头
+    [path addLineToPoint:CGPointMake(viewSize.width - arrowSize.width, viewSize.height - cornerRadius)];
+    [path addLineToPoint:CGPointMake(viewSize.width, viewSize.height)];
+    [path addLineToPoint:CGPointMake(cornerRadius, viewSize.height)];
+    // 画左下角圆弧
+    [path addArcWithCenter:CGPointMake(cornerRadius, viewSize.height - cornerRadius) radius:cornerRadius startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+    [path closePath];
     
-    CGPoint point = CGPointMake(100, 80);
-//    [cell showArrowTipsViewWithConfig:config andText:attrText andRealSize:CGSizeMake(0, 0) andArrowPoint:point andActionBlock:^BOOL(FDArrowTipsView * _Nonnull arrowTipsView, FDArrowTipsViewActionType actionType) {
-//        NSLog(@"actionType = %ld", actionType);
-//        return YES;
-//    }];
+    return path;
+}
+
+- (void)testCustomArrow:(FDArrowTipsViewConfig *)config {
+    NSAttributedString *attrText = [[NSAttributedString alloc] initWithString:@"感兴趣的" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont systemFontOfSize:15]}];
     
-    [cell showArrowTipsBackgroundViewWithConfig:config andText:attrText andRealSize:CGSizeMake(0, 0) andArrowPoint:point andActionBlock:^BOOL(FDArrowTipsView * _Nonnull arrowTipsView, FDArrowTipsViewActionType actionType) {
+    FDArrowTipsView *arrowView = [self.view showArrowTipsViewWithConfig:config andText:attrText andRealSize:CGSizeMake(0, 0) andActionBlock:^void(FDArrowTipsView * _Nonnull arrowTipsView, FDArrowTipsViewActionType actionType) {
+        if ( actionType == FDArrowTipsViewActionTypeClick ) {
+            [arrowTipsView dismissTipsView:1.0f autoRemove:YES];
+        }
         NSLog(@"actionType = %ld", actionType);
-        return YES;
     }];
+    arrowView.left = 100;
+    arrowView.top = 200;
+    arrowView.customBezierPath = [self getTrianglePath:arrowView.size cornerRadius:[arrowView getCornerRadius] arrowSize:config.arrowSize];
+}
+
+- (void)testCustomView:(FDArrowTipsViewConfig *)config {
+    UILabel *titleLabel = ({
+        UILabel *label = [[UILabel alloc] init];
+        label.backgroundColor = [UIColor clearColor];
+        label.textColor = [UIColor whiteColor];
+        label.font = [UIFont systemFontOfSize:16];
+        label.textAlignment = NSTextAlignmentLeft;
+        label.numberOfLines = 0;
+        label.text = @"感兴趣的简简单单\n浮浮雷达继熬了副科级的\n奋达科技阿里肯德基";
+        [label sizeToFit];
+        label;
+    });
+    FDArrowTipsView *arrowView = [[FDArrowTipsView alloc] initWithFrame:CGRectZero andConfig:config andCustomView:titleLabel];
+    arrowView.left = 100;
+    arrowView.top = 200;
+    arrowView.actionBlock = ^void(FDArrowTipsView * _Nonnull arrowTipsView, FDArrowTipsViewActionType actionType) {
+        switch (actionType) {
+            case FDArrowTipsViewActionTypeClick:
+            {
+                [arrowTipsView dismissTipsView:1.0f autoRemove:YES];
+                break;
+            }
+            default:
+                break;
+        }
+        NSLog(@"actionType = %lu", (unsigned long)actionType);
+    };
+    [self.view addSubview:arrowView];
+    arrowView.arrowCenterOffset = 1000;
+    [arrowView startViewAnimation:1.0f];
 }
 
 #pragma mark - 自定义弹框1
