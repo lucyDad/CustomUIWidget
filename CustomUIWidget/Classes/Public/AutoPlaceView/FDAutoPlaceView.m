@@ -7,7 +7,7 @@
 
 #import "FDAutoPlaceView.h"
 #import <objc/runtime.h>
-#import <YYCategories/YYCategories.h>
+#import "UIView+YYAdd.h"
 
 @implementation NSObject(AutoPlacePositionInfo)
 
@@ -55,8 +55,8 @@
     self = [super init];
     if (self) {
         self.contentEdgeInsets = UIEdgeInsetsMake(5, 10, 5, 10);
-        self.contentRowInterval = 5;
-        self.contentColumnInterval = 5;
+        self.contentSingleViewInterval = 5;
+        self.contentEachLineInterval = 5;
     }
     return self;
 }
@@ -69,6 +69,8 @@
 }
 
 @property (nonatomic, strong) FDAutoPlaceViewConfig *config;
+
+@property (nonatomic, assign) CGFloat  maxWidth;
 
 @end
 
@@ -104,8 +106,10 @@
 #pragma mark - Life Cycle
 
 - (instancetype)initWithMaxWidth:(CGFloat)maxWidth andConfig:(FDAutoPlaceViewConfig *)config views:(nullable NSArray<UIView *> *)views {
+    maxWidth = ( 0 != maxWidth ? maxWidth : [UIScreen mainScreen].bounds.size.width);
     self = [super initWithFrame:CGRectMake(0, 0, maxWidth, 0)];
     if (self) {
+        self.maxWidth = maxWidth;
         self.config = config;
         self.placeViews = views;
     }
@@ -127,7 +131,7 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    return [self initWithMaxWidth:(frame.size.width ? frame.size.width : [UIScreen mainScreen].bounds.size.width) andConfig:[FDAutoPlaceViewConfig new] views:nil];
+    return [self initWithMaxWidth:frame.size.width andConfig:[FDAutoPlaceViewConfig new] views:nil];
 }
 
 - (void)dealloc {
@@ -141,9 +145,11 @@
 - (void)reloadUI {
     [self removeAllSubviews];
     
-    CGFloat contentMaxWidth = self.width - self.config.contentEdgeInsets.left - self.config.contentEdgeInsets.right;   // 每行的最大显示宽度
+    CGFloat contentMaxWidth = self.maxWidth - self.config.contentEdgeInsets.left - self.config.contentEdgeInsets.right;   // 每行的最大显示宽度
     __block CGFloat placeViewY = self.config.contentEdgeInsets.top;
-    NSArray<NSNumber *> *heights = [FDAutoPlaceView heightsOfAutoPlaceView:self.width config:self.config views:self.placeViews];
+    NSArray<NSNumber *> *heights = [FDAutoPlaceView heightsOfAutoPlaceView:self.maxWidth config:self.config views:self.placeViews];
+    
+    __block CGFloat recordMaxWidth = 0.0f;
     [heights enumerateObjectsUsingBlock:^(NSNumber * _Nonnull rowHeight, NSUInteger rowIdx, BOOL * _Nonnull stop) {
         
         CGFloat centerY = [rowHeight floatValue] / 2.0f;
@@ -158,14 +164,26 @@
             
             [self addSubview:placeView];
             
-            placeViewX = CGRectGetMaxX(placeView.frame) + placeView.placeViewRightMargin + self.config.contentRowInterval;
+            placeViewX = CGRectGetMaxX(placeView.frame) + placeView.placeViewRightMargin + self.config.contentSingleViewInterval;
         }];
         
-        placeViewY += [rowHeight floatValue] + self.config.contentColumnInterval;
+        placeViewY += [rowHeight floatValue] + self.config.contentEachLineInterval;
+        
+        if (placeViewX + self.config.contentEdgeInsets.right > recordMaxWidth) {
+            recordMaxWidth = placeViewX + self.config.contentEdgeInsets.right;
+        }
     }];
     
     CGFloat viewHeight = placeViewY + self.config.contentEdgeInsets.bottom;
     self.height = viewHeight;
+    
+    if (self.config.isAutoUpdateWidth) {
+        self.width = recordMaxWidth;
+    } else {
+        self.width = self.maxWidth;
+    }
+    
+    NSLog(@"hexiang size = %@", NSStringFromCGSize((CGSize){recordMaxWidth, viewHeight}));
 }
 
 + (CGFloat)allHeightOfAutoPlaceView:(CGFloat)maxWidth
@@ -175,7 +193,7 @@
     __block CGFloat placeViewY = config.contentEdgeInsets.top;
     NSArray<NSNumber *> *heights = [FDAutoPlaceView heightsOfAutoPlaceView:maxWidth config:config views:views];
     [heights enumerateObjectsUsingBlock:^(NSNumber * _Nonnull rowHeight, NSUInteger rowIdx, BOOL * _Nonnull stop) {
-        placeViewY += [rowHeight floatValue] + config.contentColumnInterval;
+        placeViewY += [rowHeight floatValue] + config.contentEachLineInterval;
     }];
     
     CGFloat viewHeight = placeViewY + config.contentEdgeInsets.bottom;
@@ -192,7 +210,7 @@
     }
 
     CGFloat contentMaxWidth = maxWidth - config.contentEdgeInsets.left - config.contentEdgeInsets.right;   // 每行的最大显示宽度
-    CGFloat rowInterval = config.contentRowInterval;    // 每行内的间距
+    CGFloat rowInterval = config.contentSingleViewInterval;    // 每行内的间距
     __block NSMutableArray *arrHeight = [NSMutableArray array]; // 记录每行的高度列表
     __block NSInteger row = 1;  // 记录总的行数
     __block CGFloat leftWidth = contentMaxWidth;    // 初始剩余的宽度

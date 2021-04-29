@@ -20,6 +20,7 @@
 #import "UIImage+FRColor.h"
 
 static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifier";
+static NSInteger const kTagForShowView = 1111;
 
 @interface FDViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
@@ -143,6 +144,62 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
     return flagViews;
 }
 
+#pragma mark - 渐变边框view8
+
+- (void)testFunction8 {
+    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
+    
+    FDGradientBorderView *borderView = ({
+        FDGradientBorderView *view = [FDGradientBorderView new];
+        view.lineWidth = 20;
+        view.cornerRadius = 20;
+        view.tag = kTagForShowView;
+        view;
+    });
+    [self.view addSubview:borderView];
+    UIView *superView = self.view;
+    [borderView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(superView).offset(200);
+        make.bottom.equalTo(superView).offset(-200);
+        make.left.equalTo(superView).offset(100);
+        make.right.equalTo(superView).offset(-100);
+    }];
+}
+
+#pragma mark - 花瓣形状view7
+
+- (void)testFunction7 {
+    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
+    NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"视频审核状态：未审核--->不通过：删除，这个要发通知吗？【现在是没有发】不通过：删除--->通过A、过B，这个要发通知吗？【现在是发了" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont systemFontOfSize:16]}];
+
+    UILabel *titleLabel = ({
+        UILabel *label = [[UILabel alloc] init];
+        label.backgroundColor = [UIColor clearColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.numberOfLines = 0;
+        label.attributedText = attrString;
+        label;
+    });
+
+    CGFloat maxWidth = 200;//[UIScreen mainScreen].bounds.size.width - config.contentEdgeInsets.left - config.contentEdgeInsets.right;
+    CGSize size = [titleLabel sizeThatFits:CGSizeMake(maxWidth, CGFLOAT_MAX)];
+    titleLabel.size = size;
+
+    FDFlowerContainerViewConfig *config = [FDFlowerContainerViewConfig new];
+    CGFloat radius = size.height / 2.0f;
+    config.contentEdgeInsets = UIEdgeInsetsMake(radius, radius, radius, radius);
+    config.isOval = YES;
+    config.gradientBackgroundLayer = [FDFlowerContainerViewConfig gradientLayerWith:@[[UIColor redColor], [UIColor greenColor]] startPoint:CGPointZero endPoint:CGPointMake(1, 0)];
+    
+    FDFlowerContainerView *view = [[FDFlowerContainerView alloc] initWithConfig:config customView:titleLabel];
+
+    view.tag = kTagForShowView;
+    view.left = 50;
+    view.top = 100;
+    [self.view addSubview:view];
+}
+
+
 #pragma mark - 单行自动缩放view6
 
 - (void)testFunction6 {
@@ -161,7 +218,7 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
         label.flexibleLayoutViewMinWidthLimit = 30;
         label;
     });
-    [[self.view viewWithTag:9999] removeFromSuperview];
+    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
 
     FDFlexibleLayoutView *layoutView = [FDFlexibleLayoutView new];
     layoutView.backgroundColor = [UIColor redColor];
@@ -171,7 +228,7 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
     layoutView.adjustView = titleLabel;
     layoutView.fixedViews = [self generateViews];
     [layoutView reloadUI];
-    layoutView.tag = 9999;
+    layoutView.tag = kTagForShowView;
     [self.view addSubview:layoutView];
 }
 
@@ -260,11 +317,13 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
 #pragma mark - 自动换行排列view3
 
 - (void)testFunction3 {
-    CGFloat maxWidth = kScreenWidth;
+    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
+    CGFloat maxWidth = 300;
     FDAutoPlaceViewConfig *config = [FDAutoPlaceViewConfig new];
-    config.contentEdgeInsets = UIEdgeInsetsMake(30, 5, 50, 20);
-    config.contentRowInterval = 10;
-    config.contentColumnInterval = 10;
+    config.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 20);
+    config.contentSingleViewInterval = 5;
+    config.contentEachLineInterval = 5;
+    config.isAutoUpdateWidth = YES;
     FDAutoPlaceView *placeView = [[FDAutoPlaceView alloc] initWithMaxWidth:maxWidth andConfig:config];
     placeView.left = 0;
     placeView.top = 80;
@@ -282,7 +341,10 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
         [placeView removeFromSuperview];
     }];
     [placeView addGestureRecognizer:tapGes];
+    
+    placeView.tag = kTagForShowView;
     [self.view addSubview:placeView];
+    placeView.centerX = self.view.width / 2.0f;
 }
 
 #pragma mark - 箭头view2
@@ -481,7 +543,7 @@ static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifie
 - (NSArray *)arrData {
     if (!_arrData) {
         _arrData = ({
-            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4", @"长按拖动view5", @"单行自动缩放view6"];
+            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4", @"长按拖动view5", @"单行自动缩放view6", @"花瓣形状view7", @"渐变边框view8"];
             view;
         });
     }

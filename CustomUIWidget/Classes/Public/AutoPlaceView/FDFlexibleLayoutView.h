@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, FlexibleLayoutYType) {
 @property (nonatomic, assign) CGFloat  flexibleLayoutViewRightMargin;    // 单个view距离右边的距离
 @property (nonatomic, assign) FlexibleLayoutYType  flexibleLayoutViewYType; // 单个view y轴的位置
 
-@property (nonatomic, assign) CGFloat  flexibleLayoutViewMinWidthLimit;
+@property (nonatomic, assign) CGFloat  flexibleLayoutViewMinWidthLimit; // 针对adjustView可伸缩view的最小缩短宽度
 
 @end
 

@@ -13,8 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FDAutoPlaceViewConfig : NSObject
 
 @property (nonatomic, assign) UIEdgeInsets  contentEdgeInsets;  // 整个view的内容偏移(默认(5, 10, 5, 10))
-@property (nonatomic, assign) CGFloat  contentRowInterval;      // 内容每行中view之间的间距
-@property (nonatomic, assign) CGFloat  contentColumnInterval;   // 内容每行之间的间距
+@property (nonatomic, assign) CGFloat  contentSingleViewInterval;      // 内容每行中view之间的间距
+@property (nonatomic, assign) CGFloat  contentEachLineInterval;   // 内容每行之间的间距
+
+@property (nonatomic, assign) BOOL  isAutoUpdateWidth; // 是否自动更新宽
 
 @end
 

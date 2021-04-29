@@ -24,6 +24,8 @@
 #import <CustomUIWidget/FDMarqueeView.h>
 #import <CustomUIWidget/FDFlexibleLayoutView.h>
 #import <CustomUIWidget/UIView+LongPressDrag.h>
+#import <CustomUIWidget/FDFlowerContainerView.h>
+#import <CustomUIWidget/FDGradientBorderView.h>
 
 #else
 
@@ -41,6 +43,8 @@
 #import "FDMarqueeView.h"
 #import "FDFlexibleLayoutView.h"
 #import "UIView+LongPressDrag.h"
+#import "FDFlowerContainerView.h"
+#import "FDGradientBorderView.h"
 
 #endif
 

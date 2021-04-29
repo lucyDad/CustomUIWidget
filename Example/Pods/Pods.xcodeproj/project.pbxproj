@@ -245,6 +245,10 @@
 		BF7CAB0225567F2900A43DFF /* CustomUIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF85E25C258373190099AD4F /* UIView+LongPressDrag.h in Headers */ = {isa = PBXBuildFile; fileRef = BF85E25A258373190099AD4F /* UIView+LongPressDrag.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF85E25D258373190099AD4F /* UIView+LongPressDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = BF85E25B258373190099AD4F /* UIView+LongPressDrag.m */; };
+		BF8D48E72637E67E00E95702 /* FDGradientBorderView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF8D48E52637E67E00E95702 /* FDGradientBorderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF8D48E82637E67E00E95702 /* FDGradientBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8D48E62637E67E00E95702 /* FDGradientBorderView.m */; };
+		BFC19ABC2601FBF100358C5C /* FDFlowerContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = BFC19ABA2601FBF100358C5C /* FDFlowerContainerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFC19ABD2601FBF100358C5C /* FDFlowerContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC19ABB2601FBF100358C5C /* FDFlowerContainerView.m */; };
 		BFCE0E0725A40A80008A35B9 /* FDFlexibleLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = BFCE0E0525A40A80008A35B9 /* FDFlexibleLayoutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BFCE0E0825A40A80008A35B9 /* FDFlexibleLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCE0E0625A40A80008A35B9 /* FDFlexibleLayoutView.m */; };
 		BFE890A1BE34A5352D0DEB87FDD02A5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4061ECE5582EDBB1EF06CA29F25409 /* Foundation.framework */; };
@@ -674,6 +678,10 @@
 		BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUIWidget.h; sourceTree = "<group>"; };
 		BF85E25A258373190099AD4F /* UIView+LongPressDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LongPressDrag.h"; sourceTree = "<group>"; };
 		BF85E25B258373190099AD4F /* UIView+LongPressDrag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LongPressDrag.m"; sourceTree = "<group>"; };
+		BF8D48E52637E67E00E95702 /* FDGradientBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDGradientBorderView.h; sourceTree = "<group>"; };
+		BF8D48E62637E67E00E95702 /* FDGradientBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDGradientBorderView.m; sourceTree = "<group>"; };
+		BFC19ABA2601FBF100358C5C /* FDFlowerContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDFlowerContainerView.h; sourceTree = "<group>"; };
+		BFC19ABB2601FBF100358C5C /* FDFlowerContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDFlowerContainerView.m; sourceTree = "<group>"; };
 		BFCE0E0525A40A80008A35B9 /* FDFlexibleLayoutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDFlexibleLayoutView.h; sourceTree = "<group>"; };
 		BFCE0E0625A40A80008A35B9 /* FDFlexibleLayoutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDFlexibleLayoutView.m; sourceTree = "<group>"; };
 		C06331710B9D27385A7D692CFB75C12C /* YYClassInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYClassInfo.m; path = YYModel/YYClassInfo.m; sourceTree = "<group>"; };
@@ -961,6 +969,8 @@
 				EE3200A2A7A8C434FCBD1182A44B23AC /* FDArrowTipsView.m */,
 				4215F825C2B04ED19635BF74E4E5723A /* UIView+ArrowTipsView.h */,
 				1EF73D26ED7315DE1308F9357549E61C /* UIView+ArrowTipsView.m */,
+				BFC19ABA2601FBF100358C5C /* FDFlowerContainerView.h */,
+				BFC19ABB2601FBF100358C5C /* FDFlowerContainerView.m */,
 			);
 			path = ArrowTipsView;
 			sourceTree = "<group>";
@@ -1247,6 +1257,7 @@
 			isa = PBXGroup;
 			children = (
 				BF8EB1E72581D97400FDFBDE /* Tools */,
+				BF8D48E42637E64A00E95702 /* GradientView */,
 				BF7CAB0025567F2900A43DFF /* CustomUIWidget */,
 				51D2F79473454CFF587DA2E884F9EADE /* AlertView */,
 				27562583621D3DB2FBA0E986E13FE30A /* AnimationManagerView */,
@@ -1505,6 +1516,15 @@
 				BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */,
 			);
 			path = CustomUIWidget;
+			sourceTree = "<group>";
+		};
+		BF8D48E42637E64A00E95702 /* GradientView */ = {
+			isa = PBXGroup;
+			children = (
+				BF8D48E52637E67E00E95702 /* FDGradientBorderView.h */,
+				BF8D48E62637E67E00E95702 /* FDGradientBorderView.m */,
+			);
+			path = GradientView;
 			sourceTree = "<group>";
 		};
 		BF8EB1E72581D97400FDFBDE /* Tools */ = {
@@ -1818,6 +1838,8 @@
 				BF85E25C258373190099AD4F /* UIView+LongPressDrag.h in Headers */,
 				55C5E5651CA7463A5566143CA5427323 /* UIImage+FRColor.h in Headers */,
 				BFCE0E0725A40A80008A35B9 /* FDFlexibleLayoutView.h in Headers */,
+				BFC19ABC2601FBF100358C5C /* FDFlowerContainerView.h in Headers */,
+				BF8D48E72637E67E00E95702 /* FDGradientBorderView.h in Headers */,
 				1235D419FA91F8A8D3044D493062CB5B /* UIView+ArrowTipsView.h in Headers */,
 				2EB0CA1E25843F52758600DE1922CFE8 /* UIView+FDAlertView.h in Headers */,
 			);
@@ -2239,6 +2261,7 @@
 				ED4EFCFE4FDA59E205A64FE1088B5610 /* FDAnimationManagerView.m in Sources */,
 				2737CF393FD2E7F1560EF6D90D7EF4F4 /* FDArrowCustomListView.m in Sources */,
 				67C4BAC89EE131A030442608B649080B /* FDArrowTipsView.m in Sources */,
+				BF8D48E82637E67E00E95702 /* FDGradientBorderView.m in Sources */,
 				372CB34E7C5767B37157EF799280F97C /* FDAutoPlaceView.m in Sources */,
 				80BDB0C238F4BFF57221153E24DC0CC5 /* FDCollectionCellView.m in Sources */,
 				662C84C4412DAC5C050FC48C2B477489 /* FDCollectionCellViewHelper.m in Sources */,
@@ -2247,6 +2270,7 @@
 				8C0680C01BFA76050D333DB9E8B10278 /* FDCommonAlertView.m in Sources */,
 				C39D3B70AC51CD2E25D1E81D198904B6 /* FDCommonButtonView.m in Sources */,
 				ADC81014FB6433E5354982B11AE7D0C4 /* FDMarqueeView.m in Sources */,
+				BFC19ABD2601FBF100358C5C /* FDFlowerContainerView.m in Sources */,
 				2B780EE7943A107AB4667D542564E76A /* UIImage+FRColor.m in Sources */,
 				292E4FE8CDC8E6049ED944399F809758 /* UIView+ArrowTipsView.m in Sources */,
 				063854B50C5D23DB60BD5C54B4F57FB7 /* UIView+FDAlertView.m in Sources */,

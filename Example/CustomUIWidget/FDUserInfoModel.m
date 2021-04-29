@@ -91,7 +91,8 @@
         button;
     });
     
-    [arrViews addObjectsFromArray:@[titleLabel, genderImageView, guardkingButton, guardImageView, vipImageView, charmButton]];
+    //[arrViews addObjectsFromArray:@[titleLabel, genderImageView, guardkingButton, guardImageView, vipImageView, charmButton]];
+    [arrViews addObjectsFromArray:@[titleLabel, genderImageView, guardImageView, vipImageView, charmButton]];
     [self.medalInfos enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UILabel *label = [[UILabel alloc] init];
         label.backgroundColor = [UIColor clearColor];
@@ -101,7 +102,7 @@
         label.text = obj;
         [label sizeToFit];
         
-        [arrViews addObject:label];
+        //[arrViews addObject:label];
     }];
     
     UILabel *contentLabel = ({
@@ -115,7 +116,7 @@
         label.width = kScreenWidth;  // 需要独占一行
         label;
     });
-    [arrViews addObject:contentLabel];
+    //[arrViews addObject:contentLabel];
     
     self.autoPlaceViews = arrViews;
     return self.autoPlaceViews;
