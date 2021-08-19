@@ -182,8 +182,6 @@
     } else {
         self.width = self.maxWidth;
     }
-    
-    NSLog(@"hexiang size = %@", NSStringFromCGSize((CGSize){recordMaxWidth, viewHeight}));
 }
 
 + (CGFloat)allHeightOfAutoPlaceView:(CGFloat)maxWidth
@@ -243,12 +241,12 @@
         // 为每个view挂载计算好的信息
         placeView.rowForAutoPlaceView = row;
         
-        NSLog(@"FDAutoPlaceView>>>row = %zd leftWidth = %f, maxHeight = %f", row, leftWidth, maxHeight);
+        //NSLog(@"FDAutoPlaceView>>>row = %zd leftWidth = %f, maxHeight = %f", row, leftWidth, maxHeight);
     }];
     
     CFTimeInterval endTime = CACurrentMediaTime();
     CFTimeInterval consumingTime = endTime - startTime;
-    NSLog(@"FDAutoPlaceView>>>%@, row = %zd arrHeight = %@", @(consumingTime), row, arrHeight);
+    //NSLog(@"FDAutoPlaceView>>>%@, row = %zd arrHeight = %@", @(consumingTime), row, arrHeight);
     return arrHeight;
 }
 

@@ -51,26 +51,32 @@
                          andRealSize:(CGSize)realSize {
 
     YYTextContainer *container = [YYTextContainer containerWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) insets:UIEdgeInsetsZero];
+    container.maximumNumberOfRows = 10;
     YYTextLayout *layout = [YYTextLayout layoutWithContainer:container text:attrText];
-
     // 如果给定的容器大小太小才会根据文本自适应
     CGSize containerSize = [self getLabelContainerSize:config realSize:realSize];
     CGFloat equalValue = 0.0f;
     CGSize caculateSize = containerSize;
+    CGSize layoutSize = layout.textBoundingSize;
     if (containerSize.width == equalValue || containerSize.height == equalValue) {
         if (containerSize.width == equalValue && containerSize.height == equalValue ) {
-            caculateSize = layout.textBoundingRect.size;
+            caculateSize = layoutSize;
         } else if (containerSize.width == equalValue ) {
-            caculateSize = CGSizeMake(layout.textBoundingRect.size.width, containerSize.height);
+            caculateSize = CGSizeMake(layoutSize.width, containerSize.height);
         } else if (containerSize.height == equalValue ) {
-            caculateSize = CGSizeMake(containerSize.width, layout.textBoundingRect.size.height);
+            caculateSize = CGSizeMake(containerSize.width, layoutSize.height);
         }
     }
     // 创建Label
     YYLabel *label = [[YYLabel alloc] initWithFrame:CGRectMake(0, 0, caculateSize.width, caculateSize.height)];
+    label.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width;
     label.displaysAsynchronously = NO;
     label.fadeOnAsynchronouslyDisplay = NO;
     label.fadeOnHighlight = NO;
+    label.numberOfLines = 0;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textVerticalAlignment = YYTextVerticalAlignmentCenter;
+    label.lineBreakMode = NSLineBreakByClipping;
     label.textLayout = layout;
     return label;
 }

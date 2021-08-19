@@ -121,25 +121,25 @@ static NSInteger const kTagForShowView = 1111;
         [flagViews addObject:timeLabel];
     }
     
-    matchmakerImageView.flexibleLayoutViewLeftMargin = 5;
-    matchmakerImageView.flexibleLayoutViewRightMargin = 5;
-    matchmakerImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
-    
-    vipImageView.flexibleLayoutViewLeftMargin = 5;
-    vipImageView.flexibleLayoutViewRightMargin = 5;
-    vipImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
-    
-    sexImageView.flexibleLayoutViewLeftMargin = 5;
-    sexImageView.flexibleLayoutViewRightMargin = 5;
-    sexImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
-    
-    addressView.flexibleLayoutViewLeftMargin = 5;
-    addressView.flexibleLayoutViewRightMargin = 5;
-    addressView.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
-    
-    timeLabel.flexibleLayoutViewLeftMargin = 2;
-    timeLabel.flexibleLayoutViewRightMargin = 2;
-    timeLabel.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
+//    matchmakerImageView.flexibleLayoutViewLeftMargin = 5;
+//    matchmakerImageView.flexibleLayoutViewRightMargin = 5;
+//    //matchmakerImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
+//
+//    vipImageView.flexibleLayoutViewLeftMargin = 5;
+//    vipImageView.flexibleLayoutViewRightMargin = 5;
+//    //vipImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
+//
+//    sexImageView.flexibleLayoutViewLeftMargin = 5;
+//    sexImageView.flexibleLayoutViewRightMargin = 5;
+//    //sexImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
+//
+//    addressView.flexibleLayoutViewLeftMargin = 5;
+//    addressView.flexibleLayoutViewRightMargin = 5;
+//    //addressView.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
+//
+//    timeLabel.flexibleLayoutViewLeftMargin = 2;
+//    timeLabel.flexibleLayoutViewRightMargin = 2;
+//    //timeLabel.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
     
     return flagViews;
 }
@@ -170,6 +170,7 @@ static NSInteger const kTagForShowView = 1111;
 
 - (void)testFunction7 {
     [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
+    
     NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"视频审核状态：未审核--->不通过：删除，这个要发通知吗？【现在是没有发】不通过：删除--->通过A、过B，这个要发通知吗？【现在是发了" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont systemFontOfSize:16]}];
 
     UILabel *titleLabel = ({
@@ -203,6 +204,8 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 单行自动缩放view6
 
 - (void)testFunction6 {
+    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
+    
     CGSize size = CGSizeMake(300, 80);
     UILabel *titleLabel = ({
         UILabel *label = [[UILabel alloc] init];
@@ -212,13 +215,12 @@ static NSInteger const kTagForShowView = 1111;
         label.textAlignment = NSTextAlignmentLeft;
         label.text = @"红娘真心宝贝";
         [label sizeToFit];
-        label.flexibleLayoutViewLeftMargin = 10;
-        label.flexibleLayoutViewRightMargin = 5;
-        label.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
+        //label.flexibleLayoutViewLeftMargin = 10;
+        label.flexibleLayoutViewRightMargin = 15;
+        //label.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
         label.flexibleLayoutViewMinWidthLimit = 30;
         label;
     });
-    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
 
     FDFlexibleLayoutView *layoutView = [FDFlexibleLayoutView new];
     layoutView.backgroundColor = [UIColor redColor];
@@ -230,11 +232,24 @@ static NSInteger const kTagForShowView = 1111;
     [layoutView reloadUI];
     layoutView.tag = kTagForShowView;
     [self.view addSubview:layoutView];
+    
+    __block MASConstraint *sizeConstraint = nil;
+    UIView *superView = self.view;
+    [layoutView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(superView).offset(200);
+        make.left.equalTo(superView).offset(100);
+        sizeConstraint = make.size.mas_equalTo(size);
+    }];
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+        [sizeConstraint setSizeOffset:CGSizeMake(350, 50)];
+    }];
+    [layoutView addGestureRecognizer:tapGes];
 }
 
 #pragma mark - 长按拖动view5
 
 - (void)testFunction5 {
+    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
     // 示例一: UIView
     UILabel *titleLabel = ({
         UILabel *label = [[UILabel alloc] init];
@@ -248,8 +263,11 @@ static NSInteger const kTagForShowView = 1111;
     [self.view addSubview:titleLabel];
     titleLabel.longPressDragEdgeInsets = UIEdgeInsetsMake([UIApplication sharedApplication].statusBarFrame.size.height + self.navigationController.navigationBar.height + 10, 10, 40, 10);
     [titleLabel addLongPressDragGestureRecognizer];
+    titleLabel.tag = kTagForShowView;
     
     // 示例二: UIWindow
+    _tmpWindow = nil;
+    
     UIWindow *view = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
     view.backgroundColor = [UIColor redColor];
     view.windowLevel = UIWindowLevelAlert + 10;
@@ -270,6 +288,8 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 格子view4
 
 - (void)testFunction4 {
+    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
+    
     FDCollectionCellViewHelperConfig *config = [FDCollectionCellViewHelperConfig new];
     config.maxWidth = 300;
     config.titleColor = [UIColor redColor];
@@ -312,12 +332,15 @@ static NSInteger const kTagForShowView = 1111;
         //[self.cellHelper.cellView removeFromSuperview];
     };
     [self.view addSubview:self.cellHelper.cellView];
+    
+    self.cellHelper.cellView.tag = kTagForShowView;
 }
 
 #pragma mark - 自动换行排列view3
 
 - (void)testFunction3 {
     [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
+    
     CGFloat maxWidth = 300;
     FDAutoPlaceViewConfig *config = [FDAutoPlaceViewConfig new];
     config.contentEdgeInsets = UIEdgeInsetsMake(5, 5, 5, 20);
@@ -349,6 +372,39 @@ static NSInteger const kTagForShowView = 1111;
 
 #pragma mark - 箭头view2
 
+- (void)testFunction2 {
+    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
+    
+    FDArrowTipsViewConfig *config = [FDArrowTipsViewConfig new];
+    config.contentCornerRadius = 8;
+    config.contentEdgeInsets = UIEdgeInsetsMake(8, 12, 8, 12);
+    config.originDirection = FDArrowDirection_Right;
+    config.gradientBackgroundLayer = [FDArrowTipsViewConfig gradientLayerWith:@[[UIColor colorWithRed:66.0 / 255.0 green:61.0 / 255.0 blue:98.0 / 255.0 alpha:0.65], [UIColor colorWithRed:66.0 / 255.0 green:61.0 / 255.0 blue:98.0 / 255.0 alpha:0.65]]];
+    config.arrowSize = CGSizeMake(6, 12);
+
+    NSInteger i = 1;
+    switch (i) {
+        case 0:
+        {
+            [self testCustomArrow:config];
+            break;
+        }
+        case 1:
+        {
+            [self testDefaultCustomView:config];
+            break;
+        }
+        case 2:
+        {
+            [self testCustomView:config];
+            break;
+        }
+        default:
+            break;
+    }
+    
+}
+
 - (NSMutableAttributedString *)defaultArrowTipsViewAttributedString:(NSString *)text {
     NSMutableAttributedString *attText = [[NSMutableAttributedString alloc] initWithString:text];
     attText.yy_font = [UIFont fontWithName:@"PingFangSC-Regular" size:15];
@@ -358,21 +414,11 @@ static NSInteger const kTagForShowView = 1111;
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineSpacing = 4;
     paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
-    paragraphStyle.alignment = NSTextAlignmentLeft;
-    
-    [attText addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+
+//    [attText addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, text.length)];
+    attText.yy_paragraphStyle = paragraphStyle;
     return attText;
-}
-
-- (void)testFunction2 {
-    FDArrowTipsViewConfig *config = [FDArrowTipsViewConfig new];
-    config.contentCornerRadius = 8;
-    config.contentEdgeInsets = UIEdgeInsetsMake(8, 12, 8, 12);
-    config.originDirection = FDArrowDirection_Right;
-    config.gradientBackgroundLayer = [FDArrowTipsViewConfig gradientLayerWith:@[[UIColor colorWithRed:66.0 / 255.0 green:61.0 / 255.0 blue:98.0 / 255.0 alpha:0.65], [UIColor colorWithRed:66.0 / 255.0 green:61.0 / 255.0 blue:98.0 / 255.0 alpha:0.65]]];
-    config.arrowSize = CGSizeMake(6, 12);
-
-    [self testCustomArrow:config];
 }
 
 - (UIBezierPath *)getTrianglePath:(CGSize)viewSize
@@ -409,6 +455,7 @@ static NSInteger const kTagForShowView = 1111;
     arrowView.left = 100;
     arrowView.top = 200;
     arrowView.customBezierPath = [self getTrianglePath:arrowView.size cornerRadius:[arrowView getCornerRadius] arrowSize:config.arrowSize];
+    arrowView.tag = kTagForShowView;
 }
 
 - (void)testCustomView:(FDArrowTipsViewConfig *)config {
@@ -417,9 +464,9 @@ static NSInteger const kTagForShowView = 1111;
         label.backgroundColor = [UIColor clearColor];
         label.textColor = [UIColor whiteColor];
         label.font = [UIFont systemFontOfSize:16];
-        label.textAlignment = NSTextAlignmentLeft;
+        label.textAlignment = NSTextAlignmentCenter;
         label.numberOfLines = 0;
-        label.text = @"感兴趣的简简单单\n浮浮雷达继熬了副科级的\n奋达科技阿里肯德基";
+        label.text = @"简简单单\n浮浮雷达继熬了副科级的\n奋达科技阿里肯德基";
         [label sizeToFit];
         label;
     });
@@ -441,11 +488,24 @@ static NSInteger const kTagForShowView = 1111;
     [self.view addSubview:arrowView];
     arrowView.arrowCenterOffset = 1000;
     [arrowView startViewAnimation:1.0f];
+    arrowView.tag = kTagForShowView;
+}
+
+- (void)testDefaultCustomView:(FDArrowTipsViewConfig *)config {
+
+    FDArrowTipsView *arrowView = [self.view showArrowTipsViewWithConfig:config andText:[self defaultArrowTipsViewAttributedString:@"简简单单\n浮浮雷达继熬了副科级的\n奋达科技阿里肯德基"] andRealSize:CGSizeZero andActionBlock:^(FDArrowTipsView * _Nonnull arrowTipsView, FDArrowTipsViewActionType actionType) {
+        NSLog(@"actionType = %lu", (unsigned long)actionType);
+    }];
+    arrowView.left = 100;
+    arrowView.top = 200;
+    arrowView.tag = kTagForShowView;
 }
 
 #pragma mark - 自定义弹框1
 
 - (void)testFunction1 {
+    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
+    
     FDCommonAlertViewConfig *config = [FDCommonAlertViewConfig new];
     config.content = @"优秀的第三方包管理工具";
     [self.view showFDAlertViewWithConfig:config customView:nil clickBlock:^(FDAlertViewClickType clickType) {
@@ -458,6 +518,8 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 自定义跑马灯0
 
 - (void)testFunction0 {
+    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
+    
     CGFloat allWidth = self.view.bounds.size.width;
     CGFloat contentViewHeight = 300;
     FDMarqueeViewConfig *config = [FDMarqueeViewConfig new];
@@ -486,6 +548,8 @@ static NSInteger const kTagForShowView = 1111;
         [fdMarqueeView removeFromSuperview];
     };
     [view startMarquee];
+    
+    view.tag = kTagForShowView;
 }
 
 #pragma mark - Delegates

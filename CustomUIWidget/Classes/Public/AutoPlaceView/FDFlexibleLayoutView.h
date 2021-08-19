@@ -10,9 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, FlexibleLayoutYType) {
+    FlexibleLayoutYTypeCenter,
     FlexibleLayoutYTypeTop,
     FlexibleLayoutYTypeBottom,
-    FlexibleLayoutYTypeCenter,
 };
 
 @interface UIView(FlexibleLayoutViewInfo)

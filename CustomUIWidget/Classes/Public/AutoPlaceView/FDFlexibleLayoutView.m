@@ -7,15 +7,18 @@
 
 #import "FDFlexibleLayoutView.h"
 #import <objc/runtime.h>
-#import <YYCategories/YYCategories.h>
 
 @interface UIView()
 
-@property (nonatomic, assign, getter=isFlexibleLayoutViewSelect) BOOL  flexibleLayoutViewSelect;
+@property (nonatomic, assign, getter=isFlexibleLayoutViewSelect) BOOL  flexibleLayoutViewSelect; // 每个view标记是否展示
+
+@property (nonatomic, assign, getter=isSetUpRightMargin) BOOL  setUpRightMargin; // 是否设置过右侧偏移
 
 @end
 
 @implementation UIView(FlexibleLayoutViewInfo)
+
+#pragma mark - Public
 
 - (CGFloat)flexibleLayoutViewLeftMargin {
     return [objc_getAssociatedObject(self, _cmd) floatValue];
@@ -26,10 +29,14 @@
 }
 
 - (CGFloat)flexibleLayoutViewRightMargin {
-    return [objc_getAssociatedObject(self, _cmd) floatValue];
+    if (self.isSetUpRightMargin) {
+        return [objc_getAssociatedObject(self, _cmd) floatValue];
+    }
+    return 5; // 默认值是5
 }
 
 - (void)setFlexibleLayoutViewRightMargin:(CGFloat)flexibleLayoutViewRightMargin {
+    self.setUpRightMargin = YES;
     objc_setAssociatedObject(self, @selector(flexibleLayoutViewRightMargin), @(flexibleLayoutViewRightMargin), OBJC_ASSOCIATION_RETAIN);
 }
 
@@ -41,6 +48,16 @@
     objc_setAssociatedObject(self, @selector(flexibleLayoutViewMinWidthLimit), @(flexibleLayoutViewMinWidthLimit), OBJC_ASSOCIATION_RETAIN);
 }
 
+- (FlexibleLayoutYType)flexibleLayoutViewYType {
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
+}
+
+- (void)setFlexibleLayoutViewYType:(FlexibleLayoutYType)flexibleLayoutViewYType {
+    objc_setAssociatedObject(self, @selector(flexibleLayoutViewYType), @(flexibleLayoutViewYType), OBJC_ASSOCIATION_RETAIN);
+}
+
+#pragma mark - Private
+
 - (BOOL)isFlexibleLayoutViewSelect {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
@@ -49,13 +66,22 @@
     objc_setAssociatedObject(self, @selector(isFlexibleLayoutViewSelect), @(flexibleLayoutViewSelect), OBJC_ASSOCIATION_RETAIN);
 }
 
-- (FlexibleLayoutYType)flexibleLayoutViewYType {
-    return [objc_getAssociatedObject(self, _cmd) integerValue];
+- (BOOL)isSetUpRightMargin {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
-- (void)setFlexibleLayoutViewYType:(FlexibleLayoutYType)flexibleLayoutViewYType {
-    objc_setAssociatedObject(self, @selector(flexibleLayoutViewYType), @(flexibleLayoutViewYType), OBJC_ASSOCIATION_RETAIN);
+- (void)setSetUpRightMargin:(BOOL)setUpRightMargin {
+    objc_setAssociatedObject(self, @selector(isSetUpRightMargin), @(setUpRightMargin), OBJC_ASSOCIATION_RETAIN);
 }
+
+@end
+
+@interface FDFlexibleLayoutView ()
+{
+    
+}
+
+@property (nonatomic, assign) CGRect  oldFrame;
 
 @end
 
@@ -73,6 +99,14 @@
     return self;
 }
 
+- (void)layoutSubviews {
+    //NSLog(@"oldframe = %@, frame = %@", NSStringFromCGRect(self.oldFrame), NSStringFromCGRect(self.frame));
+    if (!CGRectEqualToRect(self.oldFrame, self.frame)) {
+        self.oldFrame = self.frame;
+        [self reloadUI];
+    }
+}
+
 #pragma mark - Event Response
 
 #pragma mark - Private Methods
@@ -81,10 +115,13 @@
     if (nil == self.adjustView ) {
         return;
     }
-    [self removeAllSubviews];
-    
-    CGSize size = [self caculateSize:self.size adjustView:self.adjustView fixViews:self.fixedViews];
-    self.size = size;
+    while(self.subviews.count) {
+        [self.subviews.lastObject removeFromSuperview];
+    }
+    CGRect frame = self.frame;
+    CGSize size = [self caculateSize:frame.size adjustView:self.adjustView fixViews:self.fixedViews];
+    frame.size = size;
+    self.frame = frame;
     
     [self addSubview:self.adjustView];
     [self.fixedViews enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -114,7 +151,7 @@
             if (CGRectGetHeight(obj.frame) > maxHeight) {
                 maxHeight = CGRectGetHeight(obj.frame);
             }
-            NSLog(@"layoutView>>>leftWidth = %f, maxHeight = %f", leftWidth, maxHeight);
+            //NSLog(@"layoutView>>>leftWidth = %f, maxHeight = %f", leftWidth, maxHeight);
         }
     }];
     
@@ -129,7 +166,7 @@
             
             originX = CGRectGetMaxX(obj.frame) + obj.flexibleLayoutViewRightMargin;
             
-            NSLog(@"layoutView>>>idx = %lu, frame = %@, originX = %f", (unsigned long)idx, NSStringFromCGRect(obj.frame), originX);
+            //NSLog(@"layoutView>>>idx = %lu, frame = %@, originX = %f", (unsigned long)idx, NSStringFromCGRect(obj.frame), originX);
         }
     }];
     return CGSizeMake(originX, heightLimit);
