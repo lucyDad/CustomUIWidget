@@ -26,6 +26,8 @@
 #import <CustomUIWidget/UIView+LongPressDrag.h>
 #import <CustomUIWidget/FDFlowerContainerView.h>
 #import <CustomUIWidget/FDGradientBorderView.h>
+#import <CustomUIWidget/FDPopWindowManager.h>
+#import <CustomUIWidget/FDPopWindowEventModel.h>
 
 #else
 
@@ -45,6 +47,8 @@
 #import "UIView+LongPressDrag.h"
 #import "FDFlowerContainerView.h"
 #import "FDGradientBorderView.h"
+#import "FDPopWindowManager.h"
+#import "FDPopWindowEventModel.h"
 
 #endif
 

@@ -242,6 +242,17 @@
 		BD52A9F30FCC8DE5995827ABC52D6979 /* YYCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A6EA8122FE69C40BC8264F866464A3D /* YYCategories.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD75594A85D9DA491BBDECEFD62BF592 /* YYTextMagnifier.h in Headers */ = {isa = PBXBuildFile; fileRef = EC3DB0FD623852AB922C607A687F8AF6 /* YYTextMagnifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDBA3C6262A2E394E7D5B2EB63521AEB /* NSData+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF65BB9A8ABE919042457A95DBD008A /* NSData+YYAdd.m */; };
+		BF61BD0126D3394F00B9961F /* FDAlertNavigationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BF61BCFF26D3394F00B9961F /* FDAlertNavigationManager.h */; };
+		BF61BD0226D3394F00B9961F /* FDAlertNavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BD0026D3394F00B9961F /* FDAlertNavigationManager.m */; };
+		BF61BD0626D3450700B9961F /* FDPopWindowManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BF61BD0426D3450700B9961F /* FDPopWindowManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF61BD0726D3450700B9961F /* FDPopWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BD0526D3450700B9961F /* FDPopWindowManager.m */; };
+		BF61BD0B26D345BF00B9961F /* FDPopWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = BF61BD0926D345BF00B9961F /* FDPopWindow.h */; };
+		BF61BD0C26D345BF00B9961F /* FDPopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BD0A26D345BF00B9961F /* FDPopWindow.m */; };
+		BF61BD0F26D3468500B9961F /* FDPopWindowEventModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF61BD0D26D3468500B9961F /* FDPopWindowEventModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF61BD1026D3468500B9961F /* FDPopWindowEventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BD0E26D3468500B9961F /* FDPopWindowEventModel.m */; };
+		BF61BD1226D3471400B9961F /* FDPopWindowManagerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = BF61BD1126D3471400B9961F /* FDPopWindowManagerProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF61BD1526D347B500B9961F /* UIView+FDPopWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = BF61BD1326D347B500B9961F /* UIView+FDPopWindow.h */; };
+		BF61BD1626D347B500B9961F /* UIView+FDPopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BD1426D347B500B9961F /* UIView+FDPopWindow.m */; };
 		BF7CAB0225567F2900A43DFF /* CustomUIWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF85E25C258373190099AD4F /* UIView+LongPressDrag.h in Headers */ = {isa = PBXBuildFile; fileRef = BF85E25A258373190099AD4F /* UIView+LongPressDrag.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF85E25D258373190099AD4F /* UIView+LongPressDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = BF85E25B258373190099AD4F /* UIView+LongPressDrag.m */; };
@@ -675,6 +686,17 @@
 		BD74198A5FA1740DDA0B182D5358F19C /* YYImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YYImage-dummy.m"; sourceTree = "<group>"; };
 		BDD1156C8C0C3B1AA2516D960A73819E /* NSDate+YYAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+YYAdd.h"; path = "YYCategories/Foundation/NSDate+YYAdd.h"; sourceTree = "<group>"; };
 		BE365511B677ECF640161F5837DCA873 /* YYImageCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYImageCoder.m; path = YYImage/YYImageCoder.m; sourceTree = "<group>"; };
+		BF61BCFF26D3394F00B9961F /* FDAlertNavigationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDAlertNavigationManager.h; sourceTree = "<group>"; };
+		BF61BD0026D3394F00B9961F /* FDAlertNavigationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDAlertNavigationManager.m; sourceTree = "<group>"; };
+		BF61BD0426D3450700B9961F /* FDPopWindowManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDPopWindowManager.h; sourceTree = "<group>"; };
+		BF61BD0526D3450700B9961F /* FDPopWindowManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDPopWindowManager.m; sourceTree = "<group>"; };
+		BF61BD0926D345BF00B9961F /* FDPopWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDPopWindow.h; sourceTree = "<group>"; };
+		BF61BD0A26D345BF00B9961F /* FDPopWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDPopWindow.m; sourceTree = "<group>"; };
+		BF61BD0D26D3468500B9961F /* FDPopWindowEventModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDPopWindowEventModel.h; sourceTree = "<group>"; };
+		BF61BD0E26D3468500B9961F /* FDPopWindowEventModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDPopWindowEventModel.m; sourceTree = "<group>"; };
+		BF61BD1126D3471400B9961F /* FDPopWindowManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDPopWindowManagerProtocol.h; sourceTree = "<group>"; };
+		BF61BD1326D347B500B9961F /* UIView+FDPopWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+FDPopWindow.h"; sourceTree = "<group>"; };
+		BF61BD1426D347B500B9961F /* UIView+FDPopWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+FDPopWindow.m"; sourceTree = "<group>"; };
 		BF7CAB0125567F2900A43DFF /* CustomUIWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomUIWidget.h; sourceTree = "<group>"; };
 		BF85E25A258373190099AD4F /* UIView+LongPressDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LongPressDrag.h"; sourceTree = "<group>"; };
 		BF85E25B258373190099AD4F /* UIView+LongPressDrag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LongPressDrag.m"; sourceTree = "<group>"; };
@@ -1256,6 +1278,8 @@
 		61C4824F930C9248B6DDC32E20AB8228 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				BF61BD0326D3442700B9961F /* PopWindow */,
+				BFEBD11126CFB2A8007E701A /* AlertNav */,
 				BF8EB1E72581D97400FDFBDE /* Tools */,
 				BF8D48E42637E64A00E95702 /* GradientView */,
 				BF7CAB0025567F2900A43DFF /* CustomUIWidget */,
@@ -1510,6 +1534,30 @@
 			name = EXTNil;
 			sourceTree = "<group>";
 		};
+		BF61BD0326D3442700B9961F /* PopWindow */ = {
+			isa = PBXGroup;
+			children = (
+				BF61BD0826D3455300B9961F /* Widgets */,
+				BF61BD0426D3450700B9961F /* FDPopWindowManager.h */,
+				BF61BD0526D3450700B9961F /* FDPopWindowManager.m */,
+			);
+			path = PopWindow;
+			sourceTree = "<group>";
+		};
+		BF61BD0826D3455300B9961F /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				BF61BD0926D345BF00B9961F /* FDPopWindow.h */,
+				BF61BD0A26D345BF00B9961F /* FDPopWindow.m */,
+				BF61BD0D26D3468500B9961F /* FDPopWindowEventModel.h */,
+				BF61BD0E26D3468500B9961F /* FDPopWindowEventModel.m */,
+				BF61BD1126D3471400B9961F /* FDPopWindowManagerProtocol.h */,
+				BF61BD1326D347B500B9961F /* UIView+FDPopWindow.h */,
+				BF61BD1426D347B500B9961F /* UIView+FDPopWindow.m */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
 		BF7CAB0025567F2900A43DFF /* CustomUIWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -1534,6 +1582,15 @@
 				BF85E25B258373190099AD4F /* UIView+LongPressDrag.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		BFEBD11126CFB2A8007E701A /* AlertNav */ = {
+			isa = PBXGroup;
+			children = (
+				BF61BCFF26D3394F00B9961F /* FDAlertNavigationManager.h */,
+				BF61BD0026D3394F00B9961F /* FDAlertNavigationManager.m */,
+			);
+			path = AlertNav;
 			sourceTree = "<group>";
 		};
 		C3E9390E4C5BAEE587F1F2037FE00E8B /* RuntimeExtensions */ = {
@@ -1820,15 +1877,20 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF61BD0626D3450700B9961F /* FDPopWindowManager.h in Headers */,
+				BF61BD0F26D3468500B9961F /* FDPopWindowEventModel.h in Headers */,
+				BF61BD1226D3471400B9961F /* FDPopWindowManagerProtocol.h in Headers */,
 				2AE85B32E8913D0747271D2EA368F1E7 /* CustomUIWidget-umbrella.h in Headers */,
 				B38326FF9544CFDC6369B32EDC90CC4C /* FDAlertViewCommonDef.h in Headers */,
 				3E60FA6FE707273E63EBF4C386CC7786 /* FDAnimationManagerView.h in Headers */,
 				988DD76DF82485E4A36231213E685215 /* FDArrowCustomListView.h in Headers */,
 				69440AB6D5F3138159ED07F67DE31A3C /* FDArrowTipsView.h in Headers */,
+				BF61BD0126D3394F00B9961F /* FDAlertNavigationManager.h in Headers */,
 				B6EB7BD0643F2B3CF98A558185289AAB /* FDAutoPlaceView.h in Headers */,
 				36CE9A68AA16DD7854DF2401D66FD81D /* FDAutoPlaceViewProtocol.h in Headers */,
 				D38B989DA9663DDC09093136AC213EC0 /* FDCollectionCellView.h in Headers */,
 				06CD98C1986A068518AEF829CEFA7748 /* FDCollectionCellViewHelper.h in Headers */,
+				BF61BD1526D347B500B9961F /* UIView+FDPopWindow.h in Headers */,
 				DE14CA0DC590E6F2EA295E1537A25CD0 /* FDCommonAlertPresentManager.h in Headers */,
 				24727A49B37E2EC189BAE33E589DA551 /* FDCommonAlertView.h in Headers */,
 				0905A571A692B4ACA5E26C609C6FAAC4 /* FDCommonButtonView.h in Headers */,
@@ -1840,6 +1902,7 @@
 				BFCE0E0725A40A80008A35B9 /* FDFlexibleLayoutView.h in Headers */,
 				BFC19ABC2601FBF100358C5C /* FDFlowerContainerView.h in Headers */,
 				BF8D48E72637E67E00E95702 /* FDGradientBorderView.h in Headers */,
+				BF61BD0B26D345BF00B9961F /* FDPopWindow.h in Headers */,
 				1235D419FA91F8A8D3044D493062CB5B /* UIView+ArrowTipsView.h in Headers */,
 				2EB0CA1E25843F52758600DE1922CFE8 /* UIView+FDAlertView.h in Headers */,
 			);
@@ -2258,11 +2321,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				74F0889F32B219AB7FD0AB4093DBC09A /* CustomUIWidget-dummy.m in Sources */,
+				BF61BD0C26D345BF00B9961F /* FDPopWindow.m in Sources */,
 				ED4EFCFE4FDA59E205A64FE1088B5610 /* FDAnimationManagerView.m in Sources */,
 				2737CF393FD2E7F1560EF6D90D7EF4F4 /* FDArrowCustomListView.m in Sources */,
 				67C4BAC89EE131A030442608B649080B /* FDArrowTipsView.m in Sources */,
 				BF8D48E82637E67E00E95702 /* FDGradientBorderView.m in Sources */,
 				372CB34E7C5767B37157EF799280F97C /* FDAutoPlaceView.m in Sources */,
+				BF61BD1626D347B500B9961F /* UIView+FDPopWindow.m in Sources */,
 				80BDB0C238F4BFF57221153E24DC0CC5 /* FDCollectionCellView.m in Sources */,
 				662C84C4412DAC5C050FC48C2B477489 /* FDCollectionCellViewHelper.m in Sources */,
 				6857296A75C7B8210D7C11DE34205B3D /* FDCommonAlertPresentManager.m in Sources */,
@@ -2270,11 +2335,14 @@
 				8C0680C01BFA76050D333DB9E8B10278 /* FDCommonAlertView.m in Sources */,
 				C39D3B70AC51CD2E25D1E81D198904B6 /* FDCommonButtonView.m in Sources */,
 				ADC81014FB6433E5354982B11AE7D0C4 /* FDMarqueeView.m in Sources */,
+				BF61BD1026D3468500B9961F /* FDPopWindowEventModel.m in Sources */,
 				BFC19ABD2601FBF100358C5C /* FDFlowerContainerView.m in Sources */,
 				2B780EE7943A107AB4667D542564E76A /* UIImage+FRColor.m in Sources */,
 				292E4FE8CDC8E6049ED944399F809758 /* UIView+ArrowTipsView.m in Sources */,
+				BF61BD0226D3394F00B9961F /* FDAlertNavigationManager.m in Sources */,
 				063854B50C5D23DB60BD5C54B4F57FB7 /* UIView+FDAlertView.m in Sources */,
 				BFCE0E0825A40A80008A35B9 /* FDFlexibleLayoutView.m in Sources */,
+				BF61BD0726D3450700B9961F /* FDPopWindowManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

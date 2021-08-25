@@ -18,6 +18,7 @@
 #import "FDCollectionCellViewHelper.h"
 #import "CustomUIWidget.h"
 #import "UIImage+FRColor.h"
+#import "FDWindowHandler.h"
 
 static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifier";
 static NSInteger const kTagForShowView = 1111;
@@ -30,7 +31,7 @@ static NSInteger const kTagForShowView = 1111;
 @property (strong, nonatomic) UITableView *tableView;
 @property (nonatomic, strong) NSArray *arrData;
 @property (nonatomic, strong) FDCollectionCellViewHelper *cellHelper;
-
+@property (nonatomic, strong) FDPopWindowManager *windowManager;
 @end
 
 @implementation FDViewController
@@ -43,105 +44,14 @@ static NSInteger const kTagForShowView = 1111;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(superView);
     }];
+    
 }
 
-- (NSArray<UIView *> *)generateViews {
-    
-    UIImageView *matchmakerImageView = ({
-        UIImageView *imageView = [UIImageView new];
-        UIImage *image = [UIImage imageNamed:@"icon_matckmaker"];
-        imageView.image = image;
-        [imageView sizeToFit];
-        imageView;
-    });
-    UIImageView *vipImageView = ({
-        UIImageView *imageView = [UIImageView new];
-        UIImage *image = [UIImage imageNamed:@"icon_vip"];
-        imageView.image = image;
-        [imageView sizeToFit];
-        imageView;
-    });
-    UIImageView *sexImageView = ({
-        UIImageView *imageView = [UIImageView new];
-        UIImage *image = [UIImage imageNamed:@"icon_male"];
-        imageView.image = image;
-        [imageView sizeToFit];
-        imageView;
-    });
-    UIView *addressView = ({
-        UIView *superView = [UIView new];
-        superView.backgroundColor = UIColorHex(F4F4F4);
-        UILabel *addressLabel = ({
-            UILabel *label = [[UILabel alloc] init];
-            label.backgroundColor = [UIColor clearColor];
-            label.textColor = UIColorHex(999999);
-            label.font = [UIFont systemFontOfSize:12];
-            label.textAlignment = NSTextAlignmentCenter;
-            label;
-        });
-        addressLabel.text = @"28.广东";
-        [addressLabel sizeToFit];
-        UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0, 8, 0, 8);
-        addressLabel.left = edgeInsets.left;
-        addressLabel.top = edgeInsets.top;
-        
-        [superView addSubview:addressLabel];
-        CGSize size = CGSizeMake(edgeInsets.left + edgeInsets.right + addressLabel.width, edgeInsets.top + edgeInsets.bottom + addressLabel.height);
-        superView.size = size;
-        superView.layer.cornerRadius = size.height / 2.0f;
-        superView.layer.masksToBounds = YES;
-        superView;
-    });
-    
-    UILabel *timeLabel = ({
-        UILabel *label = [[UILabel alloc] init];
-        label.backgroundColor = [UIColor clearColor];
-        label.textColor = UIColorHex(333333);
-        label.font = [UIFont systemFontOfSize:11];
-        label.textAlignment = NSTextAlignmentRight;
-        label.text = @"2020年12月24";
-        [label sizeToFit];
-        label;
-    });
-    
-    NSMutableArray *flagViews = [NSMutableArray array];
-    if (NO) {
-        [flagViews addObject:matchmakerImageView];
-    }
-    if (YES) {
-        [flagViews addObject:vipImageView];
-    }
-    if (NO) {
-        [flagViews addObject:addressView];
-    }
-    if (YES) {
-        [flagViews addObject:sexImageView];
-    }
-    if (YES) {
-        [flagViews addObject:timeLabel];
-    }
-    
-//    matchmakerImageView.flexibleLayoutViewLeftMargin = 5;
-//    matchmakerImageView.flexibleLayoutViewRightMargin = 5;
-//    //matchmakerImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
-//
-//    vipImageView.flexibleLayoutViewLeftMargin = 5;
-//    vipImageView.flexibleLayoutViewRightMargin = 5;
-//    //vipImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
-//
-//    sexImageView.flexibleLayoutViewLeftMargin = 5;
-//    sexImageView.flexibleLayoutViewRightMargin = 5;
-//    //sexImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
-//
-//    addressView.flexibleLayoutViewLeftMargin = 5;
-//    addressView.flexibleLayoutViewRightMargin = 5;
-//    //addressView.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
-//
-//    timeLabel.flexibleLayoutViewLeftMargin = 2;
-//    timeLabel.flexibleLayoutViewRightMargin = 2;
-//    //timeLabel.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
-    
-    return flagViews;
+#pragma mark - 弹框管理9
+
+- (void)testFunction9 {
+    FDWindowHandler *handler = [FDWindowHandler new];
+    [self.windowManager addHandlers:handler];
 }
 
 #pragma mark - 渐变边框view8
@@ -589,7 +499,120 @@ static NSInteger const kTagForShowView = 1111;
 
 #pragma mark - Private Methods
 
+- (NSArray<UIView *> *)generateViews {
+    
+    UIImageView *matchmakerImageView = ({
+        UIImageView *imageView = [UIImageView new];
+        UIImage *image = [UIImage imageNamed:@"icon_matckmaker"];
+        imageView.image = image;
+        [imageView sizeToFit];
+        imageView;
+    });
+    UIImageView *vipImageView = ({
+        UIImageView *imageView = [UIImageView new];
+        UIImage *image = [UIImage imageNamed:@"icon_vip"];
+        imageView.image = image;
+        [imageView sizeToFit];
+        imageView;
+    });
+    UIImageView *sexImageView = ({
+        UIImageView *imageView = [UIImageView new];
+        UIImage *image = [UIImage imageNamed:@"icon_male"];
+        imageView.image = image;
+        [imageView sizeToFit];
+        imageView;
+    });
+    UIView *addressView = ({
+        UIView *superView = [UIView new];
+        superView.backgroundColor = UIColorHex(F4F4F4);
+        UILabel *addressLabel = ({
+            UILabel *label = [[UILabel alloc] init];
+            label.backgroundColor = [UIColor clearColor];
+            label.textColor = UIColorHex(999999);
+            label.font = [UIFont systemFontOfSize:12];
+            label.textAlignment = NSTextAlignmentCenter;
+            label;
+        });
+        addressLabel.text = @"28.广东";
+        [addressLabel sizeToFit];
+        UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0, 8, 0, 8);
+        addressLabel.left = edgeInsets.left;
+        addressLabel.top = edgeInsets.top;
+        
+        [superView addSubview:addressLabel];
+        CGSize size = CGSizeMake(edgeInsets.left + edgeInsets.right + addressLabel.width, edgeInsets.top + edgeInsets.bottom + addressLabel.height);
+        superView.size = size;
+        superView.layer.cornerRadius = size.height / 2.0f;
+        superView.layer.masksToBounds = YES;
+        superView;
+    });
+    
+    UILabel *timeLabel = ({
+        UILabel *label = [[UILabel alloc] init];
+        label.backgroundColor = [UIColor clearColor];
+        label.textColor = UIColorHex(333333);
+        label.font = [UIFont systemFontOfSize:11];
+        label.textAlignment = NSTextAlignmentRight;
+        label.text = @"2020年12月24";
+        [label sizeToFit];
+        label;
+    });
+    
+    NSMutableArray *flagViews = [NSMutableArray array];
+    if (NO) {
+        [flagViews addObject:matchmakerImageView];
+    }
+    if (YES) {
+        [flagViews addObject:vipImageView];
+    }
+    if (NO) {
+        [flagViews addObject:addressView];
+    }
+    if (YES) {
+        [flagViews addObject:sexImageView];
+    }
+    if (YES) {
+        [flagViews addObject:timeLabel];
+    }
+    
+//    matchmakerImageView.flexibleLayoutViewLeftMargin = 5;
+//    matchmakerImageView.flexibleLayoutViewRightMargin = 5;
+//    //matchmakerImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
+//
+//    vipImageView.flexibleLayoutViewLeftMargin = 5;
+//    vipImageView.flexibleLayoutViewRightMargin = 5;
+//    //vipImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
+//
+//    sexImageView.flexibleLayoutViewLeftMargin = 5;
+//    sexImageView.flexibleLayoutViewRightMargin = 5;
+//    //sexImageView.flexibleLayoutViewYType = FlexibleLayoutYTypeCenter;
+//
+//    addressView.flexibleLayoutViewLeftMargin = 5;
+//    addressView.flexibleLayoutViewRightMargin = 5;
+//    //addressView.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
+//
+//    timeLabel.flexibleLayoutViewLeftMargin = 2;
+//    timeLabel.flexibleLayoutViewRightMargin = 2;
+//    //timeLabel.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
+    
+    return flagViews;
+}
+
 #pragma mark - Setter or Getter
+
+- (FDPopWindowManager *)windowManager {
+    if (!_windowManager) {
+        _windowManager = ({
+            FDPopWindowManagerConfig *config = [FDPopWindowManagerConfig new];
+            config.windowLevel = UIWindowLevelStatusBar + 1;
+            config.showTime = 10;
+            config.strategy = FDDissmissStrategyPageChange;
+            FDPopWindowManager *manager = [[FDPopWindowManager alloc] initWithConfig:config];
+            manager;
+        });
+    }
+    return _windowManager;
+}
 
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -607,7 +630,7 @@ static NSInteger const kTagForShowView = 1111;
 - (NSArray *)arrData {
     if (!_arrData) {
         _arrData = ({
-            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4", @"长按拖动view5", @"单行自动缩放view6", @"花瓣形状view7", @"渐变边框view8"];
+            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4", @"长按拖动view5", @"单行自动缩放view6", @"花瓣形状view7", @"渐变边框view8", @"弹框管理9"];
             view;
         });
     }
