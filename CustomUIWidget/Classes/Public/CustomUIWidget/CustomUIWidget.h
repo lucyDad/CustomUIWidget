@@ -28,6 +28,7 @@
 #import <CustomUIWidget/FDGradientBorderView.h>
 #import <CustomUIWidget/FDPopWindowManager.h>
 #import <CustomUIWidget/FDPopWindowEventModel.h>
+#import <CustomUIWidget/FDImageLabelView.h>
 
 #else
 
@@ -49,6 +50,8 @@
 #import "FDGradientBorderView.h"
 #import "FDPopWindowManager.h"
 #import "FDPopWindowEventModel.h"
+#import "FDImageLabelView.h"
+#import "UIView+UIBorder.h"
 
 #endif
 

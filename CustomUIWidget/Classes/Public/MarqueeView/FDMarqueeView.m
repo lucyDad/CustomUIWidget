@@ -7,6 +7,7 @@
 //
 
 #import "FDMarqueeView.h"
+#import <Masonry/Masonry.h>
 
 @implementation FDMarqueeViewConfig
 
@@ -33,7 +34,7 @@
         self.frameInterval = 1;
         self.contentMargin = 30;
         self.pointsPerFrame = 0.5;
-        
+        self.isLessLengthScroll = YES;
         self.maxTimeLimit = MAXFLOAT;
     }
     return self;
@@ -50,6 +51,8 @@
 }
 
 @end
+
+static NSInteger const kTagForCopyView = 1000;
 
 @interface FDMarqueeView ()
 {
@@ -80,18 +83,25 @@
 }
 
 - (void)startMarquee {
-    [self stopMarquee];
-    
-    self.marqueeDisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(processMarquee)];
-    // preferredFramesPerSecond: 每秒钟调用几次
-    // frameInterval: 标识间隔多少帧调用一次selector方法
-    if (@available(iOS 10, *)) {
-        self.marqueeDisplayLink.preferredFramesPerSecond = 60 / self.viewConfig.frameInterval;
-    } else {
-        self.marqueeDisplayLink.frameInterval = self.viewConfig.frameInterval;
-    }
-    
-    [self.marqueeDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        if (![self isNeedScroll]) {
+            return;
+        }
+        
+        [self stopMarquee];
+        
+        self.marqueeDisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(processMarquee)];
+        // preferredFramesPerSecond: 每秒钟调用几次
+        // frameInterval: 标识间隔多少帧调用一次selector方法
+        if (@available(iOS 10, *)) {
+            self.marqueeDisplayLink.preferredFramesPerSecond = 60 / self.viewConfig.frameInterval;
+        } else {
+            self.marqueeDisplayLink.frameInterval = self.viewConfig.frameInterval;
+        }
+        
+        [self.marqueeDisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    });
 }
 
 - (void)stopMarquee {
@@ -125,6 +135,15 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+
+    CGRect frame = self.containerView.frame;
+    frame.size.height = self.frame.size.height;
+    self.containerView.frame = frame;
+    
+    BOOL showCopyView = [self isNeedScroll];
+    [self log:@"%s, frame = %@, showCopyView = %d", __func__, NSStringFromCGRect(self.frame), showCopyView];
+    UIView *copyView = [self viewWithTag:kTagForCopyView];
+    copyView.hidden = !showCopyView;
 }
 
 - (void)dealloc {
@@ -200,39 +219,100 @@
 
 #pragma mark - Private Methods
 
-- (void)setupUI {
+- (BOOL)isNeedScroll {
+    if (!self.viewConfig.isLessLengthScroll && CGRectGetWidth(self.viewConfig.customView.frame) <= CGRectGetWidth(self.frame) ) {
+        return NO;
+    }
+    return YES;
+}
+
+- (void)setupContainerView {
+    //
+    UIView *customView = self.viewConfig.customView;
+    CGSize customSize = CGSizeMake(CGRectGetWidth(customView.frame), CGRectGetHeight(customView.frame));
+
+    if (nil == customView) {
+        NSAssert(NO, @"please set config customView property");
+        return;
+    }
+
+    UIView *copyCustomView = [self copyView:customView];
+    copyCustomView.tag = kTagForCopyView;
     
+    UIView *superView = self.containerView;
+    [superView addSubview:customView];
+    [superView addSubview:copyCustomView];
+    
+    switch (self.viewConfig.yPosition) {
+        case FDMarqueeCustomViewYPositionCenter:
+        {
+            [customView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.centerY.equalTo(superView);
+                make.left.equalTo(superView);
+                make.size.mas_equalTo(customSize);
+            }];
+            [copyCustomView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.centerY.equalTo(customView);
+                make.left.equalTo(customView.mas_right).offset(self.viewConfig.contentMargin);
+                make.size.mas_equalTo(customSize);
+            }];
+            break;
+        }
+        case FDMarqueeCustomViewYPositionTop:
+        {
+            [customView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(superView);
+                make.left.equalTo(superView);
+                make.size.mas_equalTo(customSize);
+            }];
+            [copyCustomView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(customView);
+                make.left.equalTo(customView.mas_right).offset(self.viewConfig.contentMargin);
+                make.size.mas_equalTo(customSize);
+            }];
+            break;
+        }
+        case FDMarqueeCustomViewYPositionBottom:
+        {
+            [customView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.bottom.equalTo(superView);
+                make.left.equalTo(superView);
+                make.size.mas_equalTo(customSize);
+            }];
+            [copyCustomView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.bottom.equalTo(customView);
+                make.left.equalTo(customView.mas_right).offset(self.viewConfig.contentMargin);
+                make.size.mas_equalTo(customSize);
+            }];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)setupUI {
+    [self setupContainerView];
+    
+    UIView *customView = self.viewConfig.customView;
+    CGSize customSize = CGSizeMake(CGRectGetWidth(customView.frame), CGRectGetHeight(customView.frame));
+    
+    CGSize allSize = CGSizeMake(customSize.width * 2 + self.viewConfig.contentMargin, CGRectGetHeight(self.frame));
     switch (self.viewConfig.scrollDirection) {
         case FDMarqueeViewScrollDirectionLeft:
         {
-            self.containerView.frame = CGRectMake(0, 0, CGRectGetWidth(self.containerView.frame), CGRectGetHeight(self.containerView.frame));
+            self.containerView.frame = CGRectMake(0, 0, allSize.width, allSize.height);
             break;
         }
         case FDMarqueeViewScrollDirectionRight:
         {
-            self.containerView.frame = CGRectMake(CGRectGetWidth(self.frame) - CGRectGetWidth(self.containerView.frame), 0, CGRectGetWidth(self.containerView.frame), CGRectGetHeight(self.containerView.frame));
+            self.containerView.frame = CGRectMake(CGRectGetWidth(self.frame) - CGRectGetWidth(self.containerView.frame), 0, allSize.width, allSize.height);
             break;
         }
         default:
             break;
     }
     [self addSubview:self.containerView];
-    
-    UIView *customView = self.viewConfig.customView;
-    if (nil == customView) {
-        NSAssert(NO, @"please set config customView property");
-        return;
-    }
-    if (CGRectGetWidth(customView.frame) < CGRectGetWidth(self.frame)) {
-        [self log:@"提供的自定义view的宽度比容器view窄"];
-        customView.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(customView.frame));
-    }
-    customView.frame = CGRectMake(0, 0, CGRectGetWidth(customView.frame), CGRectGetHeight(customView.frame));
-    UIView *copyCustomView = [self copyView:customView];
-    copyCustomView.frame = CGRectMake(CGRectGetWidth(customView.frame) + self.viewConfig.contentMargin, 0, CGRectGetWidth(customView.frame), CGRectGetHeight(customView.frame));
-    
-    [self.containerView addSubview:customView];
-    [self.containerView addSubview:copyCustomView];
 }
 
 - (UIView *)copyView:(UIView *)view {
@@ -278,7 +358,7 @@
 - (UIView *)containerView {
     if (!_containerView) {
         _containerView = ({
-            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.viewConfig.customView.frame) * 2 + self.viewConfig.contentMargin, CGRectGetHeight(self.frame))];;
+            UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.viewConfig.customView.frame) * 2 + self.viewConfig.contentMargin, CGRectGetHeight(self.frame))];
             view;
         });
     }

@@ -1,5 +1,6 @@
 PODS:
-  - CustomUIWidget (0.2.0):
+  - Aspects (1.4.1)
+  - CustomUIWidget (0.2.7):
     - libextobjc
     - Masonry
     - YYCategories
@@ -56,6 +57,7 @@ PODS:
     - YYImage
 
 DEPENDENCIES:
+  - Aspects
   - CustomUIWidget (from `../`)
   - libextobjc
   - Masonry
@@ -65,7 +67,8 @@ DEPENDENCIES:
   - YYWebImage
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - Aspects
     - libextobjc
     - Masonry
     - YYCache
@@ -80,7 +83,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CustomUIWidget: 249eed407da94a16dc8317843e47173073939148
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  CustomUIWidget: 51a54d3375107823b933928c514ffdb55a9582ad
   libextobjc: aed8b7d2b07f511c1a7ecaacb33ea03e327c69b7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
@@ -90,6 +94,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: ac56fd663f125b804a3643f594c8234530c7977f
+PODFILE CHECKSUM: 24856a9c9c920655e0809e94d1a413c81203cce5
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1

@@ -13,12 +13,15 @@
 #import "UIView+ArrowTipsView.h"
 #import <YYCategories/YYCategories.h>
 #import <YYText/YYText.h>
+#import <YYWebImage/YYWebImage.h>
 #import "FDAutoPlaceView.h"
 #import "FDUserInfoModel.h"
 #import "FDCollectionCellViewHelper.h"
 #import "CustomUIWidget.h"
 #import "UIImage+FRColor.h"
 #import "FDWindowHandler.h"
+#import "FDKTVAnnouncementView.h"
+#import "FDTestViewController.h"
 
 static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifier";
 static NSInteger const kTagForShowView = 1111;
@@ -44,7 +47,52 @@ static NSInteger const kTagForShowView = 1111;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(superView);
     }];
+}
+
+#pragma mark - Test11
+
+- (void)testFunction11 {
+    FDTestViewController *vc = [FDTestViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - ImageLabel10
+
+- (void)testFunction10 {
+
+    FDImageLabelView *labelView = ({
+        FDImageLabelView *view = [FDImageLabelView new];
+//        view.left = 10;
+//        view.top = 100;
+        view.style = FDImagePositionStyleDefault;
+        view.spacing = 10;
+        view.contentEdgeInsets = UIEdgeInsetsMake(2, 6, 2, 6);
+        view.titleLabel.text = @"hexiang";
+        view.titleLabel.textColor = [UIColor blackColor];
+        view.titleLabel.font = [UIFont systemFontOfSize:15];
+        view.iconImageView.image = [UIImage imageNamed:@"icon_vip"];
+    //    [view.iconImageView yy_setImageWithURL:[NSURL URLWithString:@"https://photo.zastatic.com/images/cms/banner/20211126/2569261469449706.png"] placeholder:nil];
+        view.backgroundColor = [UIColor redColor];
+        view;
+    });
     
+    UIView *containerView = ({
+        UIView *view = [UIView new];
+        view.backgroundColor = [UIColor greenColor];
+        view;
+    });
+
+    containerView.tag = kTagForShowView;
+    [self.view addSubview:containerView];
+    UIView *superView = self.view;
+    [containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(superView).offset(100);
+        make.height.mas_equalTo(30);
+        make.width.mas_equalTo(60);
+        make.left.equalTo(superView).offset(10);
+    }];
+    
+    [containerView addSubview:labelView];
 }
 
 #pragma mark - 弹框管理9
@@ -57,8 +105,7 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 渐变边框view8
 
 - (void)testFunction8 {
-    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
-    
+
     FDGradientBorderView *borderView = ({
         FDGradientBorderView *view = [FDGradientBorderView new];
         view.lineWidth = 20;
@@ -79,8 +126,7 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 花瓣形状view7
 
 - (void)testFunction7 {
-    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
-    
+
     NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"视频审核状态：未审核--->不通过：删除，这个要发通知吗？【现在是没有发】不通过：删除--->通过A、过B，这个要发通知吗？【现在是发了" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont systemFontOfSize:16]}];
 
     UILabel *titleLabel = ({
@@ -114,8 +160,7 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 单行自动缩放view6
 
 - (void)testFunction6 {
-    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
-    
+
     CGSize size = CGSizeMake(300, 80);
     UILabel *titleLabel = ({
         UILabel *label = [[UILabel alloc] init];
@@ -159,7 +204,6 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 长按拖动view5
 
 - (void)testFunction5 {
-    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
     // 示例一: UIView
     UILabel *titleLabel = ({
         UILabel *label = [[UILabel alloc] init];
@@ -198,7 +242,6 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 格子view4
 
 - (void)testFunction4 {
-    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
     
     FDCollectionCellViewHelperConfig *config = [FDCollectionCellViewHelperConfig new];
     config.maxWidth = 300;
@@ -249,7 +292,6 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 自动换行排列view3
 
 - (void)testFunction3 {
-    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
     
     CGFloat maxWidth = 300;
     FDAutoPlaceViewConfig *config = [FDAutoPlaceViewConfig new];
@@ -283,7 +325,6 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 箭头view2
 
 - (void)testFunction2 {
-    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
     
     FDArrowTipsViewConfig *config = [FDArrowTipsViewConfig new];
     config.contentCornerRadius = 8;
@@ -414,7 +455,6 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 自定义弹框1
 
 - (void)testFunction1 {
-    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
     
     FDCommonAlertViewConfig *config = [FDCommonAlertViewConfig new];
     config.content = @"优秀的第三方包管理工具";
@@ -428,7 +468,6 @@ static NSInteger const kTagForShowView = 1111;
 #pragma mark - 自定义跑马灯0
 
 - (void)testFunction0 {
-    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
     
     CGFloat allWidth = self.view.bounds.size.width;
     CGFloat contentViewHeight = 300;
@@ -437,7 +476,8 @@ static NSInteger const kTagForShowView = 1111;
     UILabel *titleLabel = ({
         UILabel *label = [[UILabel alloc] init];
         label.backgroundColor = [UIColor clearColor];
-        label.text = @"CocoaPods是iOS，Mac下优秀的第三方包管理工具，类似于java的maven，给我们项目管理带来了极大的方便。个人或公司在开发过程中，会积累很多可以复用的代码包，有些我们不想开源，又想像开源库一样在CocoaPods中管理它们，那么通过私有仓库来管理就很必要";
+        label.text = nil;//@"优秀的第三方包管理工具";
+        //label.text = @"CocoaPods是iOS，Mac下优秀的第三方包管理工具，类似于java的maven，给我们项目管理带来了极大的方便。个人或公司在开发过程中，会积累很多可以复用的代码包，有些我们不想开源，又想像开源库一样在CocoaPods中管理它们，那么通过私有仓库来管理就很必要";
         [label sizeToFit];
         label;
     });
@@ -446,18 +486,36 @@ static NSInteger const kTagForShowView = 1111;
     config.scrollDirection = FDMarqueeViewScrollDirectionLeft;
     config.maxTimeLimit = 100;
     config.scrollPauseTime = 1;
+    config.isLessLengthScroll = YES;
+    config.yPosition = FDMarqueeCustomViewYPositionTop;
     
     CGFloat leftMargin = allWidth * 0.32;
     CGFloat rightMargin = allWidth * 0.12;
     CGFloat viewWidth = allWidth - leftMargin - rightMargin;
     CGFloat viewHeight = config.customView.bounds.size.height;
     
-    FDMarqueeView *view = [[FDMarqueeView alloc] initWithFrame:CGRectMake(leftMargin, (contentViewHeight - viewHeight) / 2.0f, viewWidth, viewHeight) andConfig:config];
+    FDMarqueeView *view = [[FDMarqueeView alloc] initWithFrame:CGRectZero andConfig:config];
+    view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
     view.scrollCompleteBlock = ^(FDMarqueeView * _Nonnull fdMarqueeView) {
         [fdMarqueeView removeFromSuperview];
     };
+    
+    UIView *superView = self.view;
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(superView).offset(200);
+        make.left.equalTo(superView).offset(100);
+        make.right.equalTo(superView).offset(-100);
+        make.height.mas_equalTo(30);
+    }];
     [view startMarquee];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        titleLabel.text = @"有些我们不想开源，又想像开源库一样在CocoaPods中管理它们";
+        [titleLabel sizeToFit];
+        [view reloadData];
+        [view startMarquee];
+    });
     
     view.tag = kTagForShowView;
 }
@@ -490,6 +548,8 @@ static NSInteger const kTagForShowView = 1111;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [[self.view viewWithTag:kTagForShowView] removeFromSuperview];
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     [self performSelector:NSSelectorFromString([NSString stringWithFormat:@"testFunction%ld", indexPath.row]) withObject:nil];
@@ -630,7 +690,7 @@ static NSInteger const kTagForShowView = 1111;
 - (NSArray *)arrData {
     if (!_arrData) {
         _arrData = ({
-            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4", @"长按拖动view5", @"单行自动缩放view6", @"花瓣形状view7", @"渐变边框view8", @"弹框管理9"];
+            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4", @"长按拖动view5", @"单行自动缩放view6", @"花瓣形状view7", @"渐变边框view8", @"弹框管理9", @"ImageLabel10", @"Test11"];
             view;
         });
     }

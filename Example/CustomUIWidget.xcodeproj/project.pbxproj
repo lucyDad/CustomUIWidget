@@ -18,8 +18,24 @@
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		BF1915DE275EFDA9004D28C1 /* FDKTVAnnouncementView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1915DD275EFDA9004D28C1 /* FDKTVAnnouncementView.m */; };
+		BF2EBA1E2775663400BDF298 /* FDUIStackViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EBA1D277564A300BDF298 /* FDUIStackViewViewController.m */; };
+		BF301FC1277B02E300CCB495 /* FDImageLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF301FC0277B02E300CCB495 /* FDImageLabelViewController.m */; };
 		BF61BD1A26D3A62F00B9961F /* FDWindowHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BD1926D3A62F00B9961F /* FDWindowHandler.m */; };
+		BF77F7AC276C7E7500B728EB /* FDUIKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF77F7AB276C7E7500B728EB /* FDUIKitViewController.m */; };
+		BF77F7AF276C7E8C00B728EB /* FDComponentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF77F7AE276C7E8C00B728EB /* FDComponentsViewController.m */; };
+		BF77F7B2276C7F8A00B728EB /* FDGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF77F7B1276C7F8A00B728EB /* FDGridView.m */; };
+		BF77F7B5276C87FA00B728EB /* FDGridViewUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = BF77F7B4276C87FA00B728EB /* FDGridViewUtil.m */; };
+		BF77F7B9276C899F00B728EB /* FDOrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = BF77F7B8276C899F00B728EB /* FDOrderedDictionary.m */; };
+		BF77F7BC277022CD00B728EB /* FDUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF77F7BB277022CD00B728EB /* FDUIButton.m */; };
 		BF8C9723250B4AB7006A5431 /* FDUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8C9722250B4AB7006A5431 /* FDUserInfoModel.m */; };
+		BFDE4436279FE5E900B03DFF /* FDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDE4435279FE5E900B03DFF /* FDTestViewController.m */; };
+		BFE131C6279E936200EBAFF8 /* UIButton+FDSelectState.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE131C4279E936200EBAFF8 /* UIButton+FDSelectState.m */; };
+		BFE8E009279E8CB3004D297C /* FDUIViewBorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE8E008279E8CB3004D297C /* FDUIViewBorderViewController.m */; };
+		BFE8E00C279E8DCF004D297C /* FDSelectListView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE8E00B279E8DCF004D297C /* FDSelectListView.m */; };
+		BFF648C62770804200EA78FC /* FDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF648C52770804200EA78FC /* FDSettingViewController.m */; };
+		BFF648CB2771D2B300EA78FC /* UIButton+LXMImagePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF648C92771D2B300EA78FC /* UIButton+LXMImagePosition.m */; };
+		BFF648CF2771D73300EA78FC /* FDMarqueeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF648CE2771D73300EA78FC /* FDMarqueeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,10 +64,44 @@
 		9E4E12C6C4546B05346657C2 /* Pods-CustomUIWidget_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomUIWidget_Tests.release.xcconfig"; path = "Target Support Files/Pods-CustomUIWidget_Tests/Pods-CustomUIWidget_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AEEFBC13CC939556476FC4EF /* Pods-CustomUIWidget_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomUIWidget_Example.debug.xcconfig"; path = "Target Support Files/Pods-CustomUIWidget_Example/Pods-CustomUIWidget_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B65141B28CD6FCFD8B776A9F /* Pods_CustomUIWidget_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomUIWidget_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF02D9FA27B3752A0040CF81 /* FDComponentProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDComponentProtocol.h; sourceTree = "<group>"; };
+		BF1915DC275EFDA9004D28C1 /* FDKTVAnnouncementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDKTVAnnouncementView.h; sourceTree = "<group>"; };
+		BF1915DD275EFDA9004D28C1 /* FDKTVAnnouncementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDKTVAnnouncementView.m; sourceTree = "<group>"; };
+		BF2EBA1C277564A300BDF298 /* FDUIStackViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDUIStackViewViewController.h; sourceTree = "<group>"; };
+		BF2EBA1D277564A300BDF298 /* FDUIStackViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDUIStackViewViewController.m; sourceTree = "<group>"; };
+		BF301FBF277B02E300CCB495 /* FDImageLabelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDImageLabelViewController.h; sourceTree = "<group>"; };
+		BF301FC0277B02E300CCB495 /* FDImageLabelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDImageLabelViewController.m; sourceTree = "<group>"; };
 		BF61BD1826D3A62F00B9961F /* FDWindowHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDWindowHandler.h; sourceTree = "<group>"; };
 		BF61BD1926D3A62F00B9961F /* FDWindowHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDWindowHandler.m; sourceTree = "<group>"; };
+		BF77F7AA276C7E7500B728EB /* FDUIKitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDUIKitViewController.h; sourceTree = "<group>"; };
+		BF77F7AB276C7E7500B728EB /* FDUIKitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDUIKitViewController.m; sourceTree = "<group>"; };
+		BF77F7AD276C7E8C00B728EB /* FDComponentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDComponentsViewController.h; sourceTree = "<group>"; };
+		BF77F7AE276C7E8C00B728EB /* FDComponentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDComponentsViewController.m; sourceTree = "<group>"; };
+		BF77F7B0276C7F8A00B728EB /* FDGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDGridView.h; sourceTree = "<group>"; };
+		BF77F7B1276C7F8A00B728EB /* FDGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDGridView.m; sourceTree = "<group>"; };
+		BF77F7B3276C87FA00B728EB /* FDGridViewUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDGridViewUtil.h; sourceTree = "<group>"; };
+		BF77F7B4276C87FA00B728EB /* FDGridViewUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDGridViewUtil.m; sourceTree = "<group>"; };
+		BF77F7B7276C899F00B728EB /* FDOrderedDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDOrderedDictionary.h; sourceTree = "<group>"; };
+		BF77F7B8276C899F00B728EB /* FDOrderedDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDOrderedDictionary.m; sourceTree = "<group>"; };
+		BF77F7BA277022CD00B728EB /* FDUIButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDUIButton.h; sourceTree = "<group>"; };
+		BF77F7BB277022CD00B728EB /* FDUIButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDUIButton.m; sourceTree = "<group>"; };
 		BF8C9721250B4AB7006A5431 /* FDUserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDUserInfoModel.h; sourceTree = "<group>"; };
 		BF8C9722250B4AB7006A5431 /* FDUserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDUserInfoModel.m; sourceTree = "<group>"; };
+		BFDE4434279FE5E900B03DFF /* FDTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDTestViewController.h; sourceTree = "<group>"; };
+		BFDE4435279FE5E900B03DFF /* FDTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDTestViewController.m; sourceTree = "<group>"; };
+		BFE131C4279E936200EBAFF8 /* UIButton+FDSelectState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FDSelectState.m"; sourceTree = "<group>"; };
+		BFE131C5279E936200EBAFF8 /* UIButton+FDSelectState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FDSelectState.h"; sourceTree = "<group>"; };
+		BFE8E007279E8CB3004D297C /* FDUIViewBorderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDUIViewBorderViewController.h; sourceTree = "<group>"; };
+		BFE8E008279E8CB3004D297C /* FDUIViewBorderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDUIViewBorderViewController.m; sourceTree = "<group>"; };
+		BFE8E00A279E8DCF004D297C /* FDSelectListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDSelectListView.h; sourceTree = "<group>"; };
+		BFE8E00B279E8DCF004D297C /* FDSelectListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDSelectListView.m; sourceTree = "<group>"; };
+		BFF648C42770804200EA78FC /* FDSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDSettingViewController.h; sourceTree = "<group>"; };
+		BFF648C52770804200EA78FC /* FDSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDSettingViewController.m; sourceTree = "<group>"; };
+		BFF648C92771D2B300EA78FC /* UIButton+LXMImagePosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LXMImagePosition.m"; sourceTree = "<group>"; };
+		BFF648CA2771D2B300EA78FC /* UIButton+LXMImagePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LXMImagePosition.h"; sourceTree = "<group>"; };
+		BFF648CD2771D73300EA78FC /* FDMarqueeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDMarqueeViewController.h; sourceTree = "<group>"; };
+		BFF648CE2771D73300EA78FC /* FDMarqueeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDMarqueeViewController.m; sourceTree = "<group>"; };
+		BFF648D02771D75200EA78FC /* FDViewControllerDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDViewControllerDefine.h; sourceTree = "<group>"; };
 		DF1149857500EE0C191D0882 /* Pods-CustomUIWidget_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomUIWidget_Example.release.xcconfig"; path = "Target Support Files/Pods-CustomUIWidget_Example/Pods-CustomUIWidget_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EA476657B52F17D58A871F0E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		ECC2FF9281B387836CAAAA80 /* Pods_CustomUIWidget_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomUIWidget_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,11 +159,19 @@
 		6003F593195388D20070C39A /* Example for CustomUIWidget */ = {
 			isa = PBXGroup;
 			children = (
+				BFF648CC2771D70700EA78FC /* VCs */,
+				BFF648C82771D29900EA78FC /* Tools */,
 				6003F59C195388D20070C39A /* FDAppDelegate.h */,
 				6003F59D195388D20070C39A /* FDAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* FDViewController.h */,
 				6003F5A6195388D20070C39A /* FDViewController.m */,
+				BF77F7AA276C7E7500B728EB /* FDUIKitViewController.h */,
+				BF77F7AB276C7E7500B728EB /* FDUIKitViewController.m */,
+				BF77F7AD276C7E8C00B728EB /* FDComponentsViewController.h */,
+				BF77F7AE276C7E8C00B728EB /* FDComponentsViewController.m */,
+				BFF648C42770804200EA78FC /* FDSettingViewController.h */,
+				BFF648C52770804200EA78FC /* FDSettingViewController.m */,
 				BF61BD1726D3A61200B9961F /* Demo */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -179,10 +237,52 @@
 		BF61BD1726D3A61200B9961F /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				BF1915DC275EFDA9004D28C1 /* FDKTVAnnouncementView.h */,
+				BF1915DD275EFDA9004D28C1 /* FDKTVAnnouncementView.m */,
 				BF61BD1826D3A62F00B9961F /* FDWindowHandler.h */,
 				BF61BD1926D3A62F00B9961F /* FDWindowHandler.m */,
+				BF77F7B3276C87FA00B728EB /* FDGridViewUtil.h */,
+				BF77F7B4276C87FA00B728EB /* FDGridViewUtil.m */,
+				BF77F7BA277022CD00B728EB /* FDUIButton.h */,
+				BF77F7BB277022CD00B728EB /* FDUIButton.m */,
+				BFDE4434279FE5E900B03DFF /* FDTestViewController.h */,
+				BFDE4435279FE5E900B03DFF /* FDTestViewController.m */,
 			);
 			name = Demo;
+			sourceTree = "<group>";
+		};
+		BFF648C82771D29900EA78FC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BFE131C5279E936200EBAFF8 /* UIButton+FDSelectState.h */,
+				BFE131C4279E936200EBAFF8 /* UIButton+FDSelectState.m */,
+				BFF648CA2771D2B300EA78FC /* UIButton+LXMImagePosition.h */,
+				BFF648C92771D2B300EA78FC /* UIButton+LXMImagePosition.m */,
+				BF77F7B7276C899F00B728EB /* FDOrderedDictionary.h */,
+				BF77F7B8276C899F00B728EB /* FDOrderedDictionary.m */,
+				BF77F7B0276C7F8A00B728EB /* FDGridView.h */,
+				BF77F7B1276C7F8A00B728EB /* FDGridView.m */,
+				BFE8E00A279E8DCF004D297C /* FDSelectListView.h */,
+				BFE8E00B279E8DCF004D297C /* FDSelectListView.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		BFF648CC2771D70700EA78FC /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				BFF648D02771D75200EA78FC /* FDViewControllerDefine.h */,
+				BF02D9FA27B3752A0040CF81 /* FDComponentProtocol.h */,
+				BFF648CD2771D73300EA78FC /* FDMarqueeViewController.h */,
+				BFF648CE2771D73300EA78FC /* FDMarqueeViewController.m */,
+				BF301FBF277B02E300CCB495 /* FDImageLabelViewController.h */,
+				BF301FC0277B02E300CCB495 /* FDImageLabelViewController.m */,
+				BF2EBA1C277564A300BDF298 /* FDUIStackViewViewController.h */,
+				BF2EBA1D277564A300BDF298 /* FDUIStackViewViewController.m */,
+				BFE8E007279E8CB3004D297C /* FDUIViewBorderViewController.h */,
+				BFE8E008279E8CB3004D297C /* FDUIViewBorderViewController.m */,
+			);
+			path = VCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +380,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-CustomUIWidget_Example/Pods-CustomUIWidget_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
 				"${BUILT_PRODUCTS_DIR}/CustomUIWidget/CustomUIWidget.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
@@ -292,6 +393,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CustomUIWidget.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
@@ -314,11 +416,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF2EBA1E2775663400BDF298 /* FDUIStackViewViewController.m in Sources */,
 				6003F59E195388D20070C39A /* FDAppDelegate.m in Sources */,
 				BF61BD1A26D3A62F00B9961F /* FDWindowHandler.m in Sources */,
 				6003F5A7195388D20070C39A /* FDViewController.m in Sources */,
+				BFF648CF2771D73300EA78FC /* FDMarqueeViewController.m in Sources */,
+				BF1915DE275EFDA9004D28C1 /* FDKTVAnnouncementView.m in Sources */,
+				BFDE4436279FE5E900B03DFF /* FDTestViewController.m in Sources */,
 				BF8C9723250B4AB7006A5431 /* FDUserInfoModel.m in Sources */,
+				BF77F7BC277022CD00B728EB /* FDUIButton.m in Sources */,
+				BF301FC1277B02E300CCB495 /* FDImageLabelViewController.m in Sources */,
+				BFE8E00C279E8DCF004D297C /* FDSelectListView.m in Sources */,
+				BFF648C62770804200EA78FC /* FDSettingViewController.m in Sources */,
+				BFE131C6279E936200EBAFF8 /* UIButton+FDSelectState.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				BF77F7AF276C7E8C00B728EB /* FDComponentsViewController.m in Sources */,
+				BF77F7B9276C899F00B728EB /* FDOrderedDictionary.m in Sources */,
+				BF77F7B2276C7F8A00B728EB /* FDGridView.m in Sources */,
+				BF77F7B5276C87FA00B728EB /* FDGridViewUtil.m in Sources */,
+				BFE8E009279E8CB3004D297C /* FDUIViewBorderViewController.m in Sources */,
+				BFF648CB2771D2B300EA78FC /* UIButton+LXMImagePosition.m in Sources */,
+				BF77F7AC276C7E7500B728EB /* FDUIKitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +551,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CustomUIWidget/CustomUIWidget-Prefix.pch";
 				INFOPLIST_FILE = "CustomUIWidget/CustomUIWidget-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -485,6 +604,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CustomUIWidget/CustomUIWidget-Prefix.pch";
 				INFOPLIST_FILE = "CustomUIWidget/CustomUIWidget-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = (
 					"$(inherited)",

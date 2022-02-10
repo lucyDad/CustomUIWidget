@@ -16,6 +16,8 @@
 #import <YYWebImage/YYWebImage.h>
 #import <libextobjc/extobjc.h>
 #import <Masonry/Masonry.h>
+#import "FDUIHelper.h"
+#import "FDCommonDefine.h"
 
 #define FONT_MEDIUM_WITH_SIZE(SIZE) [UIFont fontWithName:@"PingFangSC-Medium" size:SIZE] //生成一个Medium字体的Font
 #define FONT_REGULAR_WITH_SIZE(SIZE) [UIFont fontWithName:@"PingFangSC-Regular" size:SIZE]//生成一个Regular字体的Font
