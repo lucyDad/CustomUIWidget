@@ -99,13 +99,13 @@
     return self;
 }
 
-- (void)layoutSubviews {
-    //NSLog(@"oldframe = %@, frame = %@", NSStringFromCGRect(self.oldFrame), NSStringFromCGRect(self.frame));
-    if (!CGRectEqualToRect(self.oldFrame, self.frame)) {
-        self.oldFrame = self.frame;
-        [self reloadUI];
-    }
-}
+//- (void)layoutSubviews {
+//    //NSLog(@"oldframe = %@, frame = %@", NSStringFromCGRect(self.oldFrame), NSStringFromCGRect(self.frame));
+//    if (!CGRectEqualToRect(self.oldFrame, self.frame)) {
+//        self.oldFrame = self.frame;
+//        [self reloadUI];
+//    }
+//}
 
 #pragma mark - Event Response
 
@@ -115,10 +115,16 @@
     if (nil == self.adjustView ) {
         return;
     }
+    CGRect frame = self.frame;
+    // 自动布局时初始不处理
+    if (CGRectEqualToRect(frame, CGRectZero)) {
+        return;
+    }
+    // 移除所有子view
     while(self.subviews.count) {
         [self.subviews.lastObject removeFromSuperview];
     }
-    CGRect frame = self.frame;
+    
     CGSize size = [self caculateSize:frame.size adjustView:self.adjustView fixViews:self.fixedViews];
     frame.size = size;
     self.frame = frame;
@@ -151,7 +157,9 @@
             if (CGRectGetHeight(obj.frame) > maxHeight) {
                 maxHeight = CGRectGetHeight(obj.frame);
             }
-            //NSLog(@"layoutView>>>leftWidth = %f, maxHeight = %f", leftWidth, maxHeight);
+            NSLog(@"layoutView>>>剩余可用宽度 = %f, 最大高度 = %f", leftWidth, maxHeight);
+        } else {
+            NSLog(@"layoutView>>>剩余可用宽度 = %f < 要加载view的宽度 = %f", leftWidth, singleWidth);
         }
     }];
     
@@ -166,7 +174,7 @@
             
             originX = CGRectGetMaxX(obj.frame) + obj.flexibleLayoutViewRightMargin;
             
-            //NSLog(@"layoutView>>>idx = %lu, frame = %@, originX = %f", (unsigned long)idx, NSStringFromCGRect(obj.frame), originX);
+            NSLog(@"layoutView>>>加载view的索引 = %lu, frame = %@, 最外层容器view宽度 = %f", (unsigned long)idx, NSStringFromCGRect(obj.frame), originX);
         }
     }];
     return CGSizeMake(originX, heightLimit);

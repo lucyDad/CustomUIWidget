@@ -19,6 +19,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		BF1915DE275EFDA9004D28C1 /* FDKTVAnnouncementView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1915DD275EFDA9004D28C1 /* FDKTVAnnouncementView.m */; };
+		BF255D5C27C651C200AC8E65 /* NSData+BytesUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF255D5B27C651C200AC8E65 /* NSData+BytesUtils.m */; };
 		BF2EBA1E2775663400BDF298 /* FDUIStackViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EBA1D277564A300BDF298 /* FDUIStackViewViewController.m */; };
 		BF301FC1277B02E300CCB495 /* FDImageLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF301FC0277B02E300CCB495 /* FDImageLabelViewController.m */; };
 		BF61BD1A26D3A62F00B9961F /* FDWindowHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BD1926D3A62F00B9961F /* FDWindowHandler.m */; };
@@ -67,6 +68,8 @@
 		BF02D9FA27B3752A0040CF81 /* FDComponentProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDComponentProtocol.h; sourceTree = "<group>"; };
 		BF1915DC275EFDA9004D28C1 /* FDKTVAnnouncementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDKTVAnnouncementView.h; sourceTree = "<group>"; };
 		BF1915DD275EFDA9004D28C1 /* FDKTVAnnouncementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDKTVAnnouncementView.m; sourceTree = "<group>"; };
+		BF255D5A27C651C200AC8E65 /* NSData+BytesUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BytesUtils.h"; sourceTree = "<group>"; };
+		BF255D5B27C651C200AC8E65 /* NSData+BytesUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+BytesUtils.m"; sourceTree = "<group>"; };
 		BF2EBA1C277564A300BDF298 /* FDUIStackViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDUIStackViewViewController.h; sourceTree = "<group>"; };
 		BF2EBA1D277564A300BDF298 /* FDUIStackViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDUIStackViewViewController.m; sourceTree = "<group>"; };
 		BF301FBF277B02E300CCB495 /* FDImageLabelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDImageLabelViewController.h; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 		BFF648C82771D29900EA78FC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BF255D5A27C651C200AC8E65 /* NSData+BytesUtils.h */,
+				BF255D5B27C651C200AC8E65 /* NSData+BytesUtils.m */,
 				BFE131C5279E936200EBAFF8 /* UIButton+FDSelectState.h */,
 				BFE131C4279E936200EBAFF8 /* UIButton+FDSelectState.m */,
 				BFF648CA2771D2B300EA78FC /* UIButton+LXMImagePosition.h */,
@@ -434,6 +439,7 @@
 				BF77F7B9276C899F00B728EB /* FDOrderedDictionary.m in Sources */,
 				BF77F7B2276C7F8A00B728EB /* FDGridView.m in Sources */,
 				BF77F7B5276C87FA00B728EB /* FDGridViewUtil.m in Sources */,
+				BF255D5C27C651C200AC8E65 /* NSData+BytesUtils.m in Sources */,
 				BFE8E009279E8CB3004D297C /* FDUIViewBorderViewController.m in Sources */,
 				BFF648CB2771D2B300EA78FC /* UIButton+LXMImagePosition.m in Sources */,
 				BF77F7AC276C7E7500B728EB /* FDUIKitViewController.m in Sources */,

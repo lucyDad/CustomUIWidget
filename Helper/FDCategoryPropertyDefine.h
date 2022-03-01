@@ -9,7 +9,7 @@
 #define FDCategoryPropertyDefine_h
 
 #import "YYWeakProxy.h"
-#import "FDCommonDefine.h"
+#import "FDCompileCommonDefines.h"
 #import <objc/runtime.h>
 /**
  以下系列宏用于在 Category 里添加 property 时，可以在 @implementation 里一句代码完成 getter/setter 的声明。

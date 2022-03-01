@@ -254,6 +254,23 @@
 		BE0EDF5167D8DE9A4705CD7A56244DA4 /* NSObject+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A2461A11546AF7EE2EF3164B42A742 /* NSObject+YYAdd.m */; };
 		BE77C0C10C865D7D6CE00F075016BDD1 /* MKAnnotationView+YYWebImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 006C0A374C2828B1A4F97D0B60304A29 /* MKAnnotationView+YYWebImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF08B0F12773364900D980C2 /* FDCommonDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = BF08B0F02773364900D980C2 /* FDCommonDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF37A86327B4EBE3004F5134 /* FDCGCommonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37A86227B4EABA004F5134 /* FDCGCommonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF37A86527B4ED28004F5134 /* FDLayoutCommonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37A86427B4ED28004F5134 /* FDLayoutCommonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF37A86727B5022B004F5134 /* FDCompileCommonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37A86627B5022B004F5134 /* FDCompileCommonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF37A86A27B507C8004F5134 /* FDUIHelper+Device.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37A86827B507C8004F5134 /* FDUIHelper+Device.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF37A86B27B507C8004F5134 /* FDUIHelper+Device.m in Sources */ = {isa = PBXBuildFile; fileRef = BF37A86927B507C8004F5134 /* FDUIHelper+Device.m */; };
+		BF37A87227B50C69004F5134 /* NSObject+PerformSelector.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37A87027B50C69004F5134 /* NSObject+PerformSelector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF37A87327B50C69004F5134 /* NSObject+PerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = BF37A87127B50C69004F5134 /* NSObject+PerformSelector.m */; };
+		BF37A87627B50FA3004F5134 /* NSString+FDHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37A87427B50FA3004F5134 /* NSString+FDHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF37A87727B50FA3004F5134 /* NSString+FDHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = BF37A87527B50FA3004F5134 /* NSString+FDHandle.m */; };
+		BF37A87927B51311004F5134 /* FDRuntimeCommonDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37A87827B51311004F5134 /* FDRuntimeCommonDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF37A88027B610DC004F5134 /* NSArray+FDHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37A87E27B610DC004F5134 /* NSArray+FDHandle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF37A88127B610DC004F5134 /* NSArray+FDHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = BF37A87F27B610DC004F5134 /* NSArray+FDHandle.m */; };
+		BF37A88427B639E1004F5134 /* FDHandleStringPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37A88227B639E1004F5134 /* FDHandleStringPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF37A88527B639E1004F5134 /* FDHandleStringPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF37A88327B639E1004F5134 /* FDHandleStringPrivate.m */; };
+		BF37A88727B63A40004F5134 /* FDHandleStringProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37A88627B63A40004F5134 /* FDHandleStringProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF523FA227B4B5900057EC30 /* FDMarqueeLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF523FA027B4B5900057EC30 /* FDMarqueeLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF523FA327B4B5900057EC30 /* FDMarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF523FA127B4B5900057EC30 /* FDMarqueeLabel.m */; };
 		C0B13CEEE3470F457DEEB866E0CCBAAB /* EXTKeyPathCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = D953D48B393F9DF82E4209BF6E91E8C5 /* EXTKeyPathCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0F2C8EF980602A098B2C602A66876BC /* UIView+FDHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = C89CD11B5D77A6A50896A4F47A50B6E9 /* UIView+FDHierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C222F010AD5E0A0B7DCF55DC209F7D16 /* YYTextArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B9E7A3ED6FD19D1A64115B99D2335 /* YYTextArchiver.m */; };
@@ -762,6 +779,23 @@
 		BA47FD6D37CB303C297A10AFEBD17ABB /* YYCategories-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "YYCategories-Info.plist"; sourceTree = "<group>"; };
 		BC32FF5D85F768EE249B18D54AF4A852 /* YYSpriteSheetImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYSpriteSheetImage.h; path = YYImage/YYSpriteSheetImage.h; sourceTree = "<group>"; };
 		BF08B0F02773364900D980C2 /* FDCommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCommonDefine.h; sourceTree = "<group>"; };
+		BF37A86227B4EABA004F5134 /* FDCGCommonDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDCGCommonDefines.h; sourceTree = "<group>"; };
+		BF37A86427B4ED28004F5134 /* FDLayoutCommonDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDLayoutCommonDefines.h; sourceTree = "<group>"; };
+		BF37A86627B5022B004F5134 /* FDCompileCommonDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDCompileCommonDefines.h; sourceTree = "<group>"; };
+		BF37A86827B507C8004F5134 /* FDUIHelper+Device.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FDUIHelper+Device.h"; sourceTree = "<group>"; };
+		BF37A86927B507C8004F5134 /* FDUIHelper+Device.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FDUIHelper+Device.m"; sourceTree = "<group>"; };
+		BF37A87027B50C69004F5134 /* NSObject+PerformSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+PerformSelector.h"; sourceTree = "<group>"; };
+		BF37A87127B50C69004F5134 /* NSObject+PerformSelector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PerformSelector.m"; sourceTree = "<group>"; };
+		BF37A87427B50FA3004F5134 /* NSString+FDHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FDHandle.h"; sourceTree = "<group>"; };
+		BF37A87527B50FA3004F5134 /* NSString+FDHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FDHandle.m"; sourceTree = "<group>"; };
+		BF37A87827B51311004F5134 /* FDRuntimeCommonDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDRuntimeCommonDefines.h; sourceTree = "<group>"; };
+		BF37A87E27B610DC004F5134 /* NSArray+FDHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+FDHandle.h"; sourceTree = "<group>"; };
+		BF37A87F27B610DC004F5134 /* NSArray+FDHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FDHandle.m"; sourceTree = "<group>"; };
+		BF37A88227B639E1004F5134 /* FDHandleStringPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDHandleStringPrivate.h; sourceTree = "<group>"; };
+		BF37A88327B639E1004F5134 /* FDHandleStringPrivate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDHandleStringPrivate.m; sourceTree = "<group>"; };
+		BF37A88627B63A40004F5134 /* FDHandleStringProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDHandleStringProtocol.h; sourceTree = "<group>"; };
+		BF523FA027B4B5900057EC30 /* FDMarqueeLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDMarqueeLabel.h; sourceTree = "<group>"; };
+		BF523FA127B4B5900057EC30 /* FDMarqueeLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDMarqueeLabel.m; sourceTree = "<group>"; };
 		BF6B9E7A3ED6FD19D1A64115B99D2335 /* YYTextArchiver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYTextArchiver.m; path = YYText/String/YYTextArchiver.m; sourceTree = "<group>"; };
 		BF975A1BEEC2E12FC5E78FA5468880FD /* FDCollectionCellViewHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FDCollectionCellViewHelper.h; sourceTree = "<group>"; };
 		C04F5AD89E47437AEC175AEAE33E34A5 /* UIView+FDAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+FDAlertView.m"; sourceTree = "<group>"; };
@@ -1081,11 +1115,7 @@
 		139178AA39E5D1EC2DEA3ED3407397F3 /* Categorys */ = {
 			isa = PBXGroup;
 			children = (
-				BF08B0F02773364900D980C2 /* FDCommonDefine.h */,
 				FA33F6CBEC3482A80CF1D325C262B1E1 /* FDCustomUIWidgetDef.h */,
-				9ADD75316FBC5AC7ECB956A323BDEC39 /* FDCategoryPropertyDefine.h */,
-				1B0F28260C640F4FF20DA95C206922AE /* FDUIHelper.h */,
-				2CCCD5F916282BF51D29DC17B6DE90F3 /* FDUIHelper.m */,
 				E22E4933CDF4E3CF8C7BC9528AD8D919 /* UIImage+FRColor.h */,
 				DAF1BBB55C1C51E31E94E5A7B9E9BFE7 /* UIImage+FRColor.m */,
 			);
@@ -1494,6 +1524,8 @@
 			children = (
 				2864B54FC492EE861F4E64F9E77B64DB /* FDMarqueeView.h */,
 				5B177616593F32CDFA8C748BD556BC44 /* FDMarqueeView.m */,
+				BF523FA027B4B5900057EC30 /* FDMarqueeLabel.h */,
+				BF523FA127B4B5900057EC30 /* FDMarqueeLabel.m */,
 			);
 			path = MarqueeView;
 			sourceTree = "<group>";
@@ -1626,6 +1658,7 @@
 		A9C6FF0E93B9910916DC39664B124295 /* CustomUIWidget */ = {
 			isa = PBXGroup;
 			children = (
+				BF523FA427B4E6420057EC30 /* Helper */,
 				139178AA39E5D1EC2DEA3ED3407397F3 /* Categorys */,
 				AC122FB595E0A4F8885D0561FFEDB7E6 /* Pod */,
 				5A0C22749323DA7F94CA7D6B8AA8EC3D /* Public */,
@@ -1661,6 +1694,32 @@
 				EA99B7EF5BE322E2A89A3C3E7231049D /* FDAlertNavigationManager.m */,
 			);
 			path = AlertNav;
+			sourceTree = "<group>";
+		};
+		BF523FA427B4E6420057EC30 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				1B0F28260C640F4FF20DA95C206922AE /* FDUIHelper.h */,
+				2CCCD5F916282BF51D29DC17B6DE90F3 /* FDUIHelper.m */,
+				BF37A86827B507C8004F5134 /* FDUIHelper+Device.h */,
+				BF37A86927B507C8004F5134 /* FDUIHelper+Device.m */,
+				9ADD75316FBC5AC7ECB956A323BDEC39 /* FDCategoryPropertyDefine.h */,
+				BF37A87827B51311004F5134 /* FDRuntimeCommonDefines.h */,
+				BF37A86627B5022B004F5134 /* FDCompileCommonDefines.h */,
+				BF37A86427B4ED28004F5134 /* FDLayoutCommonDefines.h */,
+				BF37A86227B4EABA004F5134 /* FDCGCommonDefines.h */,
+				BF08B0F02773364900D980C2 /* FDCommonDefine.h */,
+				BF37A87027B50C69004F5134 /* NSObject+PerformSelector.h */,
+				BF37A87127B50C69004F5134 /* NSObject+PerformSelector.m */,
+				BF37A88627B63A40004F5134 /* FDHandleStringProtocol.h */,
+				BF37A87427B50FA3004F5134 /* NSString+FDHandle.h */,
+				BF37A87527B50FA3004F5134 /* NSString+FDHandle.m */,
+				BF37A87E27B610DC004F5134 /* NSArray+FDHandle.h */,
+				BF37A87F27B610DC004F5134 /* NSArray+FDHandle.m */,
+				BF37A88227B639E1004F5134 /* FDHandleStringPrivate.h */,
+				BF37A88327B639E1004F5134 /* FDHandleStringPrivate.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		C7A3E2E260B82715E3F30B03BCE5BB78 /* Products */ = {
@@ -1969,6 +2028,17 @@
 				401C87FE631937029C9079AC1D703823 /* FDPopWindowManagerProtocol.h in Headers */,
 				E2A11C4A277B0EE10B75CAD58B7E4723 /* FDUIHelper.h in Headers */,
 				1D2877D601F077FDA3AF733234C17059 /* UIImage+FRColor.h in Headers */,
+				BF37A88027B610DC004F5134 /* NSArray+FDHandle.h in Headers */,
+				BF37A87927B51311004F5134 /* FDRuntimeCommonDefines.h in Headers */,
+				BF37A88727B63A40004F5134 /* FDHandleStringProtocol.h in Headers */,
+				BF37A86327B4EBE3004F5134 /* FDCGCommonDefines.h in Headers */,
+				BF37A86727B5022B004F5134 /* FDCompileCommonDefines.h in Headers */,
+				BF37A87227B50C69004F5134 /* NSObject+PerformSelector.h in Headers */,
+				BF37A88427B639E1004F5134 /* FDHandleStringPrivate.h in Headers */,
+				BF37A87627B50FA3004F5134 /* NSString+FDHandle.h in Headers */,
+				BF37A86527B4ED28004F5134 /* FDLayoutCommonDefines.h in Headers */,
+				BF37A86A27B507C8004F5134 /* FDUIHelper+Device.h in Headers */,
+				BF523FA227B4B5900057EC30 /* FDMarqueeLabel.h in Headers */,
 				8D9282790B25AF5FACCAFEC4B7E86F1A /* UIView+ArrowTipsView.h in Headers */,
 				80B90332D4C197792B0232DBD8F57724 /* UIView+FDAlertView.h in Headers */,
 				C0F2C8EF980602A098B2C602A66876BC /* UIView+FDHierarchy.h in Headers */,
@@ -2515,7 +2585,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF37A88127B610DC004F5134 /* NSArray+FDHandle.m in Sources */,
 				05AE974A3E16CEDD540C6BDA12B106E6 /* CALayer+FDUI.m in Sources */,
+				BF523FA327B4B5900057EC30 /* FDMarqueeLabel.m in Sources */,
 				68389B0B00658C57402E6C8E00757CF5 /* CustomUIWidget-dummy.m in Sources */,
 				E15A193194FC847036C80544945EE082 /* FDAlertNavigationManager.m in Sources */,
 				E6B6F5A98F7F1D80838BCF521B8C724C /* FDAnimationManagerView.m in Sources */,
@@ -2523,6 +2595,7 @@
 				117F679FDF406AB14DC3CA5F2F63C021 /* FDArrowTipsView.m in Sources */,
 				BC6737F48615218D4E1329AD6A6CF66C /* FDAutoPlaceView.m in Sources */,
 				87A9ED47A1552BBAE34622DC69E847F3 /* FDCollectionCellView.m in Sources */,
+				BF37A86B27B507C8004F5134 /* FDUIHelper+Device.m in Sources */,
 				858FC3A9C139E4B6E346639DF2BEFEAC /* FDCollectionCellViewHelper.m in Sources */,
 				4234C48069A73CAFD1013913CF1474DC /* FDCommonAlertPresentManager.m in Sources */,
 				BD271309B3AD3E5D9EB88A954B728228 /* FDCommonAlertView.m in Sources */,
@@ -2533,6 +2606,7 @@
 				B8ECF27BCFA856E14993087FA842A3E2 /* FDImageLabelView.m in Sources */,
 				DA6C400613833851D65B73F5ACE5EC32 /* FDMarqueeView.m in Sources */,
 				7B5A9AEAD7CA89952BA96A3175A70A9A /* FDPopWindow.m in Sources */,
+				BF37A87327B50C69004F5134 /* NSObject+PerformSelector.m in Sources */,
 				9A808C17403E122B232CFB2A747E8252 /* FDPopWindowEventModel.m in Sources */,
 				2FAD3654855375446219860992ACEEF4 /* FDPopWindowManager.m in Sources */,
 				8E9A23C8706DCF5986FE2E9C16E93CF2 /* FDUIHelper.m in Sources */,
@@ -2540,9 +2614,11 @@
 				E098C937C211EE5D8227D9A6E8E9B891 /* UIView+ArrowTipsView.m in Sources */,
 				DBE0BCA549D59DA9EA070388DCD9A2FC /* UIView+FDAlertView.m in Sources */,
 				AEE85FEED6474D4E03DD6E8813531B87 /* UIView+FDHierarchy.m in Sources */,
+				BF37A88527B639E1004F5134 /* FDHandleStringPrivate.m in Sources */,
 				8461E5929F73A890739AE3814190EEFF /* UIView+FDPopWindow.m in Sources */,
 				BCABEEDEC7D0FC7B15B913A563E88C8A /* UIView+LongPressDrag.m in Sources */,
 				CB97CD64E8C01689375500F78E04084D /* UIView+UIBorder.m in Sources */,
+				BF37A87727B50FA3004F5134 /* NSString+FDHandle.m in Sources */,
 				2C26E14876EE8355E07F499E802EB785 /* YYWeakProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2879,7 +2955,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CustomUIWidget/CustomUIWidget-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CustomUIWidget/CustomUIWidget-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CustomUIWidget/CustomUIWidget.modulemap";
 				PRODUCT_MODULE_NAME = CustomUIWidget;
@@ -3197,7 +3273,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CustomUIWidget/CustomUIWidget-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CustomUIWidget/CustomUIWidget-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/CustomUIWidget/CustomUIWidget.modulemap";
 				PRODUCT_MODULE_NAME = CustomUIWidget;

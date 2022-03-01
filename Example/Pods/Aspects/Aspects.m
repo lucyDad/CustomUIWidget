@@ -10,8 +10,8 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 
-#define AspectLog(...)
-//#define AspectLog(...) do { NSLog(__VA_ARGS__); }while(0)
+//#define AspectLog(...)
+#define AspectLog(...) do { NSLog(__VA_ARGS__); }while(0)
 #define AspectLogError(...) do { NSLog(__VA_ARGS__); }while(0)
 
 // Block internals.
@@ -277,8 +277,9 @@ static void aspect_prepareClassAndHookSelector(NSObject *self, SEL selector, NSE
         }
 
         // We use forwardInvocation to hook in.
-        class_replaceMethod(klass, selector, aspect_getMsgForwardIMP(self, selector), typeEncoding);
-        AspectLog(@"Aspects: Installed hook for -[%@ %@].", klass, NSStringFromSelector(selector));
+        IMP replaceIMP = aspect_getMsgForwardIMP(self, selector);
+        IMP previousIMP = class_replaceMethod(klass, selector, replaceIMP, typeEncoding);
+        AspectLog(@"Aspects: Installed hook for -[%@ %@]. replaceIMP = %p, previousIMP = %p", klass, NSStringFromSelector(selector), replaceIMP, previousIMP);
     }
 }
 

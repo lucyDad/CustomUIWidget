@@ -344,7 +344,7 @@ static NSInteger const kTagForCopyView = 1000;
 
 - (void)log:(NSString *)format, ... {
     
-#if 1
+#if 0
     va_list args;
     va_start(args, format);
     NSString *msg = [[NSString alloc] initWithFormat:format arguments:args];

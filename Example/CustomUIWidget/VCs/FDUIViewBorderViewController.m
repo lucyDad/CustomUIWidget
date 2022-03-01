@@ -347,7 +347,7 @@ static CGFloat const kDefaultCornerRadius = 15.0f;
             UIView *view = [UIView new];
             view.backgroundColor = [UIColor greenColor];
             view.size = CGSizeMake(kShowViewHeight, kShowViewHeight);
-            view.top = kStatusBarHeight + kNavigationBarHeight + 20;
+            view.top = StatusBarHeight + kNavigationBarHeight + 20;
             view.centerX = [UIScreen mainScreen].bounds.size.width / 2.0f;
             
             view.layer.cornerRadius = kDefaultCornerRadius;
@@ -355,6 +355,7 @@ static CGFloat const kDefaultCornerRadius = 15.0f;
             view.fdui_borderWidth = kDefaultBorderWidth;
             view.fdui_borderColor = [self getColor:kDefaultBorderColorIndex];
             view.fdui_borderPosition = [self getPosition:self.dicPosition];
+            
             view;
         });
     }

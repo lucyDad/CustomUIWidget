@@ -2,7 +2,7 @@
 source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'CustomUIWidget_Example' do
   pod 'CustomUIWidget', :path => '../'

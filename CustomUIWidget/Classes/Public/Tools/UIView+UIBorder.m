@@ -9,7 +9,7 @@
 #import "CALayer+FDUI.h"
 #import <Aspects/Aspects.h>
 #import "FDUIHelper.h"
-#import "FDCategoryPropertyDefine.h"
+#import "FDCommonDefine.h"
 
 @interface FDUIBorderLayer : CAShapeLayer
 

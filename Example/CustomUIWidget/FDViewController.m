@@ -161,7 +161,6 @@ static NSInteger const kTagForShowView = 1111;
 
 - (void)testFunction6 {
 
-    CGSize size = CGSizeMake(300, 80);
     UILabel *titleLabel = ({
         UILabel *label = [[UILabel alloc] init];
         label.backgroundColor = [UIColor clearColor];
@@ -171,30 +170,44 @@ static NSInteger const kTagForShowView = 1111;
         label.text = @"红娘真心宝贝";
         [label sizeToFit];
         //label.flexibleLayoutViewLeftMargin = 10;
-        label.flexibleLayoutViewRightMargin = 15;
+        //label.flexibleLayoutViewRightMargin = 15;
         //label.flexibleLayoutViewYType = FlexibleLayoutYTypeBottom;
-        label.flexibleLayoutViewMinWidthLimit = 30;
+        //label.flexibleLayoutViewMinWidthLimit = 30;
         label;
     });
 
+    CGSize size = CGSizeMake(300, 80);
     FDFlexibleLayoutView *layoutView = [FDFlexibleLayoutView new];
     layoutView.backgroundColor = [UIColor redColor];
     layoutView.left = 100;
     layoutView.top = 200;
     layoutView.size = size;
     layoutView.adjustView = titleLabel;
-    layoutView.fixedViews = [self generateViews];
+    
+    UIImageView *matchmakerImageView = ({
+        UIImageView *imageView = [UIImageView new];
+        UIImage *image = [UIImage imageNamed:@"icon_matckmaker"];
+        imageView.image = image;
+        [imageView sizeToFit];
+        imageView.flexibleLayoutViewLeftMargin = 20;
+        imageView;
+    });
+    
+    layoutView.fixedViews = @[matchmakerImageView];//[self generateViews];
     [layoutView reloadUI];
     layoutView.tag = kTagForShowView;
     [self.view addSubview:layoutView];
+    
     
     __block MASConstraint *sizeConstraint = nil;
     UIView *superView = self.view;
     [layoutView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(superView).offset(200);
         make.left.equalTo(superView).offset(100);
-        sizeConstraint = make.size.mas_equalTo(size);
+        sizeConstraint = make.size.mas_equalTo(CGSizeZero);
     }];
+    [sizeConstraint setSizeOffset:size];
+    
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
         [sizeConstraint setSizeOffset:CGSizeMake(350, 50)];
     }];
