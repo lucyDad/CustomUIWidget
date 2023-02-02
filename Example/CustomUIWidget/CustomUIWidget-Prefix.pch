@@ -95,4 +95,12 @@ AddAccessibilityHint(NSObject *obj, NSString *hint) {
 /// @warn 如果是用于 viewController，请使用 UIViewController(QMUI) qmui_navigationBarMaxYInViewCoordinator 代替
 #define NavigationContentTop (StatusBarHeight + NavigationBarHeight)
 
+#define zx_getter(type, name, block) \
+- (type)name { \
+if (!_##name) { \
+_##name = block; \
+} \
+return _##name; \
+}
+
 #endif

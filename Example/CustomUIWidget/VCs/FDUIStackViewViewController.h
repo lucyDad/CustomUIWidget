@@ -36,8 +36,8 @@ NS_ASSUME_NONNULL_BEGIN
 
  注意：对于隐藏（isHidden）的处理，UIStackView 会自动把空间利用起来，相当于暂时的删去，而不像 Autolayout 一般不破坏约束的做法。
 
- Main Axis:  主轴
- Cross Axis: 交叉轴
+ Main Axis:  主轴(横轴)
+ Cross Axis: 交叉轴(纵轴)
  distribution for the main axis, and alignment for the cross axis.
  
  沿主轴排列的子视图的位置和大小部分受分布属性值的影响，部分受子视图本身的大小属性影响
@@ -92,6 +92,10 @@ NS_ASSUME_NONNULL_BEGIN
  You can apply insets to your stack view by setting its isLayoutMarginsRelativeArrangement to true and assigning a new value to layoutMargins.
  plateStack.isLayoutMarginsRelativeArrangement = true
  plateStack.layoutMargins = UIEdgeInsets(…)
+ 
+ 
+ 我们只负责定义UIStackView的位置（position），UIStackView的大小（size）是可选的。当没有设置size的时候，UIStackView会根据它的内容的大小来调整自己的大小，即子视图各个控件的大小决定了UIStackView的大小，当子视图的各个控件大小为0，那么UIStackView的大小同样0。
+
  */
 
 @interface FDUIStackViewViewController : UIViewController

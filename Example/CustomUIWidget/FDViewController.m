@@ -22,6 +22,7 @@
 #import "FDWindowHandler.h"
 #import "FDKTVAnnouncementView.h"
 #import "FDTestViewController.h"
+#import "PresentVCDemoViewController.h"
 
 static NSString *kTableViewCellReuseIdentifier =  @"kTableViewCellReuseIdentifier";
 static NSInteger const kTagForShowView = 1111;
@@ -47,6 +48,15 @@ static NSInteger const kTagForShowView = 1111;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(superView);
     }];
+}
+
+#pragma mark - 12
+
+- (void)testFunction12 {
+    PresentVCDemoViewController *vc = [PresentVCDemoViewController new];
+    UINavigationController *nav= [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark - Test11
@@ -703,7 +713,7 @@ static NSInteger const kTagForShowView = 1111;
 - (NSArray *)arrData {
     if (!_arrData) {
         _arrData = ({
-            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4", @"长按拖动view5", @"单行自动缩放view6", @"花瓣形状view7", @"渐变边框view8", @"弹框管理9", @"ImageLabel10", @"Test11"];
+            NSArray *view = @[@"自定义跑马灯0", @"自定义弹框1", @"箭头view2", @"自动换行排列view3", @"格子view4", @"长按拖动view5", @"单行自动缩放view6", @"花瓣形状view7", @"渐变边框view8", @"弹框管理9", @"ImageLabel10", @"Test11", @"present问题"];
             view;
         });
     }

@@ -271,6 +271,8 @@
 		BF37A88727B63A40004F5134 /* FDHandleStringProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = BF37A88627B63A40004F5134 /* FDHandleStringProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF523FA227B4B5900057EC30 /* FDMarqueeLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = BF523FA027B4B5900057EC30 /* FDMarqueeLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF523FA327B4B5900057EC30 /* FDMarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF523FA127B4B5900057EC30 /* FDMarqueeLabel.m */; };
+		BFA6D5DE27E85D4C0028C448 /* FDCycleScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = BFA6D5DC27E85D4C0028C448 /* FDCycleScrollView.h */; };
+		BFA6D5DF27E85D4C0028C448 /* FDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA6D5DD27E85D4C0028C448 /* FDCycleScrollView.m */; };
 		C0B13CEEE3470F457DEEB866E0CCBAAB /* EXTKeyPathCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = D953D48B393F9DF82E4209BF6E91E8C5 /* EXTKeyPathCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0F2C8EF980602A098B2C602A66876BC /* UIView+FDHierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = C89CD11B5D77A6A50896A4F47A50B6E9 /* UIView+FDHierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C222F010AD5E0A0B7DCF55DC209F7D16 /* YYTextArchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B9E7A3ED6FD19D1A64115B99D2335 /* YYTextArchiver.m */; };
@@ -798,6 +800,8 @@
 		BF523FA127B4B5900057EC30 /* FDMarqueeLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDMarqueeLabel.m; sourceTree = "<group>"; };
 		BF6B9E7A3ED6FD19D1A64115B99D2335 /* YYTextArchiver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYTextArchiver.m; path = YYText/String/YYTextArchiver.m; sourceTree = "<group>"; };
 		BF975A1BEEC2E12FC5E78FA5468880FD /* FDCollectionCellViewHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FDCollectionCellViewHelper.h; sourceTree = "<group>"; };
+		BFA6D5DC27E85D4C0028C448 /* FDCycleScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDCycleScrollView.h; sourceTree = "<group>"; };
+		BFA6D5DD27E85D4C0028C448 /* FDCycleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDCycleScrollView.m; sourceTree = "<group>"; };
 		C04F5AD89E47437AEC175AEAE33E34A5 /* UIView+FDAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+FDAlertView.m"; sourceTree = "<group>"; };
 		C086AED50588A24964BB61EF5580F3B7 /* YYTextRubyAnnotation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYTextRubyAnnotation.m; path = YYText/String/YYTextRubyAnnotation.m; sourceTree = "<group>"; };
 		C4161DB5F91C3DE0769E1455C3475219 /* YYText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1365,6 +1369,7 @@
 		5A0C22749323DA7F94CA7D6B8AA8EC3D /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				BFA6D5DB27E85D0C0028C448 /* CycleScrollView */,
 				BE70D4365C6C75A812C0E71303F73A80 /* AlertNav */,
 				0648E4B456BF806E033C1888DC521F15 /* AlertView */,
 				22BD2F608CB44ECFFBFDA8496611BBDE /* AnimationManagerView */,
@@ -1722,6 +1727,15 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		BFA6D5DB27E85D0C0028C448 /* CycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				BFA6D5DC27E85D4C0028C448 /* FDCycleScrollView.h */,
+				BFA6D5DD27E85D4C0028C448 /* FDCycleScrollView.m */,
+			);
+			path = CycleScrollView;
+			sourceTree = "<group>";
+		};
 		C7A3E2E260B82715E3F30B03BCE5BB78 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -2044,6 +2058,7 @@
 				C0F2C8EF980602A098B2C602A66876BC /* UIView+FDHierarchy.h in Headers */,
 				9727D421B02CF4146011D83E2DB1C8F7 /* UIView+FDPopWindow.h in Headers */,
 				02B43DD98C0231FB331805FAC35D9EE3 /* UIView+LongPressDrag.h in Headers */,
+				BFA6D5DE27E85D4C0028C448 /* FDCycleScrollView.h in Headers */,
 				2D1C4EC68EA783F2DDB6B82739F71E9E /* UIView+UIBorder.h in Headers */,
 				8E76722E6818B85134DDD420DF2193F5 /* YYWeakProxy.h in Headers */,
 			);
@@ -2591,6 +2606,7 @@
 				68389B0B00658C57402E6C8E00757CF5 /* CustomUIWidget-dummy.m in Sources */,
 				E15A193194FC847036C80544945EE082 /* FDAlertNavigationManager.m in Sources */,
 				E6B6F5A98F7F1D80838BCF521B8C724C /* FDAnimationManagerView.m in Sources */,
+				BFA6D5DF27E85D4C0028C448 /* FDCycleScrollView.m in Sources */,
 				F49F5B3C0440F8E14195BF8A0314BA12 /* FDArrowCustomListView.m in Sources */,
 				117F679FDF406AB14DC3CA5F2F63C021 /* FDArrowTipsView.m in Sources */,
 				BC6737F48615218D4E1329AD6A6CF66C /* FDAutoPlaceView.m in Sources */,

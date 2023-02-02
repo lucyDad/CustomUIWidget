@@ -18,6 +18,7 @@
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		BF14C31929309B5500D2F44F /* PresentVCDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14C31729309B5500D2F44F /* PresentVCDemoViewController.m */; };
 		BF1915DE275EFDA9004D28C1 /* FDKTVAnnouncementView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1915DD275EFDA9004D28C1 /* FDKTVAnnouncementView.m */; };
 		BF255D5C27C651C200AC8E65 /* NSData+BytesUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF255D5B27C651C200AC8E65 /* NSData+BytesUtils.m */; };
 		BF2EBA1E2775663400BDF298 /* FDUIStackViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2EBA1D277564A300BDF298 /* FDUIStackViewViewController.m */; };
@@ -66,6 +67,8 @@
 		AEEFBC13CC939556476FC4EF /* Pods-CustomUIWidget_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomUIWidget_Example.debug.xcconfig"; path = "Target Support Files/Pods-CustomUIWidget_Example/Pods-CustomUIWidget_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B65141B28CD6FCFD8B776A9F /* Pods_CustomUIWidget_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomUIWidget_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF02D9FA27B3752A0040CF81 /* FDComponentProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDComponentProtocol.h; sourceTree = "<group>"; };
+		BF14C31729309B5500D2F44F /* PresentVCDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentVCDemoViewController.m; sourceTree = "<group>"; };
+		BF14C31829309B5500D2F44F /* PresentVCDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentVCDemoViewController.h; sourceTree = "<group>"; };
 		BF1915DC275EFDA9004D28C1 /* FDKTVAnnouncementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDKTVAnnouncementView.h; sourceTree = "<group>"; };
 		BF1915DD275EFDA9004D28C1 /* FDKTVAnnouncementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDKTVAnnouncementView.m; sourceTree = "<group>"; };
 		BF255D5A27C651C200AC8E65 /* NSData+BytesUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+BytesUtils.h"; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 		6003F593195388D20070C39A /* Example for CustomUIWidget */ = {
 			isa = PBXGroup;
 			children = (
+				BF14C31629309B4300D2F44F /* Test */,
 				BFF648CC2771D70700EA78FC /* VCs */,
 				BFF648C82771D29900EA78FC /* Tools */,
 				6003F59C195388D20070C39A /* FDAppDelegate.h */,
@@ -235,6 +239,15 @@
 				9E4E12C6C4546B05346657C2 /* Pods-CustomUIWidget_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BF14C31629309B4300D2F44F /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				BF14C31829309B5500D2F44F /* PresentVCDemoViewController.h */,
+				BF14C31729309B5500D2F44F /* PresentVCDemoViewController.m */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		BF61BD1726D3A61200B9961F /* Demo */ = {
@@ -321,6 +334,11 @@
 				CLASSPREFIX = FD;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = lucyDad;
+				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 78MHN9ZV69;
+					};
+				};
 			};
 			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "CustomUIWidget" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -421,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF14C31929309B5500D2F44F /* PresentVCDemoViewController.m in Sources */,
 				BF2EBA1E2775663400BDF298 /* FDUIStackViewViewController.m in Sources */,
 				6003F59E195388D20070C39A /* FDAppDelegate.m in Sources */,
 				BF61BD1A26D3A62F00B9961F /* FDWindowHandler.m in Sources */,
@@ -554,6 +573,8 @@
 			baseConfigurationReference = AEEFBC13CC939556476FC4EF /* Pods-CustomUIWidget_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 78MHN9ZV69;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CustomUIWidget/CustomUIWidget-Prefix.pch";
 				INFOPLIST_FILE = "CustomUIWidget/CustomUIWidget-Info.plist";
@@ -595,7 +616,7 @@
 					"-Xlinker",
 					"-interposable",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quyuehui.interestingdateOfficial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
@@ -607,6 +628,8 @@
 			baseConfigurationReference = DF1149857500EE0C191D0882 /* Pods-CustomUIWidget_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 78MHN9ZV69;
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CustomUIWidget/CustomUIWidget-Prefix.pch";
 				INFOPLIST_FILE = "CustomUIWidget/CustomUIWidget-Info.plist";
@@ -648,7 +671,7 @@
 					"-Xlinker",
 					"-interposable",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quyuehui.interestingdateOfficial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
